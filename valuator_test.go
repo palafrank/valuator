@@ -23,3 +23,28 @@ func TestGetEdgarFiling(t *testing.T) {
 		t.Error(err.Error())
 	}
 }
+
+func TestCollector(t *testing.T) {
+	c, _ := NewCollector(collectorEdgar)
+	m, _ := c.CollectAnnualData("AAPL", 2016, 2017)
+	if m[2016].BookValue() != 24.05 {
+		t.Error("Book value was not the expected value", m[2016].BookValue(), 24.05)
+	}
+	if m[2017].BookValue() != 26.10 {
+		t.Error("Book value was not the expected value", m[2017].BookValue(), 26.10)
+	}
+
+	if m[2016].OperatingLeverage() != 1.40 {
+		t.Error("Book value was not the expected value", m[2016].OperatingLeverage(), 1.40)
+	}
+	if m[2017].OperatingLeverage() != 1.43 {
+		t.Error("Book value was not the expected value", m[2017].OperatingLeverage(), 1.43)
+	}
+
+	if m[2016].FinancialLeverage() != 0.61 {
+		t.Error("Book value was not the expected value", m[2016].FinancialLeverage(), 0.61)
+	}
+	if m[2017].FinancialLeverage() != 0.77 {
+		t.Error("Book value was not the expected value", m[2017].FinancialLeverage(), 0.77)
+	}
+}
