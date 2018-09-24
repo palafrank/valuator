@@ -1,8 +1,8 @@
 package valuator
 
 import (
+	"bytes"
 	"errors"
-	"os"
 
 	"github.com/palafrank/edgar"
 )
@@ -32,7 +32,7 @@ func (c *collector) CollectEdgarAnnualData(ticker string,
 
 	fetcher := c.fetcher.(edgar.FilingFetcher)
 
-	fp, err := os.Open("./db/" + ticker + ".json")
+	fp, err := c.db.Read(ticker)
 
 	var cf edgar.CompanyFolder
 	//If there is no historical data. Get it from Edgar.
@@ -57,4 +57,18 @@ func (c *collector) CollectEdgarAnnualData(ticker string,
 	}
 
 	return ret, err
+}
+
+func (c *collector) SaveEdgarData(ticker string) error {
+	fetcher := c.fetcher.(edgar.FilingFetcher)
+	comp, err := fetcher.CompanyFolder(ticker)
+	if err == nil {
+		data := bytes.NewBuffer(nil)
+		comp.SaveFolder(data)
+		if data.Len() > 0 {
+			c.db.Write(ticker, data.Bytes())
+		}
+	}
+	return nil
+
 }

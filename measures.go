@@ -31,7 +31,6 @@ func (m *measures) String() string {
 func getMeasures(filing Filing) Measures {
 	m := new(measures)
 	m.filing = filing
-	fmt.Println("Measures filing: ", m.filing)
 	return m
 }
 

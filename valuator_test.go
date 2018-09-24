@@ -26,7 +26,7 @@ func TestGetEdgarFiling(t *testing.T) {
 
 func TestCollector(t *testing.T) {
 	c, _ := NewCollector(collectorEdgar)
-	m, _ := c.CollectAnnualData("AAPL", 2016, 2017)
+	m, _ := c.CollectAnnualData("AAPL", 2015, 2016, 2017)
 	if m[2016].BookValue() != 24.05 {
 		t.Error("Book value was not the expected value", m[2016].BookValue(), 24.05)
 	}
@@ -47,4 +47,5 @@ func TestCollector(t *testing.T) {
 	if m[2017].FinancialLeverage() != 0.77 {
 		t.Error("Book value was not the expected value", m[2017].FinancialLeverage(), 0.77)
 	}
+	c.Save("AAPL")
 }
