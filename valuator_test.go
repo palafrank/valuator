@@ -1,6 +1,7 @@
 package valuator
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/palafrank/edgar"
@@ -48,4 +49,13 @@ func TestCollector(t *testing.T) {
 		t.Error("Book value was not the expected value", m[2017].FinancialLeverage(), 0.77)
 	}
 	c.Save("AAPL")
+}
+
+func TestNewValuator(t *testing.T) {
+	v, err := NewValuator("AAPL")
+	if err != nil {
+		t.Error("Failed to create a valuator")
+	}
+	fmt.Println(v.String())
+	v.Save()
 }

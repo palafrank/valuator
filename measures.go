@@ -1,11 +1,14 @@
 package valuator
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	"math"
 )
 
 type Measures interface {
+	FiledOn() string
 	BookValue() float64
 	OperatingLeverage() float64
 	FinancialLeverage() float64
@@ -18,20 +21,45 @@ type Measures interface {
 }
 
 type measures struct {
-	filing Filing
+	filing   Filing
+	Bv       float64 `json:"Book Value"`
+	Ol       float64 `json:"Operating Leverage"`
+	Fl       float64 `json:"Financial Leverage"`
+	RoE      float64 `json:"Return on Equity (%)"`
+	RoA      float64 `json:"Return on Assets"`
+	Div      float64 `json:"Dividend"`
+	FcF      float64 `json:"Free Cash Flow"`
+	DivToFcf float64 `json:"Dividend to FCF"`
 }
 
-func (m *measures) String() string {
-	bv := fmt.Sprintf("%s%.2f\n", "Book Value: ", m.BookValue())
-	ol := fmt.Sprintf("%s%.2f\n", "Operating Leverage: ", m.OperatingLeverage())
-	fl := fmt.Sprintf("%s%.2f\n", "Financial Leverage: ", m.FinancialLeverage())
-	return bv + ol + fl
+func (m measures) String() string {
+	data, err := json.MarshalIndent(m, "", "    ")
+	if err != nil {
+		log.Fatal("Error marshaling financial data")
+	}
+	return string(data)
 }
 
 func getMeasures(filing Filing) Measures {
 	m := new(measures)
 	m.filing = filing
+	m.collect()
 	return m
+}
+
+func (m *measures) collect() {
+	m.Bv = m.BookValue()
+	m.Ol = m.OperatingLeverage()
+	m.Fl = m.FinancialLeverage()
+	m.Div = m.DividendPerShare()
+	m.DivToFcf = m.PayOutToFcf()
+	m.FcF = m.FreeCashFlow()
+	m.RoA = m.ReturnOnAssets()
+	m.RoE = m.ReturnOnEquity()
+}
+
+func (m *measures) FiledOn() string {
+	return m.filing.FiledOn()
 }
 
 /*
@@ -114,7 +142,7 @@ func (m *measures) ReturnOnEquity() float64 {
 	if err != nil {
 		return 0
 	}
-	return ni / eq
+	return math.Floor((ni / eq) * 100)
 }
 
 func (m *measures) ReturnOnAssets() float64 {
