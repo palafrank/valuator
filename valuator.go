@@ -33,7 +33,7 @@ type Valuator interface {
 }
 
 type valuation struct {
-	Data map[string]Measures `json:"Date"`
+	FiledData map[string]Measures `json:"Date"`
 }
 
 type valuator struct {
@@ -45,15 +45,8 @@ func (v valuator) String() string {
 
 	data, err := json.MarshalIndent(v.Valuations, "", "    ")
 	if err != nil {
-		log.Fatal("Error marshaling financial data")
+		log.Fatal("Error marshaling valuator data: ", err)
 	}
-
-	/*
-		for _, val := range v.measures {
-			for key1, val1 := range val {
-				fmt.Println(key1, val1)
-			}
-		}*/
 	return string(data)
 }
 
@@ -78,19 +71,19 @@ func NewValuator(ticker string) (Valuator, error) {
 		Valuations: make(map[string]valuation),
 	}
 	v.Valuations[ticker] = valuation{
-		Data: make(map[string]Measures),
+		FiledData: make(map[string]Measures),
 	}
 	collect, err := NewCollector("edgar")
 	if err != nil {
 		return nil, err
 	}
 	v.collector[ticker] = collect
-	measures, err := collect.CollectAnnualData(ticker)
+	mea, err := collect.CollectAnnualData(ticker)
 	if err != nil {
 		return nil, err
 	}
-	for _, m := range measures {
-		v.Valuations[ticker].Data[m.FiledOn()] = m
+	for _, m := range mea {
+		v.Valuations[ticker].FiledData[m.FiledOn()] = m
 	}
 	return v, nil
 }

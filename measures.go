@@ -8,7 +8,10 @@ import (
 )
 
 type Measures interface {
+	Filing() Filing
 	FiledOn() string
+	NewYoy(Measures) error
+	Yoy() Yoy
 	BookValue() float64
 	OperatingLeverage() float64
 	FinancialLeverage() float64
@@ -21,30 +24,43 @@ type Measures interface {
 }
 
 type measures struct {
-	filing   Filing
-	Bv       float64 `json:"Book Value"`
-	Ol       float64 `json:"Operating Leverage"`
-	Fl       float64 `json:"Financial Leverage"`
-	RoE      float64 `json:"Return on Equity (%)"`
-	RoA      float64 `json:"Return on Assets"`
-	Div      float64 `json:"Dividend"`
-	FcF      float64 `json:"Free Cash Flow"`
-	DivToFcf float64 `json:"Dividend to FCF"`
+	filing     Filing
+	Bv         float64 `json:"Book Value"`
+	Ol         float64 `json:"Operating Leverage"`
+	Fl         float64 `json:"Financial Leverage"`
+	RoE        float64 `json:"Return on Equity (%)"`
+	RoA        float64 `json:"Return on Assets"`
+	Div        float64 `json:"Dividend"`
+	FcF        float64 `json:"Free Cash Flow"`
+	DivToFcf   float64 `json:"Dividend to FCF"`
+	YearOnYear *yoy    `json:"YoY"`
 }
 
 func (m measures) String() string {
 	data, err := json.MarshalIndent(m, "", "    ")
 	if err != nil {
-		log.Fatal("Error marshaling financial data")
+		log.Fatal("Error marshaling financial data: ", err)
 	}
 	return string(data)
 }
 
-func getMeasures(filing Filing) Measures {
+func NewMeasures(filing Filing) Measures {
 	m := new(measures)
 	m.filing = filing
 	m.collect()
 	return m
+}
+
+func (m *measures) Yoy() Yoy {
+	return m.YearOnYear
+}
+
+func (m *measures) NewYoy(past Measures) error {
+	yoy, err := NewYoy(past, m)
+	if err == nil {
+		m.YearOnYear = yoy
+	}
+	return err
 }
 
 func (m *measures) collect() {
@@ -60,6 +76,10 @@ func (m *measures) collect() {
 
 func (m *measures) FiledOn() string {
 	return m.filing.FiledOn()
+}
+
+func (m *measures) Filing() Filing {
+	return m.filing
 }
 
 /*
@@ -78,8 +98,7 @@ func (m *measures) BookValue() float64 {
 	if err != nil {
 		return 0
 	}
-	ret := math.Floor((eq/sc)*100) / 100
-	return ret
+	return percentage(eq / sc)
 
 }
 
@@ -111,9 +130,8 @@ func (m *measures) OperatingLeverage() float64 {
 	cm := ((float64(rev) - float64(cr)) * 100) / float64(rev)
 	om := (float64(oi) * 100) / float64(rev)
 
-	ol := cm / om
-	ret := math.Floor(ol*100) / 100
-	return ret
+	return math.Floor((cm*100)/om) / 100
+
 }
 
 func (m *measures) FinancialLeverage() float64 {
@@ -129,8 +147,7 @@ func (m *measures) FinancialLeverage() float64 {
 	if err != nil {
 		return 0
 	}
-	ret := math.Floor(((ld+sd)/eq)*100) / 100
-	return ret
+	return percentage((ld + sd) / eq)
 }
 
 func (m *measures) ReturnOnEquity() float64 {
@@ -142,7 +159,7 @@ func (m *measures) ReturnOnEquity() float64 {
 	if err != nil {
 		return 0
 	}
-	return math.Floor((ni / eq) * 100)
+	return percentage(ni / eq)
 }
 
 func (m *measures) ReturnOnAssets() float64 {

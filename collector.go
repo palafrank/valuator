@@ -12,7 +12,7 @@ var (
 )
 
 type Collector interface {
-	CollectAnnualData(ticker string, year ...int) (map[int]Measures, error)
+	CollectAnnualData(ticker string, year ...int) ([]Measures, error)
 	Save(string) error
 }
 
@@ -30,7 +30,7 @@ func (c *collector) Name() string {
 }
 
 func (c *collector) CollectAnnualData(ticker string,
-	years ...int) (map[int]Measures, error) {
+	years ...int) ([]Measures, error) {
 	switch c.Name() {
 	case collectorEdgar:
 		return c.CollectEdgarAnnualData(ticker, years...)

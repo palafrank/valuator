@@ -3,6 +3,7 @@ package valuator
 import (
 	"bytes"
 	"errors"
+	"sort"
 
 	"github.com/palafrank/edgar"
 )
@@ -26,9 +27,9 @@ func contains(key int, db []int) bool {
 }
 
 func (c *collector) CollectEdgarAnnualData(ticker string,
-	years ...int) (map[int]Measures, error) {
+	years ...int) ([]Measures, error) {
 
-	ret := make(map[int]Measures)
+	var ret []Measures
 
 	fetcher := c.fetcher.(edgar.FilingFetcher)
 
@@ -52,8 +53,21 @@ func (c *collector) CollectEdgarAnnualData(ticker string,
 		if err != nil {
 			return nil, err
 		}
-		m := getMeasures(fil)
-		ret[f.Year()] = m
+		m := NewMeasures(fil)
+		ret = append(ret, m)
+	}
+
+	sort.Slice(ret, func(i, j int) bool {
+		return ret[i].FiledOn() < ret[j].FiledOn()
+	})
+
+	if len(ret) > 1 {
+		for i := 1; i < len(ret); i++ {
+			err := ret[i].NewYoy(ret[i-1])
+			if err != nil {
+				return nil, err
+			}
+		}
 	}
 
 	return ret, err
