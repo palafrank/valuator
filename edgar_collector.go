@@ -44,7 +44,6 @@ func (c *collector) CollectEdgarAnnualData(ticker string,
 	}
 
 	af := cf.AvailableFilings(edgar.FilingType10K)
-
 	for _, f := range af {
 		if len(years) > 0 && !contains(f.Year(), years) {
 			continue

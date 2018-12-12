@@ -34,11 +34,12 @@ type Valuator interface {
 
 type valuation struct {
 	FiledData map[string]Measures `json:"Date"`
+	Avgs      Average             `json:"Averages"`
 }
 
 type valuator struct {
-	collector  map[string]Collector `json:"-"`
-	Valuations map[string]valuation `json:"Company"`
+	collector  map[string]Collector  `json:"-"`
+	Valuations map[string]*valuation `json:"Company"`
 }
 
 func (v valuator) String() string {
@@ -68,10 +69,11 @@ func (v *valuator) Save() error {
 func NewValuator(ticker string) (Valuator, error) {
 	v := &valuator{
 		collector:  make(map[string]Collector),
-		Valuations: make(map[string]valuation),
+		Valuations: make(map[string]*valuation),
 	}
-	v.Valuations[ticker] = valuation{
+	v.Valuations[ticker] = &valuation{
 		FiledData: make(map[string]Measures),
+		Avgs:      nil,
 	}
 	collect, err := NewCollector("edgar")
 	if err != nil {
@@ -80,10 +82,19 @@ func NewValuator(ticker string) (Valuator, error) {
 	v.collector[ticker] = collect
 	mea, err := collect.CollectAnnualData(ticker)
 	if err != nil {
+		log.Println("Error collecting annual data: ", err.Error())
 		return nil, err
 	}
+	avg, err := NewAverages(mea)
+	if err != nil {
+		log.Println("Error collecting averages: ", err.Error())
+		return nil, err
+	}
+
 	for _, m := range mea {
 		v.Valuations[ticker].FiledData[m.FiledOn()] = m
 	}
+	v.Valuations[ticker].Avgs = avg
+
 	return v, nil
 }

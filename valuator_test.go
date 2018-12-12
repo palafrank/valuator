@@ -1,7 +1,6 @@
 package valuator
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/palafrank/edgar"
@@ -23,39 +22,42 @@ func TestGetEdgarFiling(t *testing.T) {
 	if err != nil || f == nil {
 		t.Error(err.Error())
 	}
+
 }
 
 func TestCollector(t *testing.T) {
 	c, _ := NewCollector(collectorEdgar)
 	m, _ := c.CollectAnnualData("AAPL", 2015, 2016, 2017)
-	if m[2016].BookValue() != 24.05 {
-		t.Error("Book value was not the expected value", m[2016].BookValue(), 24.05)
+	if m[1].BookValue() != 24.05 {
+		t.Error("Book value was not the expected value", m[1].BookValue(), 24.05)
 	}
-	if m[2017].BookValue() != 26.10 {
-		t.Error("Book value was not the expected value", m[2017].BookValue(), 26.10)
-	}
-
-	if m[2016].OperatingLeverage() != 1.40 {
-		t.Error("Book value was not the expected value", m[2016].OperatingLeverage(), 1.40)
-	}
-	if m[2017].OperatingLeverage() != 1.43 {
-		t.Error("Book value was not the expected value", m[2017].OperatingLeverage(), 1.43)
+	if m[2].BookValue() != 26.10 {
+		t.Error("Book value was not the expected value", m[2].BookValue(), 26.10)
 	}
 
-	if m[2016].FinancialLeverage() != 0.61 {
-		t.Error("Book value was not the expected value", m[2016].FinancialLeverage(), 0.61)
+	if m[1].OperatingLeverage() != 1.40 {
+		t.Error("Operating Leverage was not the expected value", m[1].OperatingLeverage(), 1.40)
 	}
-	if m[2017].FinancialLeverage() != 0.77 {
-		t.Error("Book value was not the expected value", m[2017].FinancialLeverage(), 0.77)
+	if m[2].OperatingLeverage() != 1.43 {
+		t.Error("Operating Leverage was not the expected value", m[2].OperatingLeverage(), 1.43)
+	}
+
+	if m[1].FinancialLeverage() != 58 {
+		t.Error("Financial Leverage was not the expected value", m[1].FinancialLeverage(), 0.61)
+	}
+	if m[2].FinancialLeverage() != 72 {
+		t.Error("Financial Leverage was not the expected value", m[2].FinancialLeverage(), 0.77)
 	}
 	c.Save("AAPL")
 }
 
+/*
 func TestNewValuator(t *testing.T) {
-	v, err := NewValuator("AAPL")
+	v, err := NewValuator("DGX")
 	if err != nil {
-		t.Error("Failed to create a valuator")
+		t.Error("Failed to create a valuator: ", err.Error())
 	}
 	fmt.Println(v.String())
 	v.Save()
 }
+*/

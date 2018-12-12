@@ -27,7 +27,7 @@ type measures struct {
 	filing     Filing
 	Bv         float64 `json:"Book Value"`
 	Ol         float64 `json:"Operating Leverage"`
-	Fl         float64 `json:"Financial Leverage"`
+	Fl         float64 `json:"Financial Leverage (%)"`
 	RoE        float64 `json:"Return on Equity (%)"`
 	RoA        float64 `json:"Return on Assets"`
 	Div        float64 `json:"Dividend"`
@@ -98,7 +98,7 @@ func (m *measures) BookValue() float64 {
 	if err != nil {
 		return 0
 	}
-	return percentage(eq / sc)
+	return round(eq / sc)
 
 }
 
@@ -139,14 +139,9 @@ func (m *measures) FinancialLeverage() float64 {
 	if err != nil {
 		return 0
 	}
-	ld, err := m.filing.LongTermDebt()
-	if err != nil {
-		return 0
-	}
-	sd, err := m.filing.ShortTermDebt()
-	if err != nil {
-		return 0
-	}
+	ld, _ := m.filing.LongTermDebt()
+	sd, _ := m.filing.ShortTermDebt()
+
 	return percentage((ld + sd) / eq)
 }
 
