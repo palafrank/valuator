@@ -25,7 +25,7 @@ func TestGetEdgarFiling(t *testing.T) {
 
 }
 
-func TestCollector(t *testing.T) {
+func TestAAPLCollector(t *testing.T) {
 	c, _ := NewCollector(collectorEdgar)
 	m, _ := c.CollectAnnualData("AAPL", 2015, 2016, 2017)
 	if m[1].BookValue() != 24.05 {
@@ -51,13 +51,16 @@ func TestCollector(t *testing.T) {
 	c.Save("AAPL")
 }
 
-/*
+func TestPSXCollector(t *testing.T) {
+	c, _ := NewCollector(collectorEdgar)
+	c.CollectAnnualData("PSX")
+	c.Save("PSX")
+}
+
 func TestNewValuator(t *testing.T) {
-	v, err := NewValuator("DGX")
+	v, err := NewValuator("PSX")
 	if err != nil {
 		t.Error("Failed to create a valuator: ", err.Error())
 	}
-	fmt.Println(v.String())
 	v.Save()
 }
-*/

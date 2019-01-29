@@ -36,7 +36,6 @@ func (m yoy) String() string {
 func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 
 	ret := new(yoy)
-
 	past := pastMeasure.Filing()
 	current := currentMeasure.Filing()
 

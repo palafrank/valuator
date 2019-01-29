@@ -2,7 +2,6 @@ package valuator
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"math"
 )
@@ -91,7 +90,6 @@ func (m *measures) Filing() Filing {
 func (m *measures) BookValue() float64 {
 	eq, err := m.filing.TotalEquity()
 	if err != nil {
-		fmt.Println(err)
 		return 0
 	}
 	sc, err := m.filing.ShareCount()

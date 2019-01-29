@@ -75,7 +75,7 @@ func NewValuator(ticker string) (Valuator, error) {
 		FiledData: make(map[string]Measures),
 		Avgs:      nil,
 	}
-	collect, err := NewCollector("edgar")
+	collect, err := NewCollector(collectorEdgar)
 	if err != nil {
 		return nil, err
 	}

@@ -42,19 +42,21 @@ func (c *collector) CollectEdgarAnnualData(ticker string,
 	} else {
 		cf, err = fetcher.CreateFolder(fp, edgar.FilingType10K)
 	}
-
 	af := cf.AvailableFilings(edgar.FilingType10K)
 	for _, f := range af {
 		if len(years) > 0 && !contains(f.Year(), years) {
 			continue
 		}
+
 		fil, err := cf.Filing(edgar.FilingType10K, f)
 		if err != nil {
 			return nil, err
 		}
+
 		m := NewMeasures(fil)
 		ret = append(ret, m)
 	}
+	c.SaveEdgarData(ticker)
 
 	sort.Slice(ret, func(i, j int) bool {
 		return ret[i].FiledOn() < ret[j].FiledOn()

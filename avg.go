@@ -28,7 +28,6 @@ type averages struct {
 
 func NewAverages(m []Measures) (Average, error) {
 	var y []Yoy
-
 	for _, val := range m {
 		lvar := val.Yoy()
 		if !reflect.ValueOf(lvar).IsNil() {

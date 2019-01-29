@@ -1,0 +1,235 @@
+{
+    "Company": "PSX",
+    "Financial Reports": {
+        "10-K": {
+            "2013-02-22": {
+                "Company": "PSX",
+                "Report date": "2013-02-22",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 621509611
+                    },
+                    "Operational Information": {
+                        "Collected Data": 119,
+                        "Revenue": 179460000000,
+                        "Cost Of Revenue": 154483000000,
+                        "Gross Margin": 6631000000,
+                        "Operational Income": 0,
+                        "Operational Expense": 4032000000,
+                        "Net Income": 4124000000,
+                        "Weighted Average Share Count": 636764,
+                        "Dividend Per Share": 0
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 55,
+                        "Long-Term debt": 6961000000,
+                        "Short-Term debt": 13000000,
+                        "Current Liabilities": 12482000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 2713000000,
+                        "Total Shareholder Equity": 20775000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 5,
+                        "Operating Cash Flow": 4296000000,
+                        "Capital Expenditure": 0,
+                        "Dividends paid": -282000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2014-02-21": {
+                "Company": "PSX",
+                "Report date": "2014-02-21",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 587624299
+                    },
+                    "Operational Information": {
+                        "Collected Data": 127,
+                        "Revenue": 171596000000,
+                        "Cost Of Revenue": 148245000000,
+                        "Gross Margin": 5526000000,
+                        "Operational Income": 3682000000,
+                        "Operational Expense": 4206000000,
+                        "Net Income": 3726000000,
+                        "Weighted Average Share Count": 618989,
+                        "Dividend Per Share": 0
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 55,
+                        "Long-Term debt": 6131000000,
+                        "Short-Term debt": 24000000,
+                        "Current Liabilities": 12931000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 5622000000,
+                        "Total Shareholder Equity": 21950000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 5,
+                        "Operating Cash Flow": 5942000000,
+                        "Capital Expenditure": 0,
+                        "Dividends paid": -807000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2015-02-20": {
+                "Company": "PSX",
+                "Report date": "2015-02-20",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 543497802
+                    },
+                    "Operational Information": {
+                        "Collected Data": 127,
+                        "Revenue": 161212000000,
+                        "Cost Of Revenue": 135748000000,
+                        "Gross Margin": 5745000000,
+                        "Operational Income": 4091000000,
+                        "Operational Expense": 4435000000,
+                        "Net Income": 4762000000,
+                        "Weighted Average Share Count": 571504,
+                        "Dividend Per Share": 0
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 55,
+                        "Long-Term debt": 7842000000,
+                        "Short-Term debt": 842000000,
+                        "Current Liabilities": 11094000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 9309000000,
+                        "Total Shareholder Equity": 21590000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 5,
+                        "Operating Cash Flow": 3527000000,
+                        "Capital Expenditure": 0,
+                        "Dividends paid": -1062000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2016-02-19": {
+                "Company": "PSX",
+                "Report date": "2016-02-19",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 527459894
+                    },
+                    "Operational Information": {
+                        "Collected Data": 127,
+                        "Revenue": 98975000000,
+                        "Cost Of Revenue": 73399000000,
+                        "Gross Margin": 6044000000,
+                        "Operational Income": 4280000000,
+                        "Operational Expense": 4294000000,
+                        "Net Income": 4227000000,
+                        "Weighted Average Share Count": 546977000,
+                        "Dividend Per Share": 0
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 55,
+                        "Long-Term debt": 8843000000,
+                        "Short-Term debt": 44000000,
+                        "Current Liabilities": 7531000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 12348000000,
+                        "Total Shareholder Equity": 23100000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 5,
+                        "Operating Cash Flow": 5713000000,
+                        "Capital Expenditure": 0,
+                        "Dividends paid": -1172000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2017-02-17": {
+                "Company": "PSX",
+                "Report date": "2017-02-17",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 517816429
+                    },
+                    "Operational Information": {
+                        "Collected Data": 127,
+                        "Revenue": 84279000000,
+                        "Cost Of Revenue": 62468000000,
+                        "Gross Margin": 2191000000,
+                        "Operational Income": 1644000000,
+                        "Operational Expense": 4275000000,
+                        "Net Income": 1555000000,
+                        "Weighted Average Share Count": 530066000,
+                        "Dividend Per Share": 0
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 55,
+                        "Long-Term debt": 9588000000,
+                        "Short-Term debt": 550000000,
+                        "Current Liabilities": 9463000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 12608000000,
+                        "Total Shareholder Equity": 22390000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 5,
+                        "Operating Cash Flow": 2963000000,
+                        "Capital Expenditure": 0,
+                        "Dividends paid": -1282000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2018-02-23": {
+                "Company": "PSX",
+                "Report date": "2018-02-23",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 501237339
+                    },
+                    "Operational Information": {
+                        "Collected Data": 127,
+                        "Revenue": 102354000000,
+                        "Cost Of Revenue": 79409000000,
+                        "Gross Margin": 22945000000,
+                        "Operational Income": 3555000000,
+                        "Operational Expense": 4699000000,
+                        "Net Income": 5106000000,
+                        "Weighted Average Share Count": 518508000,
+                        "Dividend Per Share": 0
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 55,
+                        "Long-Term debt": 10069000000,
+                        "Short-Term debt": 41000000,
+                        "Current Liabilities": 10107000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 16306000000,
+                        "Total Shareholder Equity": 25085000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 5,
+                        "Operating Cash Flow": 3648000000,
+                        "Capital Expenditure": 0,
+                        "Dividends paid": -1395000000,
+                        "Interest paid": 0
+                    }
+                }
+            }
+        }
+    }
+}
