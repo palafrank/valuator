@@ -1,0 +1,131 @@
+{
+    "Date": {
+        "2013-02-22": {
+            "Book Value": 33.42,
+            "Contribution Margin": 13,
+            "Operating Margin": 3,
+            "Operating Leverage": 4.33,
+            "Financial Leverage (%)": 33,
+            "Return on Equity (%)": 19,
+            "Return on Assets": 0,
+            "Dividend": 0,
+            "Free Cash Flow": 4296000000,
+            "Dividend to FCF": 6,
+            "YoY": null
+        },
+        "2014-02-21": {
+            "Book Value": 37.35,
+            "Contribution Margin": 13,
+            "Operating Margin": 3,
+            "Operating Leverage": 4.33,
+            "Financial Leverage (%)": 28,
+            "Return on Equity (%)": 16,
+            "Return on Assets": 0,
+            "Dividend": 0,
+            "Free Cash Flow": 5942000000,
+            "Dividend to FCF": 13,
+            "YoY": {
+                "Revenue Growth": -5,
+                "Earning Growth": -10,
+                "Operating Leverage Growth": 0,
+                "Gross Margin Growth": -7,
+                "Debt Growth": -12,
+                "Equity Growth": 5,
+                "Cash Flow Growth": 38
+            }
+        },
+        "2015-02-20": {
+            "Book Value": 39.72,
+            "Contribution Margin": 15,
+            "Operating Margin": 3,
+            "Operating Leverage": 5,
+            "Financial Leverage (%)": 40,
+            "Return on Equity (%)": 22,
+            "Return on Assets": 0,
+            "Dividend": 0,
+            "Free Cash Flow": 3527000000,
+            "Dividend to FCF": 30,
+            "YoY": {
+                "Revenue Growth": -7,
+                "Earning Growth": 27,
+                "Operating Leverage Growth": 15,
+                "Gross Margin Growth": 9,
+                "Debt Growth": 27,
+                "Equity Growth": -2,
+                "Cash Flow Growth": -41
+            }
+        },
+        "2016-02-19": {
+            "Book Value": 43.79,
+            "Contribution Margin": 25,
+            "Operating Margin": 6,
+            "Operating Leverage": 4.16,
+            "Financial Leverage (%)": 38,
+            "Return on Equity (%)": 18,
+            "Return on Assets": 0,
+            "Dividend": 0,
+            "Free Cash Flow": 5713000000,
+            "Dividend to FCF": 20,
+            "YoY": {
+                "Revenue Growth": -39,
+                "Earning Growth": -12,
+                "Operating Leverage Growth": -17,
+                "Gross Margin Growth": 0,
+                "Debt Growth": 12,
+                "Equity Growth": 6,
+                "Cash Flow Growth": 61
+            }
+        },
+        "2017-02-17": {
+            "Book Value": 43.23,
+            "Contribution Margin": 25,
+            "Operating Margin": 2,
+            "Operating Leverage": 12.5,
+            "Financial Leverage (%)": 45,
+            "Return on Equity (%)": 6,
+            "Return on Assets": 0,
+            "Dividend": 0,
+            "Free Cash Flow": 2963000000,
+            "Dividend to FCF": 43,
+            "YoY": {
+                "Revenue Growth": -15,
+                "Earning Growth": -64,
+                "Operating Leverage Growth": 200,
+                "Gross Margin Growth": -15,
+                "Debt Growth": 8,
+                "Equity Growth": -4,
+                "Cash Flow Growth": -49
+            }
+        },
+        "2018-02-23": {
+            "Book Value": 50.04,
+            "Contribution Margin": 22,
+            "Operating Margin": 3,
+            "Operating Leverage": 7.33,
+            "Financial Leverage (%)": 40,
+            "Return on Equity (%)": 20,
+            "Return on Assets": 0,
+            "Dividend": 0,
+            "Free Cash Flow": 3648000000,
+            "Dividend to FCF": 38,
+            "YoY": {
+                "Revenue Growth": 21,
+                "Earning Growth": 228,
+                "Operating Leverage Growth": -42,
+                "Gross Margin Growth": 5,
+                "Debt Growth": 5,
+                "Equity Growth": 12,
+                "Cash Flow Growth": 23
+            }
+        }
+    },
+    "Averages": {
+        "Average Revenue Growth": -9,
+        "Average Earning Growth": 33.8,
+        "Average Operating Leverage Growth": 31.2,
+        "Average Gross Margin Growth": -1.6,
+        "Average Debt Growth": 8,
+        "Average Equity Growth": 3.4,
+        "Average Cash Flow Growth": 6.4
+    }
+}

@@ -37,16 +37,16 @@ func NewDB(url string, ty DatabaseType) database {
 	return nil
 }
 
-func (f *fileDB) generateFilePath(ticker string) string {
-	return f.path + ticker + ".json"
+func (f *fileDB) generateFilePath(filename string) string {
+	return f.path + filename + ".json"
 }
 
-func (f *fileDB) Read(ticker string) (io.Reader, error) {
-	file := f.generateFilePath(ticker)
+func (f *fileDB) Read(filename string) (io.Reader, error) {
+	file := f.generateFilePath(filename)
 	fd, err := os.OpenFile(file, os.O_RDONLY, 0644)
 	if err != nil {
 		log.Println("Cannot open file ", file)
-		return nil, errors.New("No data available for " + ticker)
+		return nil, errors.New("No data available at " + file)
 	}
 	data, err := ioutil.ReadAll(fd)
 	if err != nil {

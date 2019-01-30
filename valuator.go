@@ -24,6 +24,7 @@ type Filing interface {
 	RetainedEarnings() (float64, error)
 	OperatingCashFlow() (float64, error)
 	CapitalExpenditure() (float64, error)
+	Dividend() (float64, error)
 }
 
 type Valuator interface {
@@ -38,6 +39,7 @@ type valuation struct {
 }
 
 type valuator struct {
+	db         database
 	collector  map[string]Collector  `json:"-"`
 	Valuations map[string]*valuation `json:"Company"`
 }
@@ -47,6 +49,14 @@ func (v valuator) String() string {
 	data, err := json.MarshalIndent(v.Valuations, "", "    ")
 	if err != nil {
 		log.Fatal("Error marshaling valuator data: ", err)
+	}
+	return string(data)
+}
+
+func (v valuation) String() string {
+	data, err := json.MarshalIndent(v, "", "    ")
+	if err != nil {
+		log.Fatal("Error marshaling valuation data: ", err)
 	}
 	return string(data)
 }
@@ -63,11 +73,15 @@ func (v *valuator) Save() error {
 			return err
 		}
 	}
+	for ticker, valuation := range v.Valuations {
+		v.db.Write(ticker+"_val", []byte(valuation.String()))
+	}
 	return nil
 }
 
 func NewValuator(ticker string) (Valuator, error) {
 	v := &valuator{
+		db:         NewDB(fileDBUrl, FileDatabaseType),
 		collector:  make(map[string]Collector),
 		Valuations: make(map[string]*valuation),
 	}

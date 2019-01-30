@@ -3,7 +3,6 @@ package valuator
 import (
 	"encoding/json"
 	"log"
-	"math"
 )
 
 type Measures interface {
@@ -12,6 +11,8 @@ type Measures interface {
 	NewYoy(Measures) error
 	Yoy() Yoy
 	BookValue() float64
+	ContribMargin() float64
+	OpsMargin() float64
 	OperatingLeverage() float64
 	FinancialLeverage() float64
 	ReturnOnEquity() float64
@@ -25,6 +26,8 @@ type Measures interface {
 type measures struct {
 	filing     Filing
 	Bv         float64 `json:"Book Value"`
+	Cm         float64 `json:"Contribution Margin"`
+	Om         float64 `json:"Operating Margin"`
 	Ol         float64 `json:"Operating Leverage"`
 	Fl         float64 `json:"Financial Leverage (%)"`
 	RoE        float64 `json:"Return on Equity (%)"`
@@ -64,6 +67,8 @@ func (m *measures) NewYoy(past Measures) error {
 
 func (m *measures) collect() {
 	m.Bv = m.BookValue()
+	m.Cm = m.ContribMargin()
+	m.Om = m.OpsMargin()
 	m.Ol = m.OperatingLeverage()
 	m.Fl = m.FinancialLeverage()
 	m.Div = m.DividendPerShare()
@@ -100,21 +105,7 @@ func (m *measures) BookValue() float64 {
 
 }
 
-/*
- Operating leverage:
-     ratio of contribution margin to operating margin
- The ratio captures the relation between material cost of revenue vs the
- running cost of revenue
- contribution margin (CM) = Margin of profit against materials cost
- Operating margin (OM) = Margin of operating income against revenue
- Operating leverage = CM/OM
-*/
-func (m *measures) OperatingLeverage() float64 {
-	oi, err := m.filing.OperatingIncome()
-	if err != nil {
-		return 0
-	}
-
+func (m *measures) ContribMargin() float64 {
 	rev, err := m.filing.Revenue()
 	if err != nil {
 		return 0
@@ -125,11 +116,37 @@ func (m *measures) OperatingLeverage() float64 {
 		return 0
 	}
 
-	cm := ((float64(rev) - float64(cr)) * 100) / float64(rev)
-	om := (float64(oi) * 100) / float64(rev)
+	return percentage((float64(rev) - float64(cr)) / float64(rev))
+}
 
-	return math.Floor((cm*100)/om) / 100
+func (m *measures) OpsMargin() float64 {
+	oi, err := m.filing.OperatingIncome()
+	if err != nil {
+		return 0
+	}
 
+	rev, err := m.filing.Revenue()
+	if err != nil {
+		return 0
+	}
+
+	return percentage(float64(oi) / float64(rev))
+}
+
+/*
+ Operating leverage:
+     ratio of contribution margin to operating margin
+ The ratio captures the relation between material cost of revenue vs the
+ running cost of revenue
+ contribution margin (CM) = Margin of profit against materials cost
+ Operating margin (OM) = Margin of operating income against revenue
+ Operating leverage = CM/OM
+*/
+func (m *measures) OperatingLeverage() float64 {
+	if m.OpsMargin() != 0 {
+		return round(m.ContribMargin() / m.OpsMargin())
+	}
+	return 0
 }
 
 func (m *measures) FinancialLeverage() float64 {
@@ -172,5 +189,9 @@ func (m *measures) FreeCashFlow() float64 {
 }
 
 func (m *measures) PayOutToFcf() float64 {
-	return 0
+	div, err := m.filing.Dividend()
+	if err != nil {
+		return 0
+	}
+	return percentage(div / m.FreeCashFlow())
 }

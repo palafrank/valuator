@@ -35,11 +35,11 @@ func TestAAPLCollector(t *testing.T) {
 		t.Error("Book value was not the expected value", m[2].BookValue(), 26.10)
 	}
 
-	if m[1].OperatingLeverage() != 1.40 {
-		t.Error("Operating Leverage was not the expected value", m[1].OperatingLeverage(), 1.40)
+	if m[1].OperatingLeverage() != 1.44 {
+		t.Error("Operating Leverage was not the expected value", m[1].OperatingLeverage(), 1.44)
 	}
-	if m[2].OperatingLeverage() != 1.43 {
-		t.Error("Operating Leverage was not the expected value", m[2].OperatingLeverage(), 1.43)
+	if m[2].OperatingLeverage() != 1.46 {
+		t.Error("Operating Leverage was not the expected value", m[2].OperatingLeverage(), 1.46)
 	}
 
 	if m[1].FinancialLeverage() != 58 {
