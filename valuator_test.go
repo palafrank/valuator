@@ -51,12 +51,6 @@ func TestAAPLCollector(t *testing.T) {
 	c.Save("AAPL")
 }
 
-func TestPSXCollector(t *testing.T) {
-	c, _ := NewCollector(collectorEdgar)
-	c.CollectAnnualData("PSX")
-	c.Save("PSX")
-}
-
 func TestNewValuator(t *testing.T) {
 	v, err := NewValuator("PSX")
 	if err != nil {
