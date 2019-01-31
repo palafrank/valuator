@@ -14,16 +14,20 @@ type Average interface {
 	AvgDebtGrowth() float64
 	AvgEquityGrowth() float64
 	AvgCashFlowGrowth() float64
+	AvgDividendGrowth() float64
+	AvgBookValueGrowth() float64
 }
 
 type averages struct {
-	Revenue   float64 `json:"Average Revenue Growth"`
-	Earnings  float64 `json:"Average Earning Growth"`
-	Oleverage float64 `json:"Average Operating Leverage Growth"`
-	Margin    float64 `json:"Average Gross Margin Growth"`
-	Debt      float64 `json:"Average Debt Growth"`
-	Equity    float64 `json:"Average Equity Growth"`
-	Cf        float64 `json:"Average Cash Flow Growth"`
+	Revenue   float64 `json:"Average Revenue Growth (%)"`
+	Earnings  float64 `json:"Average Earning Growth (%)"`
+	Oleverage float64 `json:"Average Operating Leverage Growth (%)"`
+	Margin    float64 `json:"Average Gross Margin Growth (%)"`
+	Debt      float64 `json:"Average Debt Growth (%)"`
+	Equity    float64 `json:"Average Equity Growth (%)"`
+	Cf        float64 `json:"Average Cash Flow Growth (%)"`
+	Div       float64 `json:"Average Dividend Growth (%)"`
+	Bv        float64 `json:"Average Book Value Growth"`
 }
 
 func NewAverages(m []Measures) (Average, error) {
@@ -49,6 +53,8 @@ func NewAverages(m []Measures) (Average, error) {
 		avg.Debt = avg.Debt + val.DebtGrowth()
 		avg.Equity = avg.Equity + val.EquityGrowth()
 		avg.Cf = avg.Cf + val.CashFlowGrowth()
+		avg.Div = avg.Div + val.DividendGrowth()
+		avg.Bv = avg.Bv + val.BookValueGrowth()
 	}
 	avg.Revenue = avgCalc(avg.Revenue, float64(len(y)))
 	avg.Earnings = avgCalc(avg.Earnings, float64(len(y)))
@@ -57,6 +63,8 @@ func NewAverages(m []Measures) (Average, error) {
 	avg.Debt = avgCalc(avg.Debt, float64(len(y)))
 	avg.Equity = avgCalc(avg.Equity, float64(len(y)))
 	avg.Cf = avgCalc(avg.Cf, float64(len(y)))
+	avg.Div = avgCalc(avg.Div, float64(len(y)))
+	avg.Bv = avgCalc(avg.Bv, float64(len(y)))
 
 	return avg, nil
 }
@@ -87,4 +95,12 @@ func (a *averages) AvgEquityGrowth() float64 {
 
 func (a *averages) AvgCashFlowGrowth() float64 {
 	return a.Cf
+}
+
+func (a *averages) AvgDividendGrowth() float64 {
+	return a.Div
+}
+
+func (a *averages) AvgBookValueGrowth() float64 {
+	return a.Bv
 }

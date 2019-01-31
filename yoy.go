@@ -13,6 +13,8 @@ type Yoy interface {
 	DebtGrowth() float64
 	EquityGrowth() float64
 	CashFlowGrowth() float64
+	DividendGrowth() float64
+	BookValueGrowth() float64
 }
 
 type yoy struct {
@@ -23,6 +25,8 @@ type yoy struct {
 	Debt      float64 `json:"Debt Growth"`
 	Equity    float64 `json:"Equity Growth"`
 	Cf        float64 `json:"Cash Flow Growth"`
+	Div       float64 `json:"Dividend Growth"`
+	Bv        float64 `json:"Book Value Growth"`
 }
 
 func (m yoy) String() string {
@@ -48,7 +52,7 @@ func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 	if err != nil {
 		return nil, err
 	}
-	ret.Revenue = yoyCalc(p, c)
+	ret.Revenue = yoyCalc(p, c, true)
 
 	//Earnings Calculations
 	p, err = past.NetIncome()
@@ -59,7 +63,7 @@ func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 	if err != nil {
 		return nil, err
 	}
-	ret.Earnings = yoyCalc(p, c)
+	ret.Earnings = yoyCalc(p, c, true)
 
 	//Margin Calculations
 	p, err = past.GrossMargin()
@@ -70,12 +74,12 @@ func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 	if err != nil {
 		return nil, err
 	}
-	ret.Margin = yoyCalc(p, c)
+	ret.Margin = yoyCalc(p, c, true)
 
 	//OL calculations
 	p = pastMeasure.OperatingLeverage()
 	c = currentMeasure.OperatingLeverage()
-	ret.Oleverage = yoyCalc(p, c)
+	ret.Oleverage = yoyCalc(p, c, true)
 
 	//Debt calculation
 	p, err = past.LongTermDebt()
@@ -86,7 +90,7 @@ func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 	if err != nil {
 		return nil, err
 	}
-	ret.Debt = yoyCalc(p, c)
+	ret.Debt = yoyCalc(p, c, true)
 
 	//Equity calculation
 	p, err = past.TotalEquity()
@@ -97,12 +101,20 @@ func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 	if err != nil {
 		return nil, err
 	}
-	ret.Equity = yoyCalc(p, c)
+	ret.Equity = yoyCalc(p, c, true)
 
 	//Cash flow calculation
 	p = pastMeasure.FreeCashFlow()
 	c = currentMeasure.FreeCashFlow()
-	ret.Cf = yoyCalc(p, c)
+	ret.Cf = yoyCalc(p, c, true)
+
+	p = pastMeasure.DividendPerShare()
+	c = currentMeasure.DividendPerShare()
+	ret.Div = yoyCalc(p, c, false)
+
+	p = pastMeasure.BookValue()
+	c = currentMeasure.BookValue()
+	ret.Bv = yoyCalc(p, c, false)
 
 	return ret, nil
 
@@ -134,4 +146,12 @@ func (y *yoy) EquityGrowth() float64 {
 
 func (y *yoy) CashFlowGrowth() float64 {
 	return y.Cf
+}
+
+func (y *yoy) DividendGrowth() float64 {
+	return y.Div
+}
+
+func (y *yoy) BookValueGrowth() float64 {
+	return y.Bv
 }

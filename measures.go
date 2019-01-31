@@ -177,6 +177,9 @@ func (m *measures) ReturnOnAssets() float64 {
 }
 
 func (m *measures) DividendPerShare() float64 {
+	if dps, err := m.Filing().DividendPerShare(); err == nil {
+		return dps
+	}
 	return 0
 }
 

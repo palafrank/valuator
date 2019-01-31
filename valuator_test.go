@@ -57,4 +57,16 @@ func TestNewValuator(t *testing.T) {
 		t.Error("Failed to create a valuator: ", err.Error())
 	}
 	v.Save()
+	ret, _ := v.DiscountedCashFlow("PSX", 3, 100, 10)
+	if ret != 192.95 {
+		t.Error("Error in DCF calculation at 100% trend ", ret)
+	}
+	ret, _ = v.DiscountedCashFlow("PSX", 3, 50, 10)
+	if ret != 124.36 {
+		t.Error("Error in DCF calculation at 100% trend ", ret)
+	}
+	ret, _ = v.DiscountedCashFlow("PSX", 3, 20, 10)
+	if ret != 83.2 {
+		t.Error("Error in DCF calculation at 100% trend ", ret)
+	}
 }

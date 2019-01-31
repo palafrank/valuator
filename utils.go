@@ -10,11 +10,14 @@ func percentage(val float64) float64 {
 	return math.Floor(val * 100)
 }
 
-func yoyCalc(past float64, curr float64) float64 {
+func yoyCalc(past float64, curr float64, pc bool) float64 {
 	if past == 0 {
 		return 0
 	}
-	return percentage((curr - past) / past)
+	if pc {
+		return percentage((curr - past) / past)
+	}
+	return round(curr - past)
 }
 
 func avgCalc(total float64, length float64) float64 {

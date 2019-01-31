@@ -1,82 +1,19 @@
 package valuator
 
 import (
-	"encoding/json"
 	"log"
+	"math"
 )
 
-// Filing interface for fetching financial data
-type Filing interface {
-	Ticker() string
-	FiledOn() string
-	ShareCount() (float64, error)
-	Revenue() (float64, error)
-	CostOfRevenue() (float64, error)
-	GrossMargin() (float64, error)
-	OperatingIncome() (float64, error)
-	OperatingExpense() (float64, error)
-	NetIncome() (float64, error)
-	TotalEquity() (float64, error)
-	ShortTermDebt() (float64, error)
-	LongTermDebt() (float64, error)
-	CurrentLiabilities() (float64, error)
-	DeferredRevenue() (float64, error)
-	RetainedEarnings() (float64, error)
-	OperatingCashFlow() (float64, error)
-	CapitalExpenditure() (float64, error)
-	Dividend() (float64, error)
-}
-
 type Valuator interface {
-	DiscountedCashFlow(ticker string) (int64, error)
+	/* Input:
+	   ticker: ticker of the company
+	   dr: Discount rate for DCF calculations
+	   trend: % of the averages to factor in DCF calculations
+	*/
+	DiscountedCashFlow(ticker string, dr float64, trend float64, duration int) (float64, error)
 	Save() error
 	String() string
-}
-
-type valuation struct {
-	FiledData map[string]Measures `json:"Date"`
-	Avgs      Average             `json:"Averages"`
-}
-
-type valuator struct {
-	db         database
-	collector  map[string]Collector  `json:"-"`
-	Valuations map[string]*valuation `json:"Company"`
-}
-
-func (v valuator) String() string {
-
-	data, err := json.MarshalIndent(v.Valuations, "", "    ")
-	if err != nil {
-		log.Fatal("Error marshaling valuator data: ", err)
-	}
-	return string(data)
-}
-
-func (v valuation) String() string {
-	data, err := json.MarshalIndent(v, "", "    ")
-	if err != nil {
-		log.Fatal("Error marshaling valuation data: ", err)
-	}
-	return string(data)
-}
-
-func (v *valuator) DiscountedCashFlow(ticker string) (int64, error) {
-	return 0, nil
-}
-
-func (v *valuator) Save() error {
-	for ticker, collect := range v.collector {
-		err := collect.Save(ticker)
-		if err != nil {
-			log.Println("Error saving document for ", ticker)
-			return err
-		}
-	}
-	for ticker, valuation := range v.Valuations {
-		v.db.Write(ticker+"_val", []byte(valuation.String()))
-	}
-	return nil
 }
 
 func NewValuator(ticker string) (Valuator, error) {
@@ -86,8 +23,7 @@ func NewValuator(ticker string) (Valuator, error) {
 		Valuations: make(map[string]*valuation),
 	}
 	v.Valuations[ticker] = &valuation{
-		FiledData: make(map[string]Measures),
-		Avgs:      nil,
+		Avgs: nil,
 	}
 	collect, err := NewCollector(collectorEdgar)
 	if err != nil {
@@ -105,10 +41,45 @@ func NewValuator(ticker string) (Valuator, error) {
 		return nil, err
 	}
 
-	for _, m := range mea {
-		v.Valuations[ticker].FiledData[m.FiledOn()] = m
-	}
+	v.Valuations[ticker].FiledData = mea
 	v.Valuations[ticker].Avgs = avg
 
 	return v, nil
+}
+
+func (v *valuator) DiscountedCashFlow(ticker string, dr float64, trend float64, duration int) (float64, error) {
+
+	// First get the right parameters for the DCF calculations
+	vals := v.Valuations[ticker]
+	div := vals.Avgs.AvgDividendGrowth()
+	bv := vals.Avgs.AvgBookValueGrowth()
+
+	// Now adjust for trend
+	div = div * (trend / 100)
+	bv = bv * (trend / 100)
+
+	// Start with the latest value
+	outDiv := vals.FiledData[len(vals.FiledData)-1].DividendPerShare()
+	outBv := vals.FiledData[len(vals.FiledData)-1].BookValue()
+
+	sumDiv := outDiv
+	sumBv := outBv / math.Pow(1+(dr/100), float64(duration))
+	outBv = bv
+
+	// Calculate discounted cash for each year
+	for i := 1; i <= duration; i++ {
+
+		// Add in the average growth
+		outDiv += div
+		outBv += bv
+
+		// Discount it
+		outDiv = outDiv / math.Pow(1+(dr/100), float64(i))
+		outBv = outBv / math.Pow(1+(dr/100), float64(i))
+		sumDiv += outDiv
+		sumBv += outBv
+
+	}
+
+	return round(sumDiv + sumBv), nil
 }
