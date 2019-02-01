@@ -30,7 +30,7 @@ type Filing interface {
 }
 
 type valuation struct {
-	FiledData []Measures `json:"Date"`
+	FiledData []Measures `json:"Measures"`
 	Avgs      Average    `json:"Averages"`
 }
 

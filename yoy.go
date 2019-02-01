@@ -81,15 +81,10 @@ func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 	c = currentMeasure.OperatingLeverage()
 	ret.Oleverage = yoyCalc(p, c, true)
 
-	//Debt calculation
-	p, err = past.LongTermDebt()
-	if err != nil {
-		return nil, err
-	}
-	c, err = current.LongTermDebt()
-	if err != nil {
-		return nil, err
-	}
+	//Debt calculation.
+	//Ignore error as LTD could be 0 or not collected
+	p, _ = past.LongTermDebt()
+	c, _ = current.LongTermDebt()
 	ret.Debt = yoyCalc(p, c, true)
 
 	//Equity calculation

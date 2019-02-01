@@ -1,0 +1,273 @@
+{
+    "Company": "IBM",
+    "Financial Reports": {
+        "10-K": {
+            "2012-02-28": {
+                "Company": "IBM",
+                "Report date": "2012-02-28",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 1158661712
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 106916000000,
+                        "Cost Of Revenue": 14973000000,
+                        "Gross Margin": 50138000000,
+                        "Operational Income": 21003000000,
+                        "Operational Expense": 70940000000,
+                        "Net Income": 15855000000,
+                        "Weighted Average Share Count": 1158661712,
+                        "Dividend Per Share": 2.99
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 22857000000,
+                        "Short-Term debt": 8463000000,
+                        "Current Liabilities": 42123000000,
+                        "Deferred revenue": 12197000000,
+                        "Retained Earnings": 104857000000,
+                        "Total Shareholder Equity": 20138000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 19846000000,
+                        "Capital Expenditure": -4108000000,
+                        "Dividends paid": -3473000000,
+                        "Interest paid": 956000000
+                    }
+                }
+            },
+            "2013-02-26": {
+                "Company": "IBM",
+                "Report date": "2013-02-26",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 1114509771
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 104507000000,
+                        "Cost Of Revenue": 13956000000,
+                        "Gross Margin": 50298000000,
+                        "Operational Income": 21902000000,
+                        "Operational Expense": 68649000000,
+                        "Net Income": 16604000000,
+                        "Weighted Average Share Count": 1114509771,
+                        "Dividend Per Share": 3.38
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 24088000000,
+                        "Short-Term debt": 9181000000,
+                        "Current Liabilities": 43625000000,
+                        "Deferred revenue": 11952000000,
+                        "Retained Earnings": 117641000000,
+                        "Total Shareholder Equity": 18860000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 19586000000,
+                        "Capital Expenditure": -4082000000,
+                        "Dividends paid": -3773000000,
+                        "Interest paid": 1009000000
+                    }
+                }
+            },
+            "2014-02-25": {
+                "Company": "IBM",
+                "Report date": "2014-02-25",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 1041340758
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 99751000000,
+                        "Cost Of Revenue": 12572000000,
+                        "Gross Margin": 48505000000,
+                        "Operational Income": 19524000000,
+                        "Operational Expense": 67655000000,
+                        "Net Income": 16483000000,
+                        "Weighted Average Share Count": 1041340758,
+                        "Dividend Per Share": 3.89
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 32856000000,
+                        "Short-Term debt": 6862000000,
+                        "Current Liabilities": 40154000000,
+                        "Deferred revenue": 12557000000,
+                        "Retained Earnings": 130042000000,
+                        "Total Shareholder Equity": 22792000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 17485000000,
+                        "Capital Expenditure": -3623000000,
+                        "Dividends paid": -4058000000,
+                        "Interest paid": 982000000
+                    }
+                }
+            },
+            "2015-02-24": {
+                "Company": "IBM",
+                "Report date": "2015-02-24",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 988424172
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 92793000000,
+                        "Cost Of Revenue": 9312000000,
+                        "Gross Margin": 46407000000,
+                        "Operational Income": 19986000000,
+                        "Operational Expense": 63495000000,
+                        "Net Income": 12022000000,
+                        "Weighted Average Share Count": 988424172,
+                        "Dividend Per Share": 4.31
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 35073000000,
+                        "Short-Term debt": 5731000000,
+                        "Current Liabilities": 39600000000,
+                        "Deferred revenue": 11877000000,
+                        "Retained Earnings": 137793000000,
+                        "Total Shareholder Equity": 11868000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 16868000000,
+                        "Capital Expenditure": -3740000000,
+                        "Dividends paid": -4265000000,
+                        "Interest paid": 1061000000
+                    }
+                }
+            },
+            "2016-02-23": {
+                "Company": "IBM",
+                "Report date": "2016-02-23",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 988424172
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 81741000000,
+                        "Cost Of Revenue": 6920000000,
+                        "Gross Margin": 40684000000,
+                        "Operational Income": 15945000000,
+                        "Operational Expense": 58876000000,
+                        "Net Income": 13190000000,
+                        "Weighted Average Share Count": 988424172,
+                        "Dividend Per Share": 4.95
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 33428000000,
+                        "Short-Term debt": 6461000000,
+                        "Current Liabilities": 34269000000,
+                        "Deferred revenue": 11021000000,
+                        "Retained Earnings": 146124000000,
+                        "Total Shareholder Equity": 14262000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 17008000000,
+                        "Capital Expenditure": -3579000000,
+                        "Dividends paid": -4897000000,
+                        "Interest paid": 995000000
+                    }
+                }
+            },
+            "2017-02-28": {
+                "Company": "IBM",
+                "Report date": "2017-02-28",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 943212551
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 79919000000,
+                        "Cost Of Revenue": 6559000000,
+                        "Gross Margin": 38294000000,
+                        "Operational Income": 12330000000,
+                        "Operational Expense": 61030000000,
+                        "Net Income": 11872000000,
+                        "Weighted Average Share Count": 943212551,
+                        "Dividend Per Share": 5.57
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 34655000000,
+                        "Short-Term debt": 7513000000,
+                        "Current Liabilities": 36275000000,
+                        "Deferred revenue": 11035000000,
+                        "Retained Earnings": 152759000000,
+                        "Total Shareholder Equity": 18246000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 16958000000,
+                        "Capital Expenditure": -3567000000,
+                        "Dividends paid": -5256000000,
+                        "Interest paid": 1158000000
+                    }
+                }
+            },
+            "2018-02-27": {
+                "Company": "IBM",
+                "Report date": "2018-02-27",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 921167894
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 79139000000,
+                        "Cost Of Revenue": 7256000000,
+                        "Gross Margin": 36227000000,
+                        "Operational Income": 11400000000,
+                        "Operational Expense": 60483000000,
+                        "Net Income": 5753000000,
+                        "Weighted Average Share Count": 921167894,
+                        "Dividend Per Share": 5.97
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 39837000000,
+                        "Short-Term debt": 6987000000,
+                        "Current Liabilities": 37363000000,
+                        "Deferred revenue": 11552000000,
+                        "Retained Earnings": 153126000000,
+                        "Total Shareholder Equity": 17594000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 16724000000,
+                        "Capital Expenditure": -3229000000,
+                        "Dividends paid": -5506000000,
+                        "Interest paid": 1208000000
+                    }
+                }
+            }
+        }
+    }
+}

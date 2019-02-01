@@ -1,17 +1,31 @@
 package valuator
 
 import (
+	"errors"
 	"log"
 	"math"
 )
 
 type Valuator interface {
-	/* Input:
-	   ticker: ticker of the company
-	   dr: Discount rate for DCF calculations
-	   trend: % of the averages to factor in DCF calculations
+	/*
+		 	DiscountedCashFlowTrend
+			Input:
+		   ticker: ticker of the company
+		   dr: Discount rate for DCF calculations
+		   trend: % of the averages to factor in DCF calculations
+			 duration: Time over which to discount the CF
 	*/
-	DiscountedCashFlow(ticker string, dr float64, trend float64, duration int) (float64, error)
+	DiscountedCashFlowTrend(ticker string, dr float64, trend float64, duration int) (float64, error)
+	/*
+		 	DiscountedCashFlow
+			Input:
+		   ticker: ticker of the company
+		   dr: Discount rate for DCF calculations
+		   bvIn: Book value rate of change
+			 divIn: Dividend rate of change
+			 duration: Time over which to discount the CF
+	*/
+	DiscountedCashFlow(ticker string, dr float64, bvIn float64, divIn float64, duration int) (float64, error)
 	Save() error
 	String() string
 }
@@ -47,16 +61,32 @@ func NewValuator(ticker string) (Valuator, error) {
 	return v, nil
 }
 
-func (v *valuator) DiscountedCashFlow(ticker string, dr float64, trend float64, duration int) (float64, error) {
+func (v *valuator) DiscountedCashFlowTrend(ticker string, dr float64, trend float64, duration int) (float64, error) {
 
 	// First get the right parameters for the DCF calculations
-	vals := v.Valuations[ticker]
+	vals, ok := v.Valuations[ticker]
+	if !ok {
+		return 0, errors.New("Valuator has not be told to collect data on " + ticker)
+	}
 	div := vals.Avgs.AvgDividendGrowth()
 	bv := vals.Avgs.AvgBookValueGrowth()
 
 	// Now adjust for trend
 	div = div * (trend / 100)
 	bv = bv * (trend / 100)
+
+	return v.DiscountedCashFlow(ticker, dr, bv, div, duration)
+}
+
+func (v *valuator) DiscountedCashFlow(ticker string, dr float64, bvIn float64, divIn float64, duration int) (float64, error) {
+
+	// First get the right parameters for the DCF calculations
+	vals, ok := v.Valuations[ticker]
+	if !ok {
+		return 0, errors.New("Valuator has not be told to collect data on " + ticker)
+	}
+	div := divIn
+	bv := bvIn
 
 	// Start with the latest value
 	outDiv := vals.FiledData[len(vals.FiledData)-1].DividendPerShare()

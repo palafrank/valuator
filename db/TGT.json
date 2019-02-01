@@ -1,0 +1,273 @@
+{
+    "Company": "TGT",
+    "Financial Reports": {
+        "10-K": {
+            "2012-03-15": {
+                "Company": "TGT",
+                "Report date": "2012-03-15",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 668486970
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 20937000000,
+                        "Cost Of Revenue": 14986000000,
+                        "Gross Margin": 5951000000,
+                        "Operational Income": 1408000000,
+                        "Operational Expense": 4543000000,
+                        "Net Income": 2929000000,
+                        "Weighted Average Share Count": 683900000,
+                        "Dividend Per Share": 1.09
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 52,
+                        "Long-Term debt": 0,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 14287000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 12959000000,
+                        "Total Shareholder Equity": 15821000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 5434000000,
+                        "Capital Expenditure": -4368000000,
+                        "Dividends paid": -750000000,
+                        "Interest paid": 816000000
+                    }
+                }
+            },
+            "2013-03-20": {
+                "Company": "TGT",
+                "Report date": "2013-03-20",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 641387165
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 22370000000,
+                        "Cost Of Revenue": 16160000000,
+                        "Gross Margin": 6210000000,
+                        "Operational Income": 1464000000,
+                        "Operational Expense": 4746000000,
+                        "Net Income": 2999000000,
+                        "Weighted Average Share Count": 663300000,
+                        "Dividend Per Share": 1.31
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 52,
+                        "Long-Term debt": 0,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 14031000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 13155000000,
+                        "Total Shareholder Equity": 16558000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 5325000000,
+                        "Capital Expenditure": -3277000000,
+                        "Dividends paid": -869000000,
+                        "Interest paid": 775000000
+                    }
+                }
+            },
+            "2014-03-14": {
+                "Company": "TGT",
+                "Report date": "2014-03-14",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 633174692
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 72596000000,
+                        "Cost Of Revenue": 51160000000,
+                        "Gross Margin": 21436000000,
+                        "Operational Income": 3103000000,
+                        "Operational Expense": 18333000000,
+                        "Net Income": 1971000000,
+                        "Weighted Average Share Count": 641800000,
+                        "Dividend Per Share": 1.56
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 53,
+                        "Long-Term debt": 12622000000,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 12777000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 12599000000,
+                        "Total Shareholder Equity": 16231000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 6520000000,
+                        "Capital Expenditure": -3453000000,
+                        "Dividends paid": -1006000000,
+                        "Interest paid": 1120000000
+                    }
+                }
+            },
+            "2015-03-13": {
+                "Company": "TGT",
+                "Report date": "2015-03-13",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 641738798
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 72618000000,
+                        "Cost Of Revenue": 51278000000,
+                        "Gross Margin": 21340000000,
+                        "Operational Income": 3653000000,
+                        "Operational Expense": 17687000000,
+                        "Net Income": -1636000000,
+                        "Weighted Average Share Count": 640100000,
+                        "Dividend Per Share": 1.88
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 53,
+                        "Long-Term debt": 12705000000,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 11736000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 9644000000,
+                        "Total Shareholder Equity": 13997000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 5131000000,
+                        "Capital Expenditure": -1786000000,
+                        "Dividends paid": -1205000000,
+                        "Interest paid": 871000000
+                    }
+                }
+            },
+            "2016-03-11": {
+                "Company": "TGT",
+                "Report date": "2016-03-11",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 599982121
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 73785000000,
+                        "Cost Of Revenue": 51997000000,
+                        "Gross Margin": 21788000000,
+                        "Operational Income": 4923000000,
+                        "Operational Expense": 16865000000,
+                        "Net Income": 3363000000,
+                        "Weighted Average Share Count": 632900000,
+                        "Dividend Per Share": 2.15
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 53,
+                        "Long-Term debt": 11945000000,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 12622000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 8188000000,
+                        "Total Shareholder Equity": 12957000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 5140000000,
+                        "Capital Expenditure": -1438000000,
+                        "Dividends paid": -1362000000,
+                        "Interest paid": 604000000
+                    }
+                }
+            },
+            "2017-03-08": {
+                "Company": "TGT",
+                "Report date": "2017-03-08",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 552675341
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 69495000000,
+                        "Cost Of Revenue": 48872000000,
+                        "Gross Margin": 20623000000,
+                        "Operational Income": 3965000000,
+                        "Operational Expense": 16658000000,
+                        "Net Income": 2737000000,
+                        "Weighted Average Share Count": 582500000,
+                        "Dividend Per Share": 2.36
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 55,
+                        "Long-Term debt": 11031000000,
+                        "Short-Term debt": 1718000000,
+                        "Current Liabilities": 12708000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 5884000000,
+                        "Total Shareholder Equity": 10953000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 5329000000,
+                        "Capital Expenditure": -1547000000,
+                        "Dividends paid": -1348000000,
+                        "Interest paid": 999000000
+                    }
+                }
+            },
+            "2018-03-14": {
+                "Company": "TGT",
+                "Report date": "2018-03-14",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 538796010
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 71879000000,
+                        "Cost Of Revenue": 51125000000,
+                        "Gross Margin": 20754000000,
+                        "Operational Income": 3646000000,
+                        "Operational Expense": 17108000000,
+                        "Net Income": 2934000000,
+                        "Weighted Average Share Count": 550300000,
+                        "Dividend Per Share": 2.46
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 55,
+                        "Long-Term debt": 11317000000,
+                        "Short-Term debt": 270000000,
+                        "Current Liabilities": 13201000000,
+                        "Deferred revenue": 0,
+                        "Retained Earnings": 6553000000,
+                        "Total Shareholder Equity": 11709000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 6849000000,
+                        "Capital Expenditure": -2533000000,
+                        "Dividends paid": -1338000000,
+                        "Interest paid": 678000000
+                    }
+                }
+            }
+        }
+    }
+}

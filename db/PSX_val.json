@@ -1,6 +1,7 @@
 {
-    "Date": [
+    "Measures": [
         {
+            "Date": "2013-02-22",
             "Book Value": 33.42,
             "Contribution Margin": 13,
             "Operating Margin": 3,
@@ -14,6 +15,7 @@
             "YoY": null
         },
         {
+            "Date": "2014-02-21",
             "Book Value": 37.35,
             "Contribution Margin": 13,
             "Operating Margin": 3,
@@ -37,6 +39,7 @@
             }
         },
         {
+            "Date": "2015-02-20",
             "Book Value": 39.72,
             "Contribution Margin": 15,
             "Operating Margin": 3,
@@ -60,6 +63,7 @@
             }
         },
         {
+            "Date": "2016-02-19",
             "Book Value": 43.79,
             "Contribution Margin": 25,
             "Operating Margin": 6,
@@ -83,6 +87,7 @@
             }
         },
         {
+            "Date": "2017-02-17",
             "Book Value": 43.23,
             "Contribution Margin": 25,
             "Operating Margin": 2,
@@ -106,6 +111,7 @@
             }
         },
         {
+            "Date": "2018-02-23",
             "Book Value": 50.04,
             "Contribution Margin": 22,
             "Operating Margin": 3,

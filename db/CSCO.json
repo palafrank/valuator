@@ -1,0 +1,273 @@
+{
+    "Company": "CSCO",
+    "Financial Reports": {
+        "10-K": {
+            "2012-09-12": {
+                "Company": "CSCO",
+                "Report date": "2012-09-12",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 5290061557
+                    },
+                    "Operational Information": {
+                        "Collected Data": 191,
+                        "Revenue": 46061000000,
+                        "Cost Of Revenue": 14505000000,
+                        "Gross Margin": 28209000000,
+                        "Operational Income": 10065000000,
+                        "Operational Expense": 18144000000,
+                        "Net Income": 8041000000,
+                        "Weighted Average Share Count": 5290061557,
+                        "Dividend Per Share": 0.28
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 16297000000,
+                        "Short-Term debt": 31000000,
+                        "Current Liabilities": 17731000000,
+                        "Deferred revenue": 8852000000,
+                        "Retained Earnings": 11354000000,
+                        "Total Shareholder Equity": 51286000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 7,
+                        "Operating Cash Flow": 11491000000,
+                        "Capital Expenditure": -1126000000,
+                        "Dividends paid": -1501000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2013-09-10": {
+                "Company": "CSCO",
+                "Report date": "2013-09-10",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 5361549877
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 48607000000,
+                        "Cost Of Revenue": 15541000000,
+                        "Gross Margin": 29440000000,
+                        "Operational Income": 11196000000,
+                        "Operational Expense": 18244000000,
+                        "Net Income": 9983000000,
+                        "Weighted Average Share Count": 5380000000,
+                        "Dividend Per Share": 0.61
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 12928000000,
+                        "Short-Term debt": 3283000000,
+                        "Current Liabilities": 22192000000,
+                        "Deferred revenue": 9262000000,
+                        "Retained Earnings": 16215000000,
+                        "Total Shareholder Equity": 59120000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 7,
+                        "Operating Cash Flow": 12894000000,
+                        "Capital Expenditure": -1160000000,
+                        "Dividends paid": -3310000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2014-09-09": {
+                "Company": "CSCO",
+                "Report date": "2014-09-09",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 5099203169
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 47142000000,
+                        "Cost Of Revenue": 15641000000,
+                        "Gross Margin": 27769000000,
+                        "Operational Income": 9345000000,
+                        "Operational Expense": 18424000000,
+                        "Net Income": 7853000000,
+                        "Weighted Average Share Count": 5281000000,
+                        "Dividend Per Share": 0.71
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 20401000000,
+                        "Short-Term debt": 508000000,
+                        "Current Liabilities": 19809000000,
+                        "Deferred revenue": 9478000000,
+                        "Retained Earnings": 14093000000,
+                        "Total Shareholder Equity": 56654000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 7,
+                        "Operating Cash Flow": 12332000000,
+                        "Capital Expenditure": -1275000000,
+                        "Dividends paid": -3758000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2015-09-08": {
+                "Company": "CSCO",
+                "Report date": "2015-09-08",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 5061293291
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 49161000000,
+                        "Cost Of Revenue": 15377000000,
+                        "Gross Margin": 29681000000,
+                        "Operational Income": 10770000000,
+                        "Operational Expense": 18911000000,
+                        "Net Income": 8981000000,
+                        "Weighted Average Share Count": 5146000000,
+                        "Dividend Per Share": 0.79
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 21457000000,
+                        "Short-Term debt": 3897000000,
+                        "Current Liabilities": 23623000000,
+                        "Deferred revenue": 9824000000,
+                        "Retained Earnings": 16045000000,
+                        "Total Shareholder Equity": 59698000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 7,
+                        "Operating Cash Flow": 12552000000,
+                        "Capital Expenditure": -1227000000,
+                        "Dividends paid": -4086000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2016-09-08": {
+                "Company": "CSCO",
+                "Report date": "2016-09-08",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 5014353833
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 49247000000,
+                        "Cost Of Revenue": 14161000000,
+                        "Gross Margin": 30960000000,
+                        "Operational Income": 12660000000,
+                        "Operational Expense": 18300000000,
+                        "Net Income": 10739000000,
+                        "Weighted Average Share Count": 5088000000,
+                        "Dividend Per Share": 0.93
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 24483000000,
+                        "Short-Term debt": 4160000000,
+                        "Current Liabilities": 24911000000,
+                        "Deferred revenue": 10155000000,
+                        "Retained Earnings": 19396000000,
+                        "Total Shareholder Equity": 63586000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 7,
+                        "Operating Cash Flow": 13570000000,
+                        "Capital Expenditure": -1146000000,
+                        "Dividends paid": -4750000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2017-09-07": {
+                "Company": "CSCO",
+                "Report date": "2017-09-07",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 4951955851
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 48005000000,
+                        "Cost Of Revenue": 13699000000,
+                        "Gross Margin": 30224000000,
+                        "Operational Income": 11973000000,
+                        "Operational Expense": 18251000000,
+                        "Net Income": 9609000000,
+                        "Weighted Average Share Count": 5049000000,
+                        "Dividend Per Share": 1.09
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 25725000000,
+                        "Short-Term debt": 7992000000,
+                        "Current Liabilities": 27583000000,
+                        "Deferred revenue": 10821000000,
+                        "Retained Earnings": 20838000000,
+                        "Total Shareholder Equity": 66137000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 7,
+                        "Operating Cash Flow": 13876000000,
+                        "Capital Expenditure": -964000000,
+                        "Dividends paid": -5511000000,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2018-09-06": {
+                "Company": "CSCO",
+                "Report date": "2018-09-06",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 4571334136
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 49330000000,
+                        "Cost Of Revenue": 18724000000,
+                        "Gross Margin": 30606000000,
+                        "Operational Income": 12309000000,
+                        "Operational Expense": 18297000000,
+                        "Net Income": 110000000,
+                        "Weighted Average Share Count": 4881000000,
+                        "Dividend Per Share": 1.22
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 63,
+                        "Long-Term debt": 20331000000,
+                        "Short-Term debt": 5238000000,
+                        "Current Liabilities": 27035000000,
+                        "Deferred revenue": 11490000000,
+                        "Retained Earnings": 1233000000,
+                        "Total Shareholder Equity": 43204000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 7,
+                        "Operating Cash Flow": 13666000000,
+                        "Capital Expenditure": -834000000,
+                        "Dividends paid": -5968000000,
+                        "Interest paid": 0
+                    }
+                }
+            }
+        }
+    }
+}

@@ -25,6 +25,7 @@ type Measures interface {
 
 type measures struct {
 	filing     Filing
+	Date       string  `json:"Date"`
 	Bv         float64 `json:"Book Value"`
 	Cm         float64 `json:"Contribution Margin"`
 	Om         float64 `json:"Operating Margin"`
@@ -49,6 +50,7 @@ func (m measures) String() string {
 func NewMeasures(filing Filing) Measures {
 	m := new(measures)
 	m.filing = filing
+	m.Date = filing.FiledOn()
 	m.collect()
 	return m
 }

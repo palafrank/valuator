@@ -2,6 +2,158 @@
     "Company": "AAPL",
     "Financial Reports": {
         "10-K": {
+            "2011-10-26": {
+                "Company": "AAPL",
+                "Report date": "2011-10-26",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 929409000
+                    },
+                    "Operational Information": {
+                        "Collected Data": 127,
+                        "Revenue": 108249000000,
+                        "Cost Of Revenue": 64431000000,
+                        "Gross Margin": 43818000000,
+                        "Operational Income": 33790000000,
+                        "Operational Expense": 10028000000,
+                        "Net Income": 25922000000,
+                        "Weighted Average Share Count": 936645000,
+                        "Dividend Per Share": 0
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 60,
+                        "Long-Term debt": 0,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 27970000000,
+                        "Deferred revenue": 4091000000,
+                        "Retained Earnings": 62841000000,
+                        "Total Shareholder Equity": 76615000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 3,
+                        "Operating Cash Flow": 37529000000,
+                        "Capital Expenditure": -4260000000,
+                        "Dividends paid": 0,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2012-10-31": {
+                "Company": "AAPL",
+                "Report date": "2012-10-31",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 940692000
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 156508000000,
+                        "Cost Of Revenue": 87846000000,
+                        "Gross Margin": 68662000000,
+                        "Operational Income": 55241000000,
+                        "Operational Expense": 13421000000,
+                        "Net Income": 41733000000,
+                        "Weighted Average Share Count": 945355000,
+                        "Dividend Per Share": 2.65
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 60,
+                        "Long-Term debt": 0,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 38542000000,
+                        "Deferred revenue": 5953000000,
+                        "Retained Earnings": 101289000000,
+                        "Total Shareholder Equity": 118210000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 3,
+                        "Operating Cash Flow": 50856000000,
+                        "Capital Expenditure": -8295000000,
+                        "Dividends paid": 0,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2013-10-30": {
+                "Company": "AAPL",
+                "Report date": "2013-10-30",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 899738000
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 170910000000,
+                        "Cost Of Revenue": 106606000000,
+                        "Gross Margin": 64304000000,
+                        "Operational Income": 48999000000,
+                        "Operational Expense": 15305000000,
+                        "Net Income": 37037000000,
+                        "Weighted Average Share Count": 931662000,
+                        "Dividend Per Share": 11.4
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 60,
+                        "Long-Term debt": 0,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 43658000000,
+                        "Deferred revenue": 7435000000,
+                        "Retained Earnings": 104256000000,
+                        "Total Shareholder Equity": 123549000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 3,
+                        "Operating Cash Flow": 53666000000,
+                        "Capital Expenditure": -8165000000,
+                        "Dividends paid": 0,
+                        "Interest paid": 0
+                    }
+                }
+            },
+            "2014-10-27": {
+                "Company": "AAPL",
+                "Report date": "2014-10-27",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 5864840000
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 182795000000,
+                        "Cost Of Revenue": 112258000000,
+                        "Gross Margin": 70537000000,
+                        "Operational Income": 52503000000,
+                        "Operational Expense": 18034000000,
+                        "Net Income": 39510000000,
+                        "Weighted Average Share Count": 6122663000,
+                        "Dividend Per Share": 1.82
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 60,
+                        "Long-Term debt": 0,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 63448000000,
+                        "Deferred revenue": 8491000000,
+                        "Retained Earnings": 87152000000,
+                        "Total Shareholder Equity": 111547000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 3,
+                        "Operating Cash Flow": 59713000000,
+                        "Capital Expenditure": -9571000000,
+                        "Dividends paid": 0,
+                        "Interest paid": 0
+                    }
+                }
+            },
             "2015-10-28": {
                 "Company": "AAPL",
                 "Report date": "2015-10-28",
@@ -113,6 +265,44 @@
                         "Capital Expenditure": -12451000000,
                         "Dividends paid": 12769000000,
                         "Interest paid": 0
+                    }
+                }
+            },
+            "2018-11-05": {
+                "Company": "AAPL",
+                "Report date": "2018-11-05",
+                "Financial Data": {
+                    "Filing Type": "10-K",
+                    "Entity Information": {
+                        "Collected Data": 1,
+                        "Shares Outstanding": 4745398000
+                    },
+                    "Operational Information": {
+                        "Collected Data": 255,
+                        "Revenue": 265595000000,
+                        "Cost Of Revenue": 163756000000,
+                        "Gross Margin": 101839000000,
+                        "Operational Income": 70898000000,
+                        "Operational Expense": 30941000000,
+                        "Net Income": 59531000000,
+                        "Weighted Average Share Count": 5000109000,
+                        "Dividend Per Share": -2.75
+                    },
+                    "Balance Sheet Information": {
+                        "Collected Data": 61,
+                        "Long-Term debt": 93735000000,
+                        "Short-Term debt": 0,
+                        "Current Liabilities": 116866000000,
+                        "Deferred revenue": 7543000000,
+                        "Retained Earnings": 70400000000,
+                        "Total Shareholder Equity": 107147000000
+                    },
+                    "Cash Flow Information": {
+                        "Collected Data": 15,
+                        "Operating Cash Flow": 77434000000,
+                        "Capital Expenditure": -13313000000,
+                        "Dividends paid": 13712000000,
+                        "Interest paid": 3022000000
                     }
                 }
             }

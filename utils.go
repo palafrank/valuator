@@ -14,7 +14,7 @@ func yoyCalc(past float64, curr float64, pc bool) float64 {
 	if past == 0 {
 		return 0
 	}
-	if pc {
+	if pc && past != 0 {
 		return percentage((curr - past) / past)
 	}
 	return round(curr - past)
