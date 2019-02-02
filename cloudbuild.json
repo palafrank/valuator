@@ -1,0 +1,24 @@
+{
+    "steps": [
+    {
+
+      "name": "gcr.io/cloud-builders/glide",
+      "args": [
+        "install"
+      ],
+      "env": [
+          "PROJECT_ROOT=valuator"
+      ],
+    },
+    {
+      "name": "gcr.io/cloud-builders/go:debian",
+      "args": [
+          "test"
+      ],
+      "env": [
+          "PROJECT_ROOT=valuator"
+      ],
+      "timeout": "500s"
+    }
+    ]
+}
