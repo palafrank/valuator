@@ -47,7 +47,6 @@ func (c *collector) CollectEdgarAnnualData(ticker string,
 		if len(years) > 0 && !contains(f.Year(), years) {
 			continue
 		}
-
 		fil, err := cf.Filing(edgar.FilingType10K, f)
 		if err != nil {
 			return nil, err

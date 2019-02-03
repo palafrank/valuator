@@ -27,26 +27,26 @@ func TestGetEdgarFiling(t *testing.T) {
 
 func TestAAPLCollector(t *testing.T) {
 	c, _ := NewCollector(collectorEdgar)
-	m, _ := c.CollectAnnualData("AAPL", 2015, 2016, 2017)
-	if m[1].BookValue() != 24.05 {
-		t.Error("Book value was not the expected value", m[1].BookValue(), 24.05)
+	m, _ := c.CollectAnnualData("AAPL", 2012, 2013, 2014, 2015, 2016, 2017)
+	if m[4].BookValue() != 24.05 {
+		t.Error("Book value was not the expected value", m[4].BookValue(), 24.05)
 	}
-	if m[2].BookValue() != 26.10 {
-		t.Error("Book value was not the expected value", m[2].BookValue(), 26.10)
-	}
-
-	if m[1].OperatingLeverage() != 1.44 {
-		t.Error("Operating Leverage was not the expected value", m[1].OperatingLeverage(), 1.44)
-	}
-	if m[2].OperatingLeverage() != 1.46 {
-		t.Error("Operating Leverage was not the expected value", m[2].OperatingLeverage(), 1.46)
+	if m[5].BookValue() != 26.10 {
+		t.Error("Book value was not the expected value", m[5].BookValue(), 26.10)
 	}
 
-	if m[1].FinancialLeverage() != 58 {
-		t.Error("Financial Leverage was not the expected value", m[1].FinancialLeverage(), 0.61)
+	if m[4].OperatingLeverage() != 1.44 {
+		t.Error("Operating Leverage was not the expected value", m[4].OperatingLeverage(), 1.44)
 	}
-	if m[2].FinancialLeverage() != 72 {
-		t.Error("Financial Leverage was not the expected value", m[2].FinancialLeverage(), 0.77)
+	if m[5].OperatingLeverage() != 1.46 {
+		t.Error("Operating Leverage was not the expected value", m[5].OperatingLeverage(), 1.46)
+	}
+
+	if m[4].FinancialLeverage() != 58 {
+		t.Error("Financial Leverage was not the expected value", m[4].FinancialLeverage(), 0.61)
+	}
+	if m[5].FinancialLeverage() != 72 {
+		t.Error("Financial Leverage was not the expected value", m[5].FinancialLeverage(), 0.77)
 	}
 	c.Save("AAPL")
 }
@@ -139,10 +139,15 @@ func TestNewCSCOValuator(t *testing.T) {
 		t.Error("Failed to create a valuator: ", err.Error())
 		return
 	}
-	v.Save()
 
 	ret, _ := v.DiscountedCashFlowTrend("CSCO", 3, 100, 10)
 	if ret != 18.28 {
 		t.Error("Error in DCF calculation at 100% trend ", ret)
 	}
+
+	ret, _ = v.DiscountedFCFTrend("CSCO", 3, 100, 10)
+	if ret != 29.51 {
+		t.Error("Error in DCFCF calculation at 100% trend ", ret)
+	}
+	v.Save()
 }

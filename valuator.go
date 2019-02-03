@@ -9,6 +9,11 @@ import (
 type Valuator interface {
 	/*
 		 	DiscountedCashFlowTrend
+			Calculated DCF based on the collected BV and DIV growth rates
+			trend will adjust the growth rates based on user Input
+			    - 100 will indicate 100% trend
+					- 50 will indicate 50% of trend
+					- 150 will indicate 150% trend
 			Input:
 		   ticker: ticker of the company
 		   dr: Discount rate for DCF calculations
@@ -26,6 +31,21 @@ type Valuator interface {
 			 duration: Time over which to discount the CF
 	*/
 	DiscountedCashFlow(ticker string, dr float64, bvIn float64, divIn float64, duration int) (float64, error)
+	/*
+		 	DiscountedFCFTrend
+			Calculated DCF based on the collected FCF and DIV growth rates
+			FCF will be based on cash flow from opertaions adjusted for capex
+			trend will adjust the growth rates based on user Input
+			    - 100 will indicate 100% trend
+					- 50 will indicate 50% of trend
+					- 150 will indicate 150% trend
+			Input:
+		   ticker: ticker of the company
+		   dr: Discount rate for DCF calculations
+		   trend: % of the averages to factor in DCF calculations
+			 duration: Time over which to discount the CF
+	*/
+	DiscountedFCFTrend(ticker string, dr float64, trend float64, duration int) (float64, error)
 	Save() error
 	String() string
 }
@@ -74,6 +94,29 @@ func (v *valuator) DiscountedCashFlowTrend(ticker string, dr float64, trend floa
 	// Now adjust for trend
 	div = div * (trend / 100)
 	bv = bv * (trend / 100)
+
+	return v.DiscountedCashFlow(ticker, dr, bv, div, duration)
+}
+
+func (v *valuator) DiscountedFCFTrend(ticker string, dr float64, trend float64, duration int) (float64, error) {
+
+	// First get the right parameters for the DCF calculations
+	vals, ok := v.Valuations[ticker]
+	if !ok {
+		return 0, errors.New("Valuator has not be told to collect data on " + ticker)
+	}
+	div := vals.Avgs.AvgDividendGrowth()
+	fcf := vals.Avgs.AvgCashFlowGrowth()
+
+	// Now adjust for trend
+	div = div * (trend / 100)
+	fcf = fcf * (trend / 100)
+
+	// Get the latest book value
+	bv := vals.FiledData[len(vals.FiledData)-1].BookValue()
+
+	// Get the BV growth at the rate of FCF growth
+	bv = bv * (fcf / 100)
 
 	return v.DiscountedCashFlow(ticker, dr, bv, div, duration)
 }
