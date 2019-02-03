@@ -20,6 +20,8 @@ type Measures interface {
 	DividendPerShare() float64
 	FreeCashFlow() float64
 	PayOutToFcf() float64
+	WorkingCapital() float64
+	CurrentRatio() float64
 	String() string
 }
 
@@ -36,6 +38,8 @@ type measures struct {
 	Div        float64 `json:"Dividend"`
 	FcF        float64 `json:"Free Cash Flow"`
 	DivToFcf   float64 `json:"Dividend to FCF"`
+	Wc         float64 `json:"Working Capital"`
+	Cr         float64 `json:"Current Ratio"`
 	YearOnYear *yoy    `json:"YoY"`
 }
 
@@ -78,6 +82,8 @@ func (m *measures) collect() {
 	m.FcF = m.FreeCashFlow()
 	m.RoA = m.ReturnOnAssets()
 	m.RoE = m.ReturnOnEquity()
+	m.Wc = m.WorkingCapital()
+	m.Cr = m.CurrentRatio()
 }
 
 func (m *measures) FiledOn() string {
@@ -199,4 +205,28 @@ func (m *measures) PayOutToFcf() float64 {
 		return 0
 	}
 	return percentage(div / m.FreeCashFlow())
+}
+
+func (m *measures) WorkingCapital() float64 {
+	assets, err := m.filing.CurrentAssets()
+	if err != nil {
+		return 0
+	}
+	liab, err := m.filing.CurrentLiabilities()
+	if err != nil {
+		return 0
+	}
+	return (assets - liab)
+}
+
+func (m *measures) CurrentRatio() float64 {
+	assets, err := m.filing.CurrentAssets()
+	if err != nil {
+		return 0
+	}
+	liab, err := m.filing.CurrentLiabilities()
+	if err != nil {
+		return 0
+	}
+	return round(assets / liab)
 }

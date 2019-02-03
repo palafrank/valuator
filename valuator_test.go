@@ -31,8 +31,20 @@ func TestAAPLCollector(t *testing.T) {
 	if m[4].BookValue() != 24.05 {
 		t.Error("Book value was not the expected value", m[4].BookValue(), 24.05)
 	}
+	if m[4].WorkingCapital() != 27863000000 {
+		t.Error("Working Capital was not the expected value", m[4].WorkingCapital(), 27863000000)
+	}
+	if m[4].CurrentRatio() != 1.35 {
+		t.Error("Current Ratio was not the expected value", m[4].CurrentRatio(), 1.35)
+	}
 	if m[5].BookValue() != 26.10 {
 		t.Error("Book value was not the expected value", m[5].BookValue(), 26.10)
+	}
+	if m[5].WorkingCapital() != 27831000000 {
+		t.Error("Working Capital was not the expected value", m[5].WorkingCapital(), 27831000000)
+	}
+	if m[5].CurrentRatio() != 1.27 {
+		t.Error("Current Ratio was not the expected value", m[5].CurrentRatio(), 1.27)
 	}
 
 	if m[4].OperatingLeverage() != 1.44 {

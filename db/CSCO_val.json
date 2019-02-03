@@ -12,6 +12,8 @@
             "Dividend": 0.28,
             "Free Cash Flow": 11491000000,
             "Dividend to FCF": 13,
+            "Working Capital": 0,
+            "Current Ratio": 0,
             "YoY": null
         },
         {
@@ -26,6 +28,8 @@
             "Dividend": 0.61,
             "Free Cash Flow": 12894000000,
             "Dividend to FCF": 25,
+            "Working Capital": 0,
+            "Current Ratio": 0,
             "YoY": {
                 "Revenue Growth": 5,
                 "Earning Growth": 24,
@@ -50,6 +54,8 @@
             "Dividend": 0.71,
             "Free Cash Flow": 12332000000,
             "Dividend to FCF": 30,
+            "Working Capital": 0,
+            "Current Ratio": 0,
             "YoY": {
                 "Revenue Growth": -4,
                 "Earning Growth": -22,
@@ -74,6 +80,8 @@
             "Dividend": 0.79,
             "Free Cash Flow": 12552000000,
             "Dividend to FCF": 32,
+            "Working Capital": 0,
+            "Current Ratio": 0,
             "YoY": {
                 "Revenue Growth": 4,
                 "Earning Growth": 14,
@@ -98,6 +106,8 @@
             "Dividend": 0.93,
             "Free Cash Flow": 13570000000,
             "Dividend to FCF": 35,
+            "Working Capital": 0,
+            "Current Ratio": 0,
             "YoY": {
                 "Revenue Growth": 0,
                 "Earning Growth": 19,
@@ -122,6 +132,8 @@
             "Dividend": 1.09,
             "Free Cash Flow": 13876000000,
             "Dividend to FCF": 39,
+            "Working Capital": 0,
+            "Current Ratio": 0,
             "YoY": {
                 "Revenue Growth": -3,
                 "Earning Growth": -11,
@@ -146,6 +158,8 @@
             "Dividend": 1.22,
             "Free Cash Flow": 13666000000,
             "Dividend to FCF": 43,
+            "Working Capital": 0,
+            "Current Ratio": 0,
             "YoY": {
                 "Revenue Growth": 2,
                 "Earning Growth": -99,
