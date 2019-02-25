@@ -1,12 +1,12 @@
 hash: 8d4dca7198f433eedeb62ca71e5b2caf459c7cf95aae66b16a43a754f5f07f74
-updated: 2019-02-06T16:08:30.596533888-08:00
+updated: 2019-02-24T22:15:54.00916587-08:00
 imports:
 - name: github.com/mongodb/mongo-go-driver
-  version: 39d8e41073b4e85cdefe13ee974238871ef4cf0a
+  version: fcec76a7c147bbcef3aecb66ce318bd4a0b004b4
   subpackages:
   - mongo
 - name: github.com/palafrank/edgar
-  version: 48eac97b9d3ee9ac88fc535a1d6a0f622cecb376
+  version: 18c54b5ffde78b179c24fe885e29100b2faff7a9
 - name: golang.org/x/net
   version: 1c5f79cfb1642860bbe00b6cfce66700c01e04f6
   subpackages:
