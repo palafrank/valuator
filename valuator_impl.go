@@ -1,14 +1,22 @@
 package valuator
 
 import (
+	"bytes"
 	"encoding/json"
+	"errors"
 	"log"
+	"time"
+)
+
+var (
+	valuatorDatabaseURL  string       = "./db/"
+	valuatorDatabaseType DatabaseType = FileDatabaseType
 )
 
 // Filing interface for fetching financial data
 type Filing interface {
 	Ticker() string
-	FiledOn() string
+	FiledOn() time.Time
 	ShareCount() (float64, error)
 	Revenue() (float64, error)
 	CostOfRevenue() (float64, error)
@@ -36,18 +44,13 @@ type valuation struct {
 }
 
 type valuator struct {
-	db         database
 	collector  map[string]Collector  `json:"-"`
 	Valuations map[string]*valuation `json:"Company"`
+	store      Store                 `json:"-"`
 }
 
 func (v valuator) String() string {
-
-	data, err := json.MarshalIndent(v.Valuations, "", "    ")
-	if err != nil {
-		log.Fatal("Error marshaling valuator data: ", err)
-	}
-	return string(data)
+	return v.store.String()
 }
 
 func (v valuation) String() string {
@@ -58,16 +61,75 @@ func (v valuation) String() string {
 	return string(data)
 }
 
-func (v *valuator) Save() error {
-	for ticker, collect := range v.collector {
-		err := collect.Save(ticker)
-		if err != nil {
-			log.Println("Error saving document for ", ticker)
-			return err
+func (v *valuator) Write() error {
+	return v.store.Write()
+}
+
+func (v *valuator) Store() error {
+	for ticker, collector := range v.collector {
+		by := bytes.NewBuffer(nil)
+		if err := collector.Write(ticker, by); err == nil {
+			v.store.PutFinancials(ticker, by.Bytes())
+		} else {
+			log.Println("Error getting doc for ", ticker, err.Error())
 		}
 	}
-	for ticker, valuation := range v.Valuations {
-		v.db.Write(ticker+"_val", []byte(valuation.String()))
+	for ticker, value := range v.Valuations {
+		v.store.PutMeasures(ticker, []byte(value.String()))
 	}
 	return nil
+}
+
+func (v *valuator) Clean(ticker string) {
+	delete(v.collector, ticker)
+	delete(v.Valuations, ticker)
+
+}
+
+func (v *valuator) Collect(ticker string) error {
+	if _, ok := v.collector[ticker]; ok {
+		return errors.New("Collection for ticker " + ticker + " is already done")
+	}
+	v.Valuations[ticker] = &valuation{
+		Avgs: nil,
+	}
+	v.store.Read(ticker)
+	collect, err := NewCollector(collectorEdgar, v.store)
+	if err != nil {
+		log.Println("Error getting the collector: ", err.Error())
+		v.Clean(ticker)
+		return err
+	}
+	v.collector[ticker] = collect
+
+	fils, err := collect.CollectAnnualData(ticker)
+	if err != nil {
+		log.Println("Error collecting annual data: ", err.Error())
+		v.Clean(ticker)
+		return err
+	}
+
+	mea := NewMeasures(fils)
+
+	if err := NewYoYs(mea); err != nil {
+		return err
+	}
+
+	avg, err := NewAverages(mea)
+	if err != nil {
+		log.Println("Error collecting averages: ", err.Error())
+		v.Clean(ticker)
+		return err
+	}
+
+	v.Valuations[ticker].FiledData = mea
+	v.Valuations[ticker].Avgs = avg
+
+	v.Store()
+
+	return nil
+}
+
+func NewValuatorDB() (database, error) {
+	return NewDatabase(valuatorDatabaseURL, valuatorDatabaseType)
 }

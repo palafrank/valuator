@@ -4,3 +4,4 @@ import:
   subpackages:
   - html
 - package: github.com/palafrank/edgar
+- package: github.com/mongodb/mongo-go-driver/mongo

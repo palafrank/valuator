@@ -37,6 +37,19 @@ func (m yoy) String() string {
 	return string(data)
 }
 
+func NewYoYs(mea []Measures) error {
+	// Calculate YoY
+	if len(mea) > 1 {
+		for i := 1; i < len(mea); i++ {
+			err := mea[i].NewYoy(mea[i-1])
+			if err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 
 	ret := new(yoy)

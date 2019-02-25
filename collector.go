@@ -2,65 +2,33 @@ package valuator
 
 import (
 	"errors"
+	"io"
 )
 
 type FilingDate string
 type FilingType string
+type CollectorType string
 
 var (
-	collectorEdgar = "edgar"
+	collectorEdgar CollectorType = "edgar"
 )
 
 type Collector interface {
-	CollectAnnualData(ticker string, year ...int) ([]Measures, error)
-	Save(string) error
+	// Name of the collector
+	Name() string
+	// CollectAnnualData queries the collector to get annual data for the years specified
+	CollectAnnualData(ticker string, year ...int) ([]Filing, error)
+	// Write the Collectors content to an IO Writer
+	Write(string, io.Writer) error
 }
 
-type Fetcher interface {
-}
+func NewCollector(name CollectorType, store Store) (Collector, error) {
 
-type collector struct {
-	name    string
-	db      database
-	fetcher Fetcher
-}
-
-func (c *collector) Name() string {
-	return c.name
-}
-
-func (c *collector) CollectAnnualData(ticker string,
-	years ...int) ([]Measures, error) {
-	switch c.Name() {
-	case collectorEdgar:
-		return c.CollectEdgarAnnualData(ticker, years...)
-	default:
-	}
-	return nil, errors.New("Unknown collector type")
-}
-
-func (c *collector) Save(ticker string) error {
-	switch c.Name() {
-	case collectorEdgar:
-		return c.SaveEdgarData(ticker)
-	default:
-	}
-	return nil
-}
-
-func NewCollector(name string) (Collector, error) {
-	c := new(collector)
 	switch name {
 	case collectorEdgar:
-		f, err := NewEdgarCollector()
-		if err == nil {
-			c.fetcher = f
-			c.name = name
-			c.db = NewDB(fileDBUrl, FileDatabaseType)
-			return c, nil
-		}
+		return NewEdgarCollector(store)
 	default:
 	}
 
-	return nil, errors.New("Unsupported collector")
+	return nil, errors.New("Unsupported collector " + string(name))
 }

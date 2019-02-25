@@ -3,6 +3,7 @@ package valuator
 import (
 	"encoding/json"
 	"log"
+	"sort"
 )
 
 type Measures interface {
@@ -27,20 +28,21 @@ type Measures interface {
 
 type measures struct {
 	filing     Filing
-	Date       string  `json:"Date"`
-	Bv         float64 `json:"Book Value"`
-	Cm         float64 `json:"Contribution Margin"`
-	Om         float64 `json:"Operating Margin"`
-	Ol         float64 `json:"Operating Leverage"`
-	Fl         float64 `json:"Financial Leverage (%)"`
-	RoE        float64 `json:"Return on Equity (%)"`
-	RoA        float64 `json:"Return on Assets"`
-	Div        float64 `json:"Dividend"`
-	FcF        float64 `json:"Free Cash Flow"`
-	DivToFcf   float64 `json:"Dividend to FCF"`
-	Wc         float64 `json:"Working Capital"`
-	Cr         float64 `json:"Current Ratio"`
-	YearOnYear *yoy    `json:"YoY"`
+	Year       int       `json:"-"`
+	Date       Timestamp `json:"Date"`
+	Bv         float64   `json:"Book Value"`
+	Cm         float64   `json:"Contribution Margin"`
+	Om         float64   `json:"Operating Margin"`
+	Ol         float64   `json:"Operating Leverage"`
+	Fl         float64   `json:"Financial Leverage (%)"`
+	RoE        float64   `json:"Return on Equity (%)"`
+	RoA        float64   `json:"Return on Assets"`
+	Div        float64   `json:"Dividend"`
+	FcF        float64   `json:"Free Cash Flow"`
+	DivToFcf   float64   `json:"Dividend to FCF"`
+	Wc         float64   `json:"Working Capital"`
+	Cr         float64   `json:"Current Ratio"`
+	YearOnYear *yoy      `json:"YoY"`
 }
 
 func (m measures) String() string {
@@ -51,12 +53,21 @@ func (m measures) String() string {
 	return string(data)
 }
 
-func NewMeasures(filing Filing) Measures {
-	m := new(measures)
-	m.filing = filing
-	m.Date = filing.FiledOn()
-	m.collect()
-	return m
+func NewMeasures(fs []Filing) []Measures {
+	var ms []Measures
+	for _, f := range fs {
+		m := new(measures)
+		m.filing = f
+		m.Date = Timestamp(f.FiledOn())
+		m.collect()
+		ms = append(ms, m)
+	}
+	// Sort all the measures that was calculated for YoY computation
+	sort.Slice(ms, func(i, j int) bool {
+		return ms[i].FiledOn() < ms[j].FiledOn()
+	})
+
+	return ms
 }
 
 func (m *measures) Yoy() Yoy {
@@ -86,8 +97,18 @@ func (m *measures) collect() {
 	m.Cr = m.CurrentRatio()
 }
 
+func createMeasuresList(measures []Measures, endYear int) []Measures {
+	var ret []Measures
+	for _, mea := range measures {
+		if getYear(mea.FiledOn()) <= endYear {
+			ret = append(ret, mea)
+		}
+	}
+	return ret
+}
+
 func (m *measures) FiledOn() string {
-	return m.filing.FiledOn()
+	return m.filing.FiledOn().String()
 }
 
 func (m *measures) Filing() Filing {

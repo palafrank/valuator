@@ -1,88 +1,99 @@
 package valuator
 
 import (
-	"bytes"
 	"errors"
-	"sort"
+	"io"
+	"log"
+	"time"
 
 	"github.com/palafrank/edgar"
 )
 
-func NewEdgarCollector() (edgar.FilingFetcher, error) {
+type edgarCollector struct {
+	name    string
+	fetcher edgar.FilingFetcher
+	store   Store
+}
+
+func NewEdgarCollector(store Store) (Collector, error) {
 	//Get the Fetcher
 	fetcher := edgar.NewFilingFetcher()
 	if fetcher == nil {
-		return nil, errors.New("Could not get edgar data")
+		return nil, errors.New("Could not create edgar collector")
 	}
-	return fetcher, nil
+	ret := &edgarCollector{
+		fetcher: fetcher,
+		store:   store,
+	}
+	return ret, nil
 }
 
-func contains(key int, db []int) bool {
-	for _, d := range db {
-		if d == key {
-			return true
-		}
+func (c *edgarCollector) MapEdgarFilingToValuatorFiling(fs []edgar.Filing) []Filing {
+	var ret []Filing
+	for _, f := range fs {
+		ret = append(ret, f.(Filing))
 	}
-	return false
+	return ret
 }
 
-func (c *collector) CollectEdgarAnnualData(ticker string,
-	years ...int) ([]Measures, error) {
+func (c *edgarCollector) Name() string {
+	return "Edgar Collector"
+}
 
-	var ret []Measures
+func (c *edgarCollector) CollectAnnualData(ticker string,
+	years ...int) ([]Filing, error) {
 
-	fetcher := c.fetcher.(edgar.FilingFetcher)
-
-	fp, err := c.db.Read(ticker)
-
+	var err error
 	var cf edgar.CompanyFolder
-	//If there is no historical data. Get it from Edgar.
-	if err != nil {
-		cf, err = fetcher.CompanyFolder(ticker, edgar.FilingType10K)
-	} else {
-		cf, err = fetcher.CreateFolder(fp, edgar.FilingType10K)
+	var fp io.Reader = nil
+
+	if c.store != nil {
+		fp = c.store.GetFinancials(ticker)
 	}
+
+	if fp == nil {
+		//If there is no historical data. Get it from Edgar.
+		log.Println("No data found. Fetching from Edgar")
+		cf, err = c.fetcher.CompanyFolder(ticker, edgar.FilingType10K)
+	} else {
+		// If data available in store use that you create folder
+		cf, err = c.fetcher.CreateFolder(fp, edgar.FilingType10K)
+	}
+	if err != nil {
+		return nil, err
+	}
+
+	// Get all the Available filings
 	af := cf.AvailableFilings(edgar.FilingType10K)
+
+	//Filter out based on what was requested
+	var filteredAF []time.Time
 	for _, f := range af {
 		if len(years) > 0 && !contains(f.Year(), years) {
 			continue
 		}
-		fil, err := cf.Filing(edgar.FilingType10K, f)
+		filteredAF = append(filteredAF, f)
+	}
+
+	// Get all the financial data
+	if len(filteredAF) > 0 {
+		fils, err := cf.Filings(edgar.FilingType10K, filteredAF...)
 		if err != nil {
 			return nil, err
 		}
 
-		m := NewMeasures(fil)
-		ret = append(ret, m)
-	}
-	c.SaveEdgarData(ticker)
-
-	sort.Slice(ret, func(i, j int) bool {
-		return ret[i].FiledOn() < ret[j].FiledOn()
-	})
-
-	if len(ret) > 1 {
-		for i := 1; i < len(ret); i++ {
-			err := ret[i].NewYoy(ret[i-1])
-			if err != nil {
-				return nil, err
-			}
-		}
+		return c.MapEdgarFilingToValuatorFiling(fils), nil
 	}
 
-	return ret, err
+	return nil, errors.New("No filings collected")
 }
 
-func (c *collector) SaveEdgarData(ticker string) error {
-	fetcher := c.fetcher.(edgar.FilingFetcher)
-	comp, err := fetcher.CompanyFolder(ticker)
+func (c *edgarCollector) Write(ticker string, writer io.Writer) error {
+
+	comp, err := c.fetcher.CompanyFolder(ticker)
 	if err == nil {
-		data := bytes.NewBuffer(nil)
-		comp.SaveFolder(data)
-		if data.Len() > 0 {
-			c.db.Write(ticker, data.Bytes())
-		}
+		return comp.SaveFolder(writer)
 	}
-	return nil
+	return err
 
 }
