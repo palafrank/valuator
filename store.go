@@ -3,7 +3,6 @@ package valuator
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -141,7 +140,7 @@ func (s *StoreCollection) Read(ticker string) error {
 
 	err = json.Unmarshal(b, &se)
 	if err != nil {
-		fmt.Println("ERROR:", err.Error())
+		log.Println("ERROR:", err.Error())
 		return err
 	}
 	se.Company = ticker

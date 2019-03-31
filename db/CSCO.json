@@ -25,14 +25,18 @@
                             "Dividend Per Share": 0.28
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 1791,
                             "Long-Term debt": 16297000000,
                             "Short-Term debt": 31000000,
                             "Current Liabilities": 17731000000,
                             "Deferred revenue": 8852000000,
                             "Retained Earnings": 11354000000,
                             "Total Shareholder Equity": 51286000000,
-                            "Current Assets": 61933000000
+                            "Current Assets": 61933000000,
+                            "Cash": 9799000000,
+                            "Securities": 0,
+                            "Goodwill": 16998000000,
+                            "Intangibles": 1959000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -64,14 +68,18 @@
                             "Dividend Per Share": 0.61
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 1791,
                             "Long-Term debt": 12928000000,
                             "Short-Term debt": 3283000000,
                             "Current Liabilities": 22192000000,
                             "Deferred revenue": 9262000000,
                             "Retained Earnings": 16215000000,
                             "Total Shareholder Equity": 59120000000,
-                            "Current Assets": 65521000000
+                            "Current Assets": 65521000000,
+                            "Cash": 9799000000,
+                            "Securities": 0,
+                            "Goodwill": 21919000000,
+                            "Intangibles": 3403000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -103,14 +111,18 @@
                             "Dividend Per Share": 0.71
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 1791,
                             "Long-Term debt": 20401000000,
                             "Short-Term debt": 508000000,
                             "Current Liabilities": 19809000000,
                             "Deferred revenue": 9478000000,
                             "Retained Earnings": 14093000000,
                             "Total Shareholder Equity": 56654000000,
-                            "Current Assets": 67114000000
+                            "Current Assets": 67114000000,
+                            "Cash": 7925000000,
+                            "Securities": 0,
+                            "Goodwill": 24239000000,
+                            "Intangibles": 3280000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -142,14 +154,18 @@
                             "Dividend Per Share": 0.79
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 1791,
                             "Long-Term debt": 21457000000,
                             "Short-Term debt": 3897000000,
                             "Current Liabilities": 23623000000,
                             "Deferred revenue": 9824000000,
                             "Retained Earnings": 16045000000,
                             "Total Shareholder Equity": 59698000000,
-                            "Current Assets": 76283000000
+                            "Current Assets": 76283000000,
+                            "Cash": 6877000000,
+                            "Securities": 0,
+                            "Goodwill": 24469000000,
+                            "Intangibles": 2376000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -181,14 +197,18 @@
                             "Dividend Per Share": 0.93
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 1791,
                             "Long-Term debt": 24483000000,
                             "Short-Term debt": 4160000000,
                             "Current Liabilities": 24911000000,
                             "Deferred revenue": 10155000000,
                             "Retained Earnings": 19396000000,
                             "Total Shareholder Equity": 63586000000,
-                            "Current Assets": 78719000000
+                            "Current Assets": 78719000000,
+                            "Cash": 7631000000,
+                            "Securities": 0,
+                            "Goodwill": 26625000000,
+                            "Intangibles": 2501000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -220,14 +240,18 @@
                             "Dividend Per Share": 1.09
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 1791,
                             "Long-Term debt": 25725000000,
                             "Short-Term debt": 7992000000,
                             "Current Liabilities": 27583000000,
                             "Deferred revenue": 10821000000,
                             "Retained Earnings": 20838000000,
                             "Total Shareholder Equity": 66137000000,
-                            "Current Assets": 83703000000
+                            "Current Assets": 83703000000,
+                            "Cash": 11708000000,
+                            "Securities": 0,
+                            "Goodwill": 29766000000,
+                            "Intangibles": 2539000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -259,14 +283,18 @@
                             "Dividend Per Share": 1.22
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 1791,
                             "Long-Term debt": 20331000000,
                             "Short-Term debt": 5238000000,
                             "Current Liabilities": 27035000000,
                             "Deferred revenue": 11490000000,
                             "Retained Earnings": 1233000000,
                             "Total Shareholder Equity": 43204000000,
-                            "Current Assets": 61837000000
+                            "Current Assets": 61837000000,
+                            "Cash": 8934000000,
+                            "Securities": 0,
+                            "Goodwill": 31706000000,
+                            "Intangibles": 2552000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -281,6 +309,7 @@
         }
     },
     "Financial Measures": {
+        "Recorded on": "2019-03-30",
         "Measures": [
             {
                 "Date": "2012-09-12",
@@ -465,6 +494,9 @@
             "Average Cash Flow Growth (%)": 2.66,
             "Average Dividend Growth (%)": 0.15,
             "Average Book Value Growth": -0.05
-        }
+        },
+        "Market Price": 53.99,
+        "Market Capitalization": 246806330002.64,
+        "Enterprise Value": 263441330002.64
     }
 }

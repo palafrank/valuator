@@ -36,21 +36,35 @@ type Filing interface {
 	Dividend() (float64, error)
 	DividendPerShare() (float64, error)
 	WAShares() (float64, error)
+	Cash() (float64, error)
+	Securities() (float64, error)
+	Goodwill() (float64, error)
+	Intangibles() (float64, error)
 }
 
 type valuation struct {
+	Date      Timestamp  `json:"Recorded on"`
 	FiledData []Measures `json:"Measures"`
 	Avgs      Average    `json:"Averages"`
+	Price     float64    `json:"Market Price"`
+	Mcap      float64    `json:"Market Capitalization"`
+	EV        float64    `json:"Enterprise Value"`
 }
 
 type valuator struct {
-	collector  map[string]Collector  `json:"-"`
+	collector  map[string]Collector
 	Valuations map[string]*valuation `json:"Company"`
-	store      Store                 `json:"-"`
+	store      Store
 }
 
 func (v valuator) String() string {
 	return v.store.String()
+}
+
+func (v valuator) HTML(ticker string) string {
+	collector := v.collector[ticker].HTML(ticker)
+	measures := v.Valuations[ticker].HTML()
+	return collector + measures
 }
 
 func (v valuation) String() string {
@@ -59,6 +73,21 @@ func (v valuation) String() string {
 		log.Fatal("Error marshaling valuation data: ", err)
 	}
 	return string(data)
+}
+
+func (v valuation) HTML() string {
+	header := `<html><body><table border="1">`
+	footer := `</table></body></html>`
+	title := `<h2>Valuation Metrics</h2>`
+
+	trDoc := header + title
+	trDoc += MeasuresHTMLHeader()
+
+	for _, m := range v.FiledData {
+		trDoc += m.HTML()
+	}
+	trDoc += footer
+	return trDoc
 }
 
 func (v *valuator) Write() error {
@@ -86,6 +115,14 @@ func (v *valuator) Clean(ticker string) {
 
 }
 
+func (v *valuator) LastFiling(ticker string) Filing {
+	if v, ok := v.Valuations[ticker]; ok {
+		m := v.FiledData[len(v.FiledData)-1]
+		return m.Filing()
+	}
+	return nil
+}
+
 func (v *valuator) Collect(ticker string) error {
 	if _, ok := v.collector[ticker]; ok {
 		return errors.New("Collection for ticker " + ticker + " is already done")
@@ -108,7 +145,6 @@ func (v *valuator) Collect(ticker string) error {
 		v.Clean(ticker)
 		return err
 	}
-
 	mea := NewMeasures(fils)
 
 	if err := NewYoYs(mea); err != nil {
@@ -121,10 +157,13 @@ func (v *valuator) Collect(ticker string) error {
 		v.Clean(ticker)
 		return err
 	}
-
-	v.Valuations[ticker].FiledData = mea
-	v.Valuations[ticker].Avgs = avg
-
+	valuation := v.Valuations[ticker]
+	valuation.FiledData = mea
+	valuation.Avgs = avg
+	valuation.Price = priceFetcher(ticker)
+	valuation.EV = v.EnterpriseValue(ticker)
+	valuation.Mcap = v.MarketCap(ticker)
+	valuation.Date = Timestamp(time.Now())
 	v.Store()
 
 	return nil

@@ -37,7 +37,7 @@ func TestValuatorQuery(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(handleTickers))
 	client := ts.Client()
 
-	res, err := client.Get(ts.URL + "?ticker=AAPL")
+	res, err := client.Get(ts.URL + "?ticker=AAPL&format=json")
 	if err != nil {
 		t.Error("Failed to get response from valuator server ", err.Error())
 		return
@@ -93,7 +93,7 @@ func TestValuatorDataQuery(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(handleTickers))
 	client := ts.Client()
 
-	res, err := client.Get(ts.URL + "?ticker=AAPL&data=yes")
+	res, err := client.Get(ts.URL + "?ticker=AAPL&data=yes&format=json")
 	if err != nil {
 		t.Error("Failed to get response from valuator server ", err.Error())
 		return
@@ -129,7 +129,7 @@ func TestValuatorQuerySpecific(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(handleTickers))
 	client := ts.Client()
 
-	res, err := client.Get(ts.URL + "?ticker=AAPL&data=yes&years=2013&years=2014")
+	res, err := client.Get(ts.URL + "?ticker=AAPL&data=yes&years=2013&years=2014&format=json")
 	if err != nil {
 		t.Error("Failed to get response from valuator server ", err.Error())
 		return

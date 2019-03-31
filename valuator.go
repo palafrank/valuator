@@ -48,6 +48,7 @@ type Valuator interface {
 	Clean(string)
 	Write() error
 	String() string
+	HTML(string) string
 }
 
 func NewValuator() (Valuator, error) {

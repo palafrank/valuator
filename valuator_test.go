@@ -209,3 +209,13 @@ func TestValuatorStore(t *testing.T) {
 	}
 
 }
+
+func TestPriceFetcher(t *testing.T) {
+
+	aapl := priceFetcher("AAPL")
+	pfe := priceFetcher("PFE")
+	dgx := priceFetcher("DGX")
+	if aapl <= 0 || pfe <= 0 || dgx <= 0 {
+		t.Error("Error getting price of tickers ", aapl, pfe, dgx)
+	}
+}

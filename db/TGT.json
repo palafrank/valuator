@@ -32,7 +32,11 @@
                             "Deferred revenue": 0,
                             "Retained Earnings": 12959000000,
                             "Total Shareholder Equity": 15821000000,
-                            "Current Assets": 16449000000
+                            "Current Assets": 16449000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -71,7 +75,11 @@
                             "Deferred revenue": 0,
                             "Retained Earnings": 13155000000,
                             "Total Shareholder Equity": 16558000000,
-                            "Current Assets": 16388000000
+                            "Current Assets": 16388000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -110,7 +118,11 @@
                             "Deferred revenue": 0,
                             "Retained Earnings": 12599000000,
                             "Total Shareholder Equity": 16231000000,
-                            "Current Assets": 11573000000
+                            "Current Assets": 11573000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -149,7 +161,11 @@
                             "Deferred revenue": 0,
                             "Retained Earnings": 9644000000,
                             "Total Shareholder Equity": 13997000000,
-                            "Current Assets": 14087000000
+                            "Current Assets": 14087000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -188,7 +204,11 @@
                             "Deferred revenue": 0,
                             "Retained Earnings": 8188000000,
                             "Total Shareholder Equity": 12957000000,
-                            "Current Assets": 14130000000
+                            "Current Assets": 14130000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -227,7 +247,11 @@
                             "Deferred revenue": 0,
                             "Retained Earnings": 5884000000,
                             "Total Shareholder Equity": 10953000000,
-                            "Current Assets": 11990000000
+                            "Current Assets": 11990000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -266,7 +290,11 @@
                             "Deferred revenue": 0,
                             "Retained Earnings": 6553000000,
                             "Total Shareholder Equity": 11709000000,
-                            "Current Assets": 12564000000
+                            "Current Assets": 12564000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -276,11 +304,55 @@
                             "Interest paid": 678000000
                         }
                     }
+                },
+                "2019-03-13": {
+                    "Company": "TGT",
+                    "Report date": "2019-03-13",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 516333213
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 75356000000,
+                            "Cost Of Revenue": 53299000000,
+                            "Gross Margin": 22057000000,
+                            "Operational Income": 4110000000,
+                            "Operational Expense": 17947000000,
+                            "Net Income": 2937000000,
+                            "Weighted Average Share Count": 533200000.00000006,
+                            "Dividend Per Share": 2.5
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 119,
+                            "Long-Term debt": 10223000000,
+                            "Short-Term debt": 1052000000,
+                            "Current Liabilities": 15014000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 6017000000,
+                            "Total Shareholder Equity": 11297000000,
+                            "Current Assets": 12519000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 5970000000,
+                            "Capital Expenditure": -3516000000,
+                            "Dividends paid": -1335000000,
+                            "Interest paid": 476000000
+                        }
+                    }
                 }
             }
         }
     },
     "Financial Measures": {
+        "Recorded on": "2019-03-30",
         "Measures": [
             {
                 "Date": "2012-03-15",
@@ -453,18 +525,47 @@
                     "Dividend Growth": 0.1,
                     "Book Value Growth": 1.92
                 }
+            },
+            {
+                "Date": "2019-03-13",
+                "Book Value": 21.87,
+                "Contribution Margin": 29,
+                "Operating Margin": 5,
+                "Operating Leverage": 5.8,
+                "Financial Leverage (%)": 99,
+                "Return on Equity (%)": 25,
+                "Return on Assets": 0,
+                "Dividend": 2.5,
+                "Free Cash Flow": 5970000000,
+                "Dividend to FCF": 22,
+                "Working Capital": -2495000000,
+                "Current Ratio": 0.83,
+                "YoY": {
+                    "Revenue Growth": 4,
+                    "Earning Growth": 0,
+                    "Operating Leverage Growth": 3,
+                    "Gross Margin Growth": 6,
+                    "Debt Growth": -10,
+                    "Equity Growth": -4,
+                    "Cash Flow Growth": -13,
+                    "Dividend Growth": 0.04,
+                    "Book Value Growth": 0.14
+                }
             }
         ],
         "Averages": {
-            "Average Revenue Growth (%)": 38,
-            "Average Earning Growth (%)": -89.17,
-            "Average Operating Leverage Growth (%)": 6,
-            "Average Gross Margin Growth (%)": 40.66,
-            "Average Debt Growth (%)": -2,
-            "Average Equity Growth (%)": -5,
-            "Average Cash Flow Growth (%)": 4.66,
-            "Average Dividend Growth (%)": 0.22,
-            "Average Book Value Growth": -0.33
-        }
+            "Average Revenue Growth (%)": 33.14,
+            "Average Earning Growth (%)": -76.43,
+            "Average Operating Leverage Growth (%)": 5.57,
+            "Average Gross Margin Growth (%)": 35.71,
+            "Average Debt Growth (%)": -3.15,
+            "Average Equity Growth (%)": -4.86,
+            "Average Cash Flow Growth (%)": 2.14,
+            "Average Dividend Growth (%)": 0.19,
+            "Average Book Value Growth": -0.26
+        },
+        "Market Price": 80.26,
+        "Market Capitalization": 41440903675.380005,
+        "Enterprise Value": 52715903675.380005
     }
 }

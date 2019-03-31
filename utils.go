@@ -1,7 +1,17 @@
 package valuator
 
 import (
+	"fmt"
+	"io/ioutil"
+	"log"
 	"math"
+	"net/http"
+	"strconv"
+)
+
+var (
+	priceUrlFormatString = `https://api.iextrading.com/1.0/stock/%s/price`
+	historicalPrice      = `https://api.iextrading.com/1.0/stock/%s/chart/date/%s`
 )
 
 func round(val float64) float64 {
@@ -33,4 +43,25 @@ func contains(key int, db []int) bool {
 		}
 	}
 	return false
+}
+
+func priceFetcher(ticker string) float64 {
+
+	url := fmt.Sprintf(priceUrlFormatString, ticker)
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Println("GET:" + err.Error())
+		return -1
+	}
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Println("READ:" + err.Error())
+		return -1
+	}
+	price, err := strconv.ParseFloat(string(data), 64)
+	if err != nil {
+		return 0
+	}
+	return price
+
 }

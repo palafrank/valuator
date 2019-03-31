@@ -13,6 +13,10 @@ func (t Timestamp) String() string {
 	return time.Time(t).Format("2006-01-02")
 }
 
+func (t Timestamp) print() string {
+	return time.Time(t).Format("20060102")
+}
+
 func (t Timestamp) MarshalJSON() ([]byte, error) {
 	return json.Marshal(t.String())
 }

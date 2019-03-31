@@ -21,7 +21,7 @@ func createAndRunServer() {
 }
 
 func handleRoot(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, from valuator")
+	fmt.Fprintf(w, "Hello World")
 }
 
 func handleTickers(w http.ResponseWriter, r *http.Request) {
@@ -29,6 +29,7 @@ func handleTickers(w http.ResponseWriter, r *http.Request) {
 	var tickers, years []string
 
 	dataOnly := false
+	jsonFormat := false
 	params := r.URL.Query()
 	for key, data := range params {
 		if key == "ticker" {
@@ -41,6 +42,10 @@ func handleTickers(w http.ResponseWriter, r *http.Request) {
 			return
 		} else if key == "data" {
 			dataOnly = true
+		} else if key == "format" {
+			if data[0] == "json" {
+				jsonFormat = true
+			}
 		}
 	}
 	if len(tickers) <= 0 {
@@ -54,32 +59,40 @@ func handleTickers(w http.ResponseWriter, r *http.Request) {
 	} else if err2 != nil {
 		fmt.Fprintf(w, err2.Error())
 	} else {
-		handleWebQuery(w, tickers, ys, dataOnly)
+		handleWebQuery(w, tickers, ys, dataOnly, jsonFormat)
 	}
 }
 
 func registerHandlers() {
 	http.HandleFunc("/valuator", handleTickers)
+	http.HandleFunc("/root", handleRoot)
 }
 
+// StartServer starts a webserver to serve queries to Valuator
 func StartServer() {
 	registerHandlers()
 	createAndRunServer()
 }
 
-func handleWebQuery(w http.ResponseWriter, tickers []string, years []int, dataOnly bool) {
+func handleWebQuery(w http.ResponseWriter, tickers []string,
+	years []int, dataOnly bool, jsonFormat bool) {
 	if dataOnly {
 		db, _ := NewValuatorDB()
 		store := NewStore(db)
 		c, _ := NewCollector(collectorEdgar, store)
 		for _, tick := range tickers {
+			store.Read(tick)
 			_, err := c.CollectAnnualData(tick, years...)
 			if err != nil {
 				fmt.Fprintln(w, "Failed to collect data for ", tick, err.Error())
 				return
 			}
-			if err := c.Write(tick, w); err != nil {
-				fmt.Fprintln(w, "Failed to collect data for ", tick, err.Error())
+			if jsonFormat {
+				if err := c.Write(tick, w); err != nil {
+					fmt.Fprintln(w, "Failed to collect data for ", tick, err.Error())
+				}
+			} else {
+				w.Write([]byte(c.HTML(tick)))
 			}
 		}
 		return
@@ -98,7 +111,13 @@ func handleWebQuery(w http.ResponseWriter, tickers []string, years []int, dataOn
 	}
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte(v.String()))
+	if jsonFormat {
+		w.Write([]byte(v.String()))
+	} else {
+		for _, tick := range tickers {
+			w.Write([]byte(v.HTML(tick)))
+		}
+	}
 }
 
 func validateYears(dates []string) ([]int, error) {
