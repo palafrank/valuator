@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"log"
+	"reflect"
 	"time"
 )
 
@@ -78,15 +79,26 @@ func (v valuation) String() string {
 func (v valuation) HTML() string {
 	header := `<html><body><table border="1">`
 	footer := `</table></body></html>`
-	title := `<h2>Valuation Metrics</h2>`
 
+	title := `<h2>Valuation Metrics</h2>`
 	trDoc := header + title
 	trDoc += MeasuresHTMLHeader()
-
 	for _, m := range v.FiledData {
 		trDoc += m.HTML()
 	}
 	trDoc += footer
+
+	title = `<h2>YoY Metrics</h2>`
+	trDoc += header + title
+	trDoc += YoYHTMLHeader()
+	for _, m := range v.FiledData {
+		if yoy := m.Yoy(); !reflect.ValueOf(yoy).IsNil() {
+			trDoc += yoy.HTML(m.FiledOn())
+		}
+	}
+
+	trDoc += footer
+
 	return trDoc
 }
 

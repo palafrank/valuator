@@ -26,7 +26,7 @@ type StoreEntry struct {
 }
 
 type StoreCollection struct {
-	db      database              `json:"-"`
+	db      database
 	Entries map[string]StoreEntry `json:"Ticker"`
 }
 

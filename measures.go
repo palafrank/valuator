@@ -202,7 +202,7 @@ func createMeasuresList(measures []Measures, endYear int) []Measures {
 }
 
 func (m *measures) FiledOn() string {
-	return m.filing.FiledOn().String()
+	return Timestamp(m.filing.FiledOn()).String()
 }
 
 func (m *measures) Filing() Filing {
