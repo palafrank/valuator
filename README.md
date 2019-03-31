@@ -28,6 +28,9 @@ Interfaces to various Metrics:
 REST interface:
   - Server
       The valuator provides a RESTful server that allows the user to start the valuator as a server and query information about a single ticker or a collection of tickers through a REST query.
+      
+# Server
+The Valuator provides a webserver that acts as a query interface to the valuator. 
 
 Some useful measures:
 
