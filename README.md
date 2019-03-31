@@ -32,6 +32,9 @@ REST interface:
 # Server
 The Valuator provides a webserver that acts as a query interface to the valuator. 
 
+- Data only query
+- Valuation query
+
 Some useful measures:
 
 Working Capital:
