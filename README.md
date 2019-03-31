@@ -3,7 +3,7 @@ A Stock Valuator
 
 A package that gets input data about company filings and uses different valuation methods to come up with price range for stock prices.
 
-Design:
+# Design
 
 There are four main interfaces to the valuator:
   - Valuator
@@ -17,24 +17,27 @@ There are four main interfaces to the valuator:
   - Database
       Database is an interface for different underlying databases that could be used by the valuator.
 
-Interfaces to various Metrics:
+# Interfaces to various Metrics:
   - Measures
       Interface to the computed metrics from the data collected from filing. This is used as the basis for other calculated YoY metrics and averages
   - YoY
       This interface is a set of metrics generated from contiguous data available from the Measures interfaces. The interface reflects data YoY as calculated over the collected Measures
   - Averages
       This interface provides access to averages calculated for all the collected data and metrics. This forms the basis for projected valuations and intrinsic value calculations
-
-REST interface:
-  - Server
-      The valuator provides a RESTful server that allows the user to start the valuator as a server and query information about a single ticker or a collection of tickers through a REST query.
       
 # Server
-The Valuator provides a webserver that acts as a query interface to the valuator. 
+The Valuator provides a webserver that acts as a query interface to the valuator. The data queried is served in the form of simple HTML tables for easy reading and evaluating. If requested, the data can also be provided in the form of a raw JSON document
 
+- Starting a server
+  - Currently the server bound IP and port are predefined as localhost:8080
+  ex: valuator.StartServer()
 - Data only query
-- Valuation query
-
+  ex: http://localhost:8080/valuator?ticker=AAPL&data=yes
+- Valuation query (Including data)
+  ex: http://localhost:8080/valuator?ticker=CSCO
+- Get data in raw JSON format
+  ex: http://localhost:8080/valuator?ticker=AAPL&data=yes&format=json
+  ex: http://localhost:8080/valuator?ticker=CSCO&format=json
 Some useful measures:
 
 Working Capital:
