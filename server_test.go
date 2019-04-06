@@ -93,13 +93,43 @@ func TestValuatorDataQuery(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(handleTickers))
 	client := ts.Client()
 
-	res, err := client.Get(ts.URL + "?ticker=AAPL&data=yes&format=json")
+	// Check HTML format
+	res, err := client.Get(ts.URL + "?ticker=AAPL&data=yes")
 	if err != nil {
 		t.Error("Failed to get response from valuator server ", err.Error())
 		return
 	}
 
 	data, err := ioutil.ReadAll(res.Body)
+	res.Body.Close()
+	if err != nil {
+		t.Error("Failed to parse greetings from valuator server ", err.Error())
+		return
+	}
+
+	if strings.Contains(string(data), `"Financial Measures"`) {
+		t.Error("Financial measures not included")
+		return
+	}
+
+	if strings.Contains(string(data), `"Averages"`) {
+		t.Error("Averages not included")
+		return
+	}
+
+	if strings.Contains(string(data), `"YoY"`) {
+		t.Error("YoY not included")
+		return
+	}
+
+	// Check JSON format
+	res, err = client.Get(ts.URL + "?ticker=AAPL&data=yes&format=json")
+	if err != nil {
+		t.Error("Failed to get response from valuator server ", err.Error())
+		return
+	}
+
+	data, err = ioutil.ReadAll(res.Body)
 	res.Body.Close()
 	if err != nil {
 		t.Error("Failed to parse greetings from valuator server ", err.Error())

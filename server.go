@@ -3,21 +3,21 @@ package valuator
 import (
 	"errors"
 	"fmt"
-	"log"
 	"net/http"
 	"strconv"
 	"time"
 )
 
-func createAndRunServer() {
+func createAndRunServer(url string, port string) error {
 	s := &http.Server{
-		Addr:           ":8080",
+		Addr:           url + ":" + port,
 		Handler:        nil,
 		ReadTimeout:    100 * time.Second,
 		WriteTimeout:   100 * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}
-	log.Fatal(s.ListenAndServe())
+
+	return s.ListenAndServeTLS("server.crt", "server.key")
 }
 
 func handleRoot(w http.ResponseWriter, r *http.Request) {
@@ -69,9 +69,12 @@ func registerHandlers() {
 }
 
 // StartServer starts a webserver to serve queries to Valuator
-func StartServer() {
+func StartServer(url string, port string) error {
 	registerHandlers()
-	createAndRunServer()
+	if url == "" || port == "" {
+		return errors.New("Invalid URL or port specified for server")
+	}
+	return createAndRunServer(url, port)
 }
 
 func handleWebQuery(w http.ResponseWriter, tickers []string,
