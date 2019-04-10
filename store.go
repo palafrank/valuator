@@ -8,29 +8,32 @@ import (
 	"log"
 )
 
+// MarshaledData is a wrapper of already marshalled data
 type MarshaledData []byte
 
+// MarshalJSON is a wrapper to return already marshalled data from store
 func (d MarshaledData) MarshalJSON() ([]byte, error) {
 	return []byte(d), nil
 }
 
+// UnmarshalJSON is a wrapper to return already unmarshalled data to the store
 func (d *MarshaledData) UnmarshalJSON(b []byte) error {
 	*d = b
 	return nil
 }
 
-type StoreEntry struct {
+type storeEntry struct {
 	Company     string        `json:"Company"`
 	FinData     MarshaledData `json:"Financial Data"`
 	FinMeasures MarshaledData `json:"Financial Measures"`
 }
 
-type StoreCollection struct {
-	db      database
-	Entries map[string]StoreEntry `json:"Ticker"`
+type storeCollection struct {
+	db      Database
+	Entries map[string]storeEntry `json:"Ticker"`
 }
 
-func (s StoreEntry) String() string {
+func (s storeEntry) String() string {
 
 	data, err := json.MarshalIndent(s, "", "    ")
 	if err != nil {
@@ -39,7 +42,7 @@ func (s StoreEntry) String() string {
 	return string(data)
 }
 
-func (s StoreCollection) String() string {
+func (s storeCollection) String() string {
 	data, err := json.MarshalIndent(s, "", "    ")
 	if err != nil {
 		log.Fatal("Error marshaling valuator data: ", err)
@@ -54,66 +57,68 @@ func (s StoreCollection) String() string {
   The valuator populates the store initially based on the DB that it has and
   saves data from the store to the DB
 */
+
+// Store interface provides a read & write interface with the in-memory store
 type Store interface {
-	GetFinancials(string) io.Reader
-	PutFinancials(string, []byte)
-	GetMeasures(string) io.Reader
-	PutMeasures(string, []byte)
-	Write() error
-	Read(string) error
+	getFinancials(string) io.Reader
+	putFinancials(string, []byte)
+	getMeasures(string) io.Reader
+	putMeasures(string, []byte)
+	write() error
+	read(string) error
 	String() string
 }
 
-func NewStore(d database) Store {
-	return &StoreCollection{
+func newStore(d Database) Store {
+	return &storeCollection{
 		db:      d,
-		Entries: make(map[string]StoreEntry),
+		Entries: make(map[string]storeEntry),
 	}
 }
 
-func (s *StoreCollection) GetFinancials(ticker string) io.Reader {
+func (s *storeCollection) getFinancials(ticker string) io.Reader {
 	if entry, ok := s.Entries[ticker]; ok {
 		return bytes.NewReader(entry.FinData)
 	}
 	return nil
 }
 
-func (s *StoreCollection) PutFinancials(ticker string, data []byte) {
+func (s *storeCollection) putFinancials(ticker string, data []byte) {
 	if entry, ok := s.Entries[ticker]; ok {
 		entry.FinData = data
 		entry.Company = ticker
 		s.Entries[ticker] = entry
 		return
 	}
-	entry := StoreEntry{
+	entry := storeEntry{
 		FinData: data,
 	}
 	s.Entries[ticker] = entry
 	return
 }
 
-func (s *StoreCollection) GetMeasures(ticker string) io.Reader {
+func (s *storeCollection) getMeasures(ticker string) io.Reader {
 	if entry, ok := s.Entries[ticker]; ok {
 		return bytes.NewReader(entry.FinMeasures)
 	}
 	return nil
 }
 
-func (s *StoreCollection) PutMeasures(ticker string, data []byte) {
+func (s *storeCollection) putMeasures(ticker string, data []byte) {
 	if entry, ok := s.Entries[ticker]; ok {
 		entry.FinMeasures = data
 		entry.Company = ticker
 		s.Entries[ticker] = entry
 		return
 	}
-	entry := StoreEntry{
+	entry := storeEntry{
 		FinMeasures: data,
 	}
 	s.Entries[ticker] = entry
 	return
 }
 
-func (s *StoreCollection) Write() error {
+func (s *storeCollection) write() error {
 	for ticker, entry := range s.Entries {
 
 		if err := s.db.Write(ticker, []byte(entry.String())); err != nil {
@@ -124,7 +129,7 @@ func (s *StoreCollection) Write() error {
 	return nil
 }
 
-func (s *StoreCollection) Read(ticker string) error {
+func (s *storeCollection) read(ticker string) error {
 	if _, ok := s.Entries[ticker]; ok {
 		return nil
 	}
@@ -136,7 +141,7 @@ func (s *StoreCollection) Read(ticker string) error {
 	if err != nil {
 		return err
 	}
-	var se StoreEntry
+	var se storeEntry
 
 	err = json.Unmarshal(b, &se)
 	if err != nil {

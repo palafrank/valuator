@@ -2,6 +2,7 @@ package valuator
 
 import "log"
 
+// Valuator interface allows queries into the the valuator for valuation metrics
 type Valuator interface {
 	/*
 		 	DiscountedCashFlowTrend
@@ -51,15 +52,16 @@ type Valuator interface {
 	HTML(string) string
 }
 
+// NewValuator creates a new valuator to generate valuation metrics
 func NewValuator() (Valuator, error) {
-	db, err := NewValuatorDB()
+	db, err := newValuatorDB()
 	if err != nil {
 		log.Println("Error creating valuator: ", err)
 	}
 	v := &valuator{
 		collector:  make(map[string]Collector),
 		Valuations: make(map[string]*valuation),
-		store:      NewStore(db),
+		store:      newStore(db),
 	}
 
 	return v, nil

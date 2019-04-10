@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"log"
 	"sort"
-	"strconv"
 )
 
+// Measures provides and interface to the computed mesaures from a filing
 type Measures interface {
 	Filing() Filing
 	FiledOn() string
@@ -25,7 +25,6 @@ type Measures interface {
 	WorkingCapital() float64
 	CurrentRatio() float64
 	String() string
-	HTML() string
 }
 
 type measures struct {
@@ -55,99 +54,7 @@ func (m measures) String() string {
 	return string(data)
 }
 
-func (m measures) HTML() string {
-	trOpen := `<tr>`
-	trClose := `</tr>`
-	trDataOpen := `<th>`
-	trDataClose := `</th>`
-
-	// Start a new row
-	trData := trOpen
-
-	// Add all the Columns
-	trData += trDataOpen
-	trData += m.Date.String()
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.BookValue(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.DividendPerShare(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.FreeCashFlow(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.PayOutToFcf(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.ContribMargin(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.OpsMargin(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.OperatingLeverage(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.FinancialLeverage(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.CurrentRatio(), 'f', 2, 64)
-	trData += trDataClose
-
-	/*
-		trData += trDataOpen
-		trData += strconv.FormatFloat(m.ReturnOnAssets(), 'f', 2, 64)
-		trData += trDataClose
-	*/
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(m.ReturnOnEquity(), 'f', 2, 64)
-	trData += trDataClose
-
-	// End the Row
-	trData += trClose
-
-	return trData
-}
-
-func MeasuresHTMLHeader() string {
-
-	trOpen := `<tr>`
-	trClose := `</tr>`
-	trDataOpen := `<th>`
-	trDataClose := `</th>`
-
-	trDoc := trOpen
-
-	trDoc += trDataOpen + "Filed" + trDataClose
-	trDoc += trDataOpen + "Book" + trDataClose
-	trDoc += trDataOpen + "DPS" + trDataClose
-	trDoc += trDataOpen + "FCF" + trDataClose
-	trDoc += trDataOpen + "Payout" + trDataClose
-	trDoc += trDataOpen + "Net Margin" + trDataClose
-	trDoc += trDataOpen + "Ops Margin" + trDataClose
-	trDoc += trDataOpen + "Ops Lev" + trDataClose
-	trDoc += trDataOpen + "Fin Lev" + trDataClose
-	trDoc += trDataOpen + "C Ratio" + trDataClose
-	//trDoc += trDataOpen + "RoA" + trDataClose
-	trDoc += trDataOpen + "RoE" + trDataClose
-	trDoc += trClose
-
-	return trDoc
-}
-
-func NewMeasures(fs []Filing) []Measures {
+func newMeasures(fs []Filing) []Measures {
 	var ms []Measures
 	for _, f := range fs {
 		m := new(measures)
@@ -169,7 +76,7 @@ func (m *measures) Yoy() Yoy {
 }
 
 func (m *measures) NewYoy(past Measures) error {
-	yoy, err := NewYoy(past, m)
+	yoy, err := newYoy(past, m)
 	if err == nil {
 		m.YearOnYear = yoy
 	}

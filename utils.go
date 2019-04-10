@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	priceUrlFormatString = `https://api.iextrading.com/1.0/stock/%s/price`
+	priceURLFormatString = `https://api.iextrading.com/1.0/stock/%s/price`
 	historicalPrice      = `https://api.iextrading.com/1.0/stock/%s/chart/date/%s`
 )
 
@@ -47,7 +47,7 @@ func contains(key int, db []int) bool {
 
 func priceFetcher(ticker string) float64 {
 
-	url := fmt.Sprintf(priceUrlFormatString, ticker)
+	url := fmt.Sprintf(priceURLFormatString, ticker)
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Println("GET:" + err.Error())

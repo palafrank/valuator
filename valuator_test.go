@@ -5,11 +5,11 @@ import (
 )
 
 func TestAAPLCollector(t *testing.T) {
-	db, _ := NewValuatorDB()
-	s := NewStore(db)
-	c, _ := NewCollector(collectorEdgar, s)
+	db, _ := newValuatorDB()
+	s := newStore(db)
+	c, _ := NewCollector(CollectorEdgar, s)
 	fs, _ := c.CollectAnnualData("AAPL", 2012, 2013, 2014, 2015, 2016, 2017)
-	m := NewMeasures(fs)
+	m := newMeasures(fs)
 	if m[4].BookValue() != 24.05 {
 		t.Error("Book value was not the expected value", m[4].BookValue(), 24.05)
 	}
@@ -42,7 +42,7 @@ func TestAAPLCollector(t *testing.T) {
 	if m[5].FinancialLeverage() != 72 {
 		t.Error("Financial Leverage was not the expected value", m[5].FinancialLeverage(), 0.77)
 	}
-	s.Write()
+	s.write()
 }
 
 func TestNewPSXValuator(t *testing.T) {
@@ -195,10 +195,10 @@ func TestNewWValuator(t *testing.T) {
 }
 
 func TestValuatorStore(t *testing.T) {
-	db, _ := NewValuatorDB()
-	s := NewStore(db)
-	s.Read("IBM")
-	collect, err := NewCollector(collectorEdgar, s)
+	db, _ := newValuatorDB()
+	s := newStore(db)
+	s.read("IBM")
+	collect, err := NewCollector(CollectorEdgar, s)
 	if err != nil {
 		t.Error("Failed to create a collector with a store")
 		return

@@ -3,9 +3,9 @@ package valuator
 import (
 	"encoding/json"
 	"log"
-	"strconv"
 )
 
+// Yoy is an interface to get year-over-year information from a sequence of filings
 type Yoy interface {
 	RevenueGrowth() float64
 	EarningsGrowth() float64
@@ -16,7 +16,6 @@ type Yoy interface {
 	CashFlowGrowth() float64
 	DividendGrowth() float64
 	BookValueGrowth() float64
-	HTML(string) string
 }
 
 type yoy struct {
@@ -31,91 +30,15 @@ type yoy struct {
 	Bv        float64 `json:"Book Value Growth"`
 }
 
-func YoYHTMLHeader() string {
-
-	trOpen := `<tr>`
-	trClose := `</tr>`
-	trDataOpen := `<th>`
-	trDataClose := `</th>`
-
-	trDoc := trOpen
-
-	trDoc += trDataOpen + "Filed" + trDataClose
-	trDoc += trDataOpen + "Revenue(%)" + trDataClose
-	trDoc += trDataOpen + "Earnings(%)" + trDataClose
-	trDoc += trDataOpen + "FCF(%)" + trDataClose
-	trDoc += trDataOpen + "Margin(%)" + trDataClose
-	trDoc += trDataOpen + "Debt(%)" + trDataClose
-	trDoc += trDataOpen + "Equity(%)" + trDataClose
-	trDoc += trDataOpen + "BV" + trDataClose
-	trDoc += trDataOpen + "Div" + trDataClose
-	trDoc += trClose
-
-	return trDoc
-}
-
-func (y yoy) HTML(date string) string {
-	trOpen := `<tr>`
-	trClose := `</tr>`
-	trDataOpen := `<th>`
-	trDataClose := `</th>`
-
-	// Start a new row
-	trData := trOpen
-
-	// Add all the Columns
-	trData += trDataOpen
-	trData += date
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(y.RevenueGrowth(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(y.EarningsGrowth(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(y.CashFlowGrowth(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(y.GrossMarginGrowth(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(y.DebtGrowth(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(y.EquityGrowth(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(y.BookValueGrowth(), 'f', 2, 64)
-	trData += trDataClose
-
-	trData += trDataOpen
-	trData += strconv.FormatFloat(y.DividendGrowth(), 'f', 2, 64)
-	trData += trDataClose
-
-	// End the Row
-	trData += trClose
-
-	return trData
-
-}
-
-func (m yoy) String() string {
-	data, err := json.MarshalIndent(m, "", "    ")
+func (y yoy) String() string {
+	data, err := json.MarshalIndent(y, "", "    ")
 	if err != nil {
 		log.Fatal("Error marshaling year over year data: ", err)
 	}
 	return string(data)
 }
 
-func NewYoYs(mea []Measures) error {
+func newYoYs(mea []Measures) error {
 	// Calculate YoY
 	if len(mea) > 1 {
 		for i := 1; i < len(mea); i++ {
@@ -128,7 +51,7 @@ func NewYoYs(mea []Measures) error {
 	return nil
 }
 
-func NewYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
+func newYoy(pastMeasure Measures, currentMeasure Measures) (*yoy, error) {
 
 	ret := new(yoy)
 	past := pastMeasure.Filing()

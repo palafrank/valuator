@@ -14,7 +14,7 @@ type fileDB struct {
 	writer map[string]*os.File
 }
 
-func NewFileDB(url string) *fileDB {
+func newFileDB(url string) *fileDB {
 	return &fileDB{
 		path:   url,
 		writer: make(map[string]*os.File),

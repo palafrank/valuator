@@ -6,27 +6,33 @@ import (
 	"log"
 )
 
+// DatabaseType is a type definition of the different databases supported by valuator
 type DatabaseType string
 
-var (
-	FileDatabaseType  DatabaseType = "file"
-	MongoDatabaseType DatabaseType = "mongo"
-	NoneDatabaseType  DatabaseType = "none"
-)
+// FileDatabaseType is a file database type
+const FileDatabaseType DatabaseType = "file"
 
-type database interface {
+// MongoDatabaseType is a mongo database type
+const MongoDatabaseType DatabaseType = "mongo"
+
+// NoneDatabaseType is a no database type
+const NoneDatabaseType DatabaseType = "none"
+
+// Database is an interface to the database used by the valuator
+type Database interface {
 	Open() error
 	Close()
 	Read(string) (io.Reader, error)
 	Write(string, []byte) error
 }
 
-func NewDatabase(url interface{}, ty DatabaseType) (database, error) {
-	var db database
+// NewDatabase creates a new database to be used by valuator
+func NewDatabase(url interface{}, ty DatabaseType) (Database, error) {
+	var db Database
 	switch ty {
 	case FileDatabaseType:
 		if _, ok := url.(string); ok {
-			db = NewFileDB(url.(string))
+			db = newFileDB(url.(string))
 		}
 	case NoneDatabaseType:
 		return &noneDB{}, nil

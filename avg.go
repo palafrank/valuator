@@ -6,6 +6,7 @@ import (
 	"reflect"
 )
 
+// Average is a interface for computed averages from collected filings
 type Average interface {
 	AvgRevenueGrowth() float64
 	AvgEarningsGrowth() float64
@@ -30,7 +31,7 @@ type averages struct {
 	Bv        float64 `json:"Average Book Value Growth"`
 }
 
-func NewAverages(m []Measures) (Average, error) {
+func newAverages(m []Measures) (Average, error) {
 	var y []Yoy
 	for _, val := range m {
 		lvar := val.Yoy()

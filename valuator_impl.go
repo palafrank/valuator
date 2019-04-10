@@ -4,14 +4,15 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
+	"html/template"
 	"log"
 	"reflect"
 	"time"
 )
 
 var (
-	valuatorDatabaseURL  string       = "./db/"
-	valuatorDatabaseType DatabaseType = FileDatabaseType
+	valuatorDatabaseURL  = "./db/"
+	valuatorDatabaseType = FileDatabaseType
 )
 
 // Filing interface for fetching financial data
@@ -63,8 +64,31 @@ func (v valuator) String() string {
 }
 
 func (v valuator) HTML(ticker string) string {
+	// Get filing data
 	collector := v.collector[ticker].HTML(ticker)
-	measures := v.Valuations[ticker].HTML()
+
+	// Get Measures data
+	by := bytes.NewBuffer(nil)
+	t := template.New("valuator")
+	t.Funcs(template.FuncMap{
+		"isYoyNonNil": func(m Measures) bool {
+			if yoy := m.Yoy(); !reflect.ValueOf(yoy).IsNil() {
+				return true
+			}
+			return false
+		},
+		"getYoy": func(m Measures) Yoy {
+			return m.Yoy()
+		},
+	})
+	t, err := t.Parse(valuatorTemplate)
+	if err != nil {
+		panic(err.Error())
+	}
+
+	t.Execute(by, v.Valuations[ticker])
+	measures := string(by.Bytes())
+
 	return collector + measures
 }
 
@@ -76,47 +100,21 @@ func (v valuation) String() string {
 	return string(data)
 }
 
-func (v valuation) HTML() string {
-	header := `<html><body><table border="1">`
-	footer := `</table></body></html>`
-
-	title := `<h2>Valuation Metrics</h2>`
-	trDoc := header + title
-	trDoc += MeasuresHTMLHeader()
-	for _, m := range v.FiledData {
-		trDoc += m.HTML()
-	}
-	trDoc += footer
-
-	title = `<h2>YoY Metrics</h2>`
-	trDoc += header + title
-	trDoc += YoYHTMLHeader()
-	for _, m := range v.FiledData {
-		if yoy := m.Yoy(); !reflect.ValueOf(yoy).IsNil() {
-			trDoc += yoy.HTML(m.FiledOn())
-		}
-	}
-
-	trDoc += footer
-
-	return trDoc
-}
-
 func (v *valuator) Write() error {
-	return v.store.Write()
+	return v.store.write()
 }
 
 func (v *valuator) Store() error {
 	for ticker, collector := range v.collector {
 		by := bytes.NewBuffer(nil)
 		if err := collector.Write(ticker, by); err == nil {
-			v.store.PutFinancials(ticker, by.Bytes())
+			v.store.putFinancials(ticker, by.Bytes())
 		} else {
 			log.Println("Error getting doc for ", ticker, err.Error())
 		}
 	}
 	for ticker, value := range v.Valuations {
-		v.store.PutMeasures(ticker, []byte(value.String()))
+		v.store.putMeasures(ticker, []byte(value.String()))
 	}
 	return nil
 }
@@ -142,8 +140,8 @@ func (v *valuator) Collect(ticker string) error {
 	v.Valuations[ticker] = &valuation{
 		Avgs: nil,
 	}
-	v.store.Read(ticker)
-	collect, err := NewCollector(collectorEdgar, v.store)
+	v.store.read(ticker)
+	collect, err := NewCollector(CollectorEdgar, v.store)
 	if err != nil {
 		log.Println("Error getting the collector: ", err.Error())
 		v.Clean(ticker)
@@ -157,13 +155,13 @@ func (v *valuator) Collect(ticker string) error {
 		v.Clean(ticker)
 		return err
 	}
-	mea := NewMeasures(fils)
+	mea := newMeasures(fils)
 
-	if err := NewYoYs(mea); err != nil {
+	if err = newYoYs(mea); err != nil {
 		return err
 	}
 
-	avg, err := NewAverages(mea)
+	avg, err := newAverages(mea)
 	if err != nil {
 		log.Println("Error collecting averages: ", err.Error())
 		v.Clean(ticker)
@@ -181,6 +179,6 @@ func (v *valuator) Collect(ticker string) error {
 	return nil
 }
 
-func NewValuatorDB() (database, error) {
+func newValuatorDB() (Database, error) {
 	return NewDatabase(valuatorDatabaseURL, valuatorDatabaseType)
 }

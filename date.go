@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// Timestamp is a wrapper for time.Time
 type Timestamp time.Time
 
 func (t Timestamp) String() string {
@@ -17,10 +18,12 @@ func (t Timestamp) print() string {
 	return time.Time(t).Format("20060102")
 }
 
+// MarshalJSON is a special marshal of the timestamp type
 func (t Timestamp) MarshalJSON() ([]byte, error) {
 	return json.Marshal(t.String())
 }
 
+// UnmarshalJSON is a special unmarshal to Timestamp format
 func (t *Timestamp) UnmarshalJSON(b []byte) error {
 	var s string
 	if err := json.Unmarshal(b, &s); err != nil {

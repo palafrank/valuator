@@ -5,14 +5,13 @@ import (
 	"io"
 )
 
-type FilingDate string
-type FilingType string
+// CollectorType is a type definition for different collector types
 type CollectorType string
 
-var (
-	collectorEdgar CollectorType = "edgar"
-)
+// CollectorEdgar is the collector defined in the edgar package
+const CollectorEdgar CollectorType = "edgar"
 
+// Collector interface provides access to the collector
 type Collector interface {
 	// Name of the collector
 	Name() string
@@ -24,11 +23,12 @@ type Collector interface {
 	HTML(string) string
 }
 
+// NewCollector creates a collector to collect filings
 func NewCollector(name CollectorType, store Store) (Collector, error) {
 
 	switch name {
-	case collectorEdgar:
-		return NewEdgarCollector(store)
+	case CollectorEdgar:
+		return newEdgarCollector(store)
 	default:
 	}
 

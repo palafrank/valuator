@@ -20,10 +20,6 @@ func createAndRunServer(url string, port string) error {
 	return s.ListenAndServeTLS("server.crt", "server.key")
 }
 
-func handleRoot(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World")
-}
-
 func handleTickers(w http.ResponseWriter, r *http.Request) {
 
 	var tickers, years []string
@@ -37,9 +33,6 @@ func handleTickers(w http.ResponseWriter, r *http.Request) {
 			tickers = data
 		} else if key == "years" {
 			years = data
-		} else if key == "test" {
-			fmt.Fprintf(w, "Hello, from valuator ticker handler "+r.URL.String())
-			return
 		} else if key == "data" {
 			dataOnly = true
 		} else if key == "format" {
@@ -65,7 +58,6 @@ func handleTickers(w http.ResponseWriter, r *http.Request) {
 
 func registerHandlers() {
 	http.HandleFunc("/valuator", handleTickers)
-	http.HandleFunc("/root", handleRoot)
 }
 
 // StartServer starts a webserver to serve queries to Valuator
@@ -80,11 +72,11 @@ func StartServer(url string, port string) error {
 func handleWebQuery(w http.ResponseWriter, tickers []string,
 	years []int, dataOnly bool, jsonFormat bool) {
 	if dataOnly {
-		db, _ := NewValuatorDB()
-		store := NewStore(db)
-		c, _ := NewCollector(collectorEdgar, store)
+		db, _ := newValuatorDB()
+		store := newStore(db)
+		c, _ := NewCollector(CollectorEdgar, store)
 		for _, tick := range tickers {
-			store.Read(tick)
+			store.read(tick)
 			_, err := c.CollectAnnualData(tick, years...)
 			if err != nil {
 				fmt.Fprintln(w, "Failed to collect data for ", tick, err.Error())

@@ -23,7 +23,7 @@ func (v *valuator) DiscountedCashFlowTrend(ticker string, dr float64, trend floa
 
 	if len(endYear) == 1 {
 		meas := createMeasuresList(vals.FiledData, endYear[0])
-		if avgs, err := NewAverages(meas); err == nil {
+		if avgs, err := newAverages(meas); err == nil {
 			div = avgs.AvgDividendGrowth()
 			bv = avgs.AvgBookValueGrowth()
 		} else {
@@ -55,7 +55,7 @@ func (v *valuator) DiscountedFCFTrend(ticker string, dr float64, trend float64, 
 
 	if len(endYear) == 1 {
 		meas := createMeasuresList(vals.FiledData, endYear[0])
-		if avgs, err := NewAverages(meas); err == nil {
+		if avgs, err := newAverages(meas); err == nil {
 			div = avgs.AvgDividendGrowth()
 			fcf = avgs.AvgCashFlowGrowth()
 			bv = meas[len(meas)-1].BookValue()

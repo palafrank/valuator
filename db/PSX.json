@@ -309,7 +309,7 @@
         }
     },
     "Financial Measures": {
-        "Recorded on": "2019-03-31",
+        "Recorded on": "2019-04-09",
         "Measures": [
             {
                 "Date": "2013-02-22",
@@ -495,8 +495,8 @@
             "Average Dividend Growth (%)": 0.42,
             "Average Book Value Growth": 3.45
         },
-        "Market Price": 95.17,
-        "Market Capitalization": 43294078489.79,
-        "Enterprise Value": 51435078489.79
+        "Market Price": 97.37,
+        "Market Capitalization": 44294887281.19,
+        "Enterprise Value": 52435887281.19
     }
 }

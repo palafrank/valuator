@@ -8,31 +8,6 @@ import (
 	"testing"
 )
 
-func TestValuatorServer(t *testing.T) {
-	ts := httptest.NewServer(http.HandlerFunc(handleTickers))
-	client := ts.Client()
-
-	res, err := client.Get(ts.URL + "?test=yes")
-	if err != nil {
-		t.Error("Failed to get response from valuator server ", err.Error())
-		return
-	}
-
-	greeting, err := ioutil.ReadAll(res.Body)
-	res.Body.Close()
-	if err != nil {
-		t.Error("Failed to parse greetings from valuator server ", err.Error())
-		return
-	}
-
-	if !strings.Contains(string(greeting), "Hello, from valuator ticker handler") {
-		t.Error("Failed to get the right greeting from the server ", string(greeting))
-	}
-
-	ts.Close()
-
-}
-
 func TestValuatorQuery(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(handleTickers))
 	client := ts.Client()
@@ -89,12 +64,12 @@ func TestValuatorQuery(t *testing.T) {
 
 }
 
-func TestValuatorDataQuery(t *testing.T) {
+func TestValuatorHTMLQuery(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(handleTickers))
 	client := ts.Client()
 
 	// Check HTML format
-	res, err := client.Get(ts.URL + "?ticker=AAPL&data=yes")
+	res, err := client.Get(ts.URL + "?ticker=IBM")
 	if err != nil {
 		t.Error("Failed to get response from valuator server ", err.Error())
 		return
@@ -108,28 +83,33 @@ func TestValuatorDataQuery(t *testing.T) {
 	}
 
 	if strings.Contains(string(data), `"Financial Measures"`) {
-		t.Error("Financial measures not included")
+		t.Error("Should not be JSON format")
 		return
 	}
 
-	if strings.Contains(string(data), `"Averages"`) {
-		t.Error("Averages not included")
+	if !strings.Contains(string(data), `<tr>`) {
+		t.Error("Should contain HTML rows")
+		return
+	}
+	if !strings.Contains(string(data), `<table`) {
+		t.Error("Should contain HTML table")
 		return
 	}
 
-	if strings.Contains(string(data), `"YoY"`) {
-		t.Error("YoY not included")
-		return
-	}
+}
+
+func TestValuatorDataJSONQuery(t *testing.T) {
+	ts := httptest.NewServer(http.HandlerFunc(handleTickers))
+	client := ts.Client()
 
 	// Check JSON format
-	res, err = client.Get(ts.URL + "?ticker=AAPL&data=yes&format=json")
+	res, err := client.Get(ts.URL + "?ticker=IBM&data=yes&format=json")
 	if err != nil {
 		t.Error("Failed to get response from valuator server ", err.Error())
 		return
 	}
 
-	data, err = ioutil.ReadAll(res.Body)
+	data, err := ioutil.ReadAll(res.Body)
 	res.Body.Close()
 	if err != nil {
 		t.Error("Failed to parse greetings from valuator server ", err.Error())
@@ -137,17 +117,42 @@ func TestValuatorDataQuery(t *testing.T) {
 	}
 
 	if strings.Contains(string(data), `"Financial Measures"`) {
-		t.Error("Financial measures not included")
+		t.Error("Financial measures included")
 		return
 	}
 
 	if strings.Contains(string(data), `"Averages"`) {
-		t.Error("Averages not included")
+		t.Error("Averages included")
 		return
 	}
 
 	if strings.Contains(string(data), `"YoY"`) {
-		t.Error("YoY not included")
+		t.Error("YoY included")
+		return
+	}
+
+	if !strings.Contains(string(data), `"Financial Data"`) {
+		t.Error("Filing data not included")
+		return
+	}
+
+	if !strings.Contains(string(data), `"Operational Information"`) {
+		t.Error("Operational Information not included")
+		return
+	}
+
+	if !strings.Contains(string(data), `"Balance Sheet Information"`) {
+		t.Error("Balance Sheet information not included")
+		return
+	}
+
+	if !strings.Contains(string(data), `"Cash Flow Information"`) {
+		t.Error("Cash flow information not included")
+		return
+	}
+
+	if !strings.Contains(string(data), `"Entity Information"`) {
+		t.Error("Entity information not included")
 		return
 	}
 

@@ -15,7 +15,7 @@ type edgarCollector struct {
 	store   Store
 }
 
-func NewEdgarCollector(store Store) (Collector, error) {
+func newEdgarCollector(store Store) (Collector, error) {
 	//Get the Fetcher
 	fetcher := edgar.NewFilingFetcher()
 	if fetcher == nil {
@@ -54,10 +54,10 @@ func (c *edgarCollector) CollectAnnualData(ticker string,
 
 	var err error
 	var cf edgar.CompanyFolder
-	var fp io.Reader = nil
+	var fp io.Reader
 
 	if c.store != nil {
-		fp = c.store.GetFinancials(ticker)
+		fp = c.store.getFinancials(ticker)
 	}
 
 	if fp == nil {
