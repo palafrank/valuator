@@ -1,0 +1,502 @@
+{
+    "Company": "PSX",
+    "Financial Data": {
+        "Company": "PSX",
+        "Financial Reports": {
+            "10-K": {
+                "2013-02-22": {
+                    "Company": "PSX",
+                    "Report date": "2013-02-22",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 621509611
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 179460000000,
+                            "Cost Of Revenue": 154483000000,
+                            "Gross Margin": 24977000000,
+                            "Operational Income": 6631000000,
+                            "Operational Expense": 4032000000,
+                            "Net Income": 4131000000,
+                            "Weighted Average Share Count": 636764000,
+                            "Dividend Per Share": 0.44
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 119,
+                            "Long-Term debt": 6961000000,
+                            "Short-Term debt": 13000000,
+                            "Current Liabilities": 12482000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 2713000000,
+                            "Total Shareholder Equity": 20775000000,
+                            "Current Assets": 17962000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 4296000000,
+                            "Capital Expenditure": -1721000000,
+                            "Dividends paid": -282000000,
+                            "Interest paid": 246000000
+                        }
+                    }
+                },
+                "2014-02-21": {
+                    "Company": "PSX",
+                    "Report date": "2014-02-21",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 587624299
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 171596000000,
+                            "Cost Of Revenue": 148245000000,
+                            "Gross Margin": 23351000000,
+                            "Operational Income": 5526000000,
+                            "Operational Expense": 4206000000,
+                            "Net Income": 3743000000,
+                            "Weighted Average Share Count": 618989000,
+                            "Dividend Per Share": 1.3
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 119,
+                            "Long-Term debt": 6131000000,
+                            "Short-Term debt": 24000000,
+                            "Current Liabilities": 12931000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 5622000000,
+                            "Total Shareholder Equity": 21950000000,
+                            "Current Assets": 19237000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 5942000000,
+                            "Capital Expenditure": -1779000000,
+                            "Dividends paid": -807000000,
+                            "Interest paid": 275000000
+                        }
+                    }
+                },
+                "2015-02-20": {
+                    "Company": "PSX",
+                    "Report date": "2015-02-20",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 543497802
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 161212000000,
+                            "Cost Of Revenue": 135748000000,
+                            "Gross Margin": 25464000000,
+                            "Operational Income": 5745000000,
+                            "Operational Expense": 4435000000,
+                            "Net Income": 4797000000,
+                            "Weighted Average Share Count": 571504000,
+                            "Dividend Per Share": 1.85
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 119,
+                            "Long-Term debt": 7842000000,
+                            "Short-Term debt": 842000000,
+                            "Current Liabilities": 11094000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 9309000000,
+                            "Total Shareholder Equity": 21590000000,
+                            "Current Assets": 16696000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 3527000000,
+                            "Capital Expenditure": -3773000000,
+                            "Dividends paid": -1062000000,
+                            "Interest paid": 267000000
+                        }
+                    }
+                },
+                "2016-02-19": {
+                    "Company": "PSX",
+                    "Report date": "2016-02-19",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 527459894
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 98975000000,
+                            "Cost Of Revenue": 73399000000,
+                            "Gross Margin": 25576000000,
+                            "Operational Income": 6044000000,
+                            "Operational Expense": 4294000000,
+                            "Net Income": 4280000000,
+                            "Weighted Average Share Count": 546977000,
+                            "Dividend Per Share": 2.14
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 119,
+                            "Long-Term debt": 8843000000,
+                            "Short-Term debt": 44000000,
+                            "Current Liabilities": 7531000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 12348000000,
+                            "Total Shareholder Equity": 23100000000,
+                            "Current Assets": 12256000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 5713000000,
+                            "Capital Expenditure": -5764000000,
+                            "Dividends paid": -1172000000,
+                            "Interest paid": 310000000
+                        }
+                    }
+                },
+                "2017-02-17": {
+                    "Company": "PSX",
+                    "Report date": "2017-02-17",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 517816429
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 84279000000,
+                            "Cost Of Revenue": 62468000000,
+                            "Gross Margin": 21811000000,
+                            "Operational Income": 2191000000,
+                            "Operational Expense": 4275000000,
+                            "Net Income": 1644000000,
+                            "Weighted Average Share Count": 530066000,
+                            "Dividend Per Share": 2.41
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 119,
+                            "Long-Term debt": 9588000000,
+                            "Short-Term debt": 550000000,
+                            "Current Liabilities": 9463000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 12608000000,
+                            "Total Shareholder Equity": 22390000000,
+                            "Current Assets": 12680000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 2963000000,
+                            "Capital Expenditure": -2844000000,
+                            "Dividends paid": -1282000000,
+                            "Interest paid": 338000000
+                        }
+                    }
+                },
+                "2018-02-23": {
+                    "Company": "PSX",
+                    "Report date": "2018-02-23",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 501237339
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 102354000000,
+                            "Cost Of Revenue": 79409000000,
+                            "Gross Margin": 22945000000,
+                            "Operational Income": 3555000000,
+                            "Operational Expense": 4699000000,
+                            "Net Income": 5248000000,
+                            "Weighted Average Share Count": 518508000,
+                            "Dividend Per Share": 2.69
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 119,
+                            "Long-Term debt": 10069000000,
+                            "Short-Term debt": 41000000,
+                            "Current Liabilities": 10107000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 16306000000,
+                            "Total Shareholder Equity": 25085000000,
+                            "Current Assets": 14390000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 3648000000,
+                            "Capital Expenditure": -1832000000,
+                            "Dividends paid": -1395000000,
+                            "Interest paid": 438000000
+                        }
+                    }
+                },
+                "2019-02-22": {
+                    "Company": "PSX",
+                    "Report date": "2019-02-22",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 454913087
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 29098000000,
+                            "Cost Of Revenue": 97930000000,
+                            "Gross Margin": -68832000000,
+                            "Operational Income": 7445000000,
+                            "Operational Expense": 4880000000,
+                            "Net Income": 2316000000,
+                            "Weighted Average Share Count": 474047000,
+                            "Dividend Per Share": 3.02
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 119,
+                            "Long-Term debt": 11093000000,
+                            "Short-Term debt": 67000000,
+                            "Current Liabilities": 8935000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 20489000000,
+                            "Total Shareholder Equity": 24653000000,
+                            "Current Assets": 13209000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 7573000000,
+                            "Capital Expenditure": -2639000000,
+                            "Dividends paid": -1436000000,
+                            "Interest paid": 504000000
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Financial Measures": {
+        "Recorded on": "2019-03-04",
+        "Measures": [
+            {
+                "Date": "2013-02-22",
+                "Book Value": 33.42,
+                "Contribution Margin": 13,
+                "Operating Margin": 3,
+                "Operating Leverage": 4.33,
+                "Financial Leverage (%)": 33,
+                "Return on Equity (%)": 19,
+                "Return on Assets": 0,
+                "Dividend": 0.44,
+                "Free Cash Flow": 4296000000,
+                "Dividend to FCF": 6,
+                "Working Capital": 5480000000,
+                "Current Ratio": 1.43,
+                "YoY": null
+            },
+            {
+                "Date": "2014-02-21",
+                "Book Value": 37.35,
+                "Contribution Margin": 13,
+                "Operating Margin": 3,
+                "Operating Leverage": 4.33,
+                "Financial Leverage (%)": 28,
+                "Return on Equity (%)": 17,
+                "Return on Assets": 0,
+                "Dividend": 1.3,
+                "Free Cash Flow": 5942000000,
+                "Dividend to FCF": 13,
+                "Working Capital": 6306000000,
+                "Current Ratio": 1.48,
+                "YoY": {
+                    "Revenue Growth": -5,
+                    "Earning Growth": -10,
+                    "Operating Leverage Growth": 0,
+                    "Gross Margin Growth": -7,
+                    "Debt Growth": -12,
+                    "Equity Growth": 5,
+                    "Cash Flow Growth": 38,
+                    "Dividend Growth": 0.86,
+                    "Book Value Growth": 3.93
+                }
+            },
+            {
+                "Date": "2015-02-20",
+                "Book Value": 39.72,
+                "Contribution Margin": 15,
+                "Operating Margin": 3,
+                "Operating Leverage": 5,
+                "Financial Leverage (%)": 40,
+                "Return on Equity (%)": 22,
+                "Return on Assets": 0,
+                "Dividend": 1.85,
+                "Free Cash Flow": 3527000000,
+                "Dividend to FCF": 30,
+                "Working Capital": 5602000000,
+                "Current Ratio": 1.5,
+                "YoY": {
+                    "Revenue Growth": -7,
+                    "Earning Growth": 28,
+                    "Operating Leverage Growth": 15,
+                    "Gross Margin Growth": 9,
+                    "Debt Growth": 27,
+                    "Equity Growth": -2,
+                    "Cash Flow Growth": -41,
+                    "Dividend Growth": 0.55,
+                    "Book Value Growth": 2.36
+                }
+            },
+            {
+                "Date": "2016-02-19",
+                "Book Value": 43.79,
+                "Contribution Margin": 25,
+                "Operating Margin": 6,
+                "Operating Leverage": 4.16,
+                "Financial Leverage (%)": 38,
+                "Return on Equity (%)": 18,
+                "Return on Assets": 0,
+                "Dividend": 2.14,
+                "Free Cash Flow": 5713000000,
+                "Dividend to FCF": 20,
+                "Working Capital": 4725000000,
+                "Current Ratio": 1.62,
+                "YoY": {
+                    "Revenue Growth": -39,
+                    "Earning Growth": -11,
+                    "Operating Leverage Growth": -17,
+                    "Gross Margin Growth": 0,
+                    "Debt Growth": 12,
+                    "Equity Growth": 6,
+                    "Cash Flow Growth": 61,
+                    "Dividend Growth": 0.29,
+                    "Book Value Growth": 4.07
+                }
+            },
+            {
+                "Date": "2017-02-17",
+                "Book Value": 43.23,
+                "Contribution Margin": 25,
+                "Operating Margin": 2,
+                "Operating Leverage": 12.5,
+                "Financial Leverage (%)": 45,
+                "Return on Equity (%)": 7,
+                "Return on Assets": 0,
+                "Dividend": 2.41,
+                "Free Cash Flow": 2963000000,
+                "Dividend to FCF": 43,
+                "Working Capital": 3217000000,
+                "Current Ratio": 1.33,
+                "YoY": {
+                    "Revenue Growth": -15,
+                    "Earning Growth": -62,
+                    "Operating Leverage Growth": 200,
+                    "Gross Margin Growth": -15,
+                    "Debt Growth": 8,
+                    "Equity Growth": -4,
+                    "Cash Flow Growth": -49,
+                    "Dividend Growth": 0.27,
+                    "Book Value Growth": -0.57
+                }
+            },
+            {
+                "Date": "2018-02-23",
+                "Book Value": 50.04,
+                "Contribution Margin": 22,
+                "Operating Margin": 3,
+                "Operating Leverage": 7.33,
+                "Financial Leverage (%)": 40,
+                "Return on Equity (%)": 20,
+                "Return on Assets": 0,
+                "Dividend": 2.69,
+                "Free Cash Flow": 3648000000,
+                "Dividend to FCF": 38,
+                "Working Capital": 4283000000,
+                "Current Ratio": 1.42,
+                "YoY": {
+                    "Revenue Growth": 21,
+                    "Earning Growth": 219,
+                    "Operating Leverage Growth": -42,
+                    "Gross Margin Growth": 5,
+                    "Debt Growth": 5,
+                    "Equity Growth": 12,
+                    "Cash Flow Growth": 23,
+                    "Dividend Growth": 0.27,
+                    "Book Value Growth": 6.81
+                }
+            },
+            {
+                "Date": "2019-02-22",
+                "Book Value": 54.19,
+                "Contribution Margin": -237,
+                "Operating Margin": 25,
+                "Operating Leverage": -9.48,
+                "Financial Leverage (%)": 45,
+                "Return on Equity (%)": 9,
+                "Return on Assets": 0,
+                "Dividend": 3.02,
+                "Free Cash Flow": 7573000000,
+                "Dividend to FCF": 18,
+                "Working Capital": 4274000000,
+                "Current Ratio": 1.47,
+                "YoY": {
+                    "Revenue Growth": -72,
+                    "Earning Growth": -56,
+                    "Operating Leverage Growth": -230,
+                    "Gross Margin Growth": -400,
+                    "Debt Growth": 10,
+                    "Equity Growth": -2,
+                    "Cash Flow Growth": 107,
+                    "Dividend Growth": 0.33,
+                    "Book Value Growth": 4.14
+                }
+            }
+        ],
+        "Averages": {
+            "Average Revenue Growth (%)": -19.5,
+            "Average Earning Growth (%)": 18,
+            "Average Operating Leverage Growth (%)": -12.34,
+            "Average Gross Margin Growth (%)": -68,
+            "Average Debt Growth (%)": 8.33,
+            "Average Equity Growth (%)": 2.5,
+            "Average Cash Flow Growth (%)": 23.16,
+            "Average Dividend Growth (%)": 0.42,
+            "Average Book Value Growth": 3.45
+        },
+        "Market Price": 97.28,
+        "Market Capitalization": 44253945103.36,
+        "Enterprise Value": 55413945103.36
+    }
+}

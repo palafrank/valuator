@@ -1,0 +1,79 @@
+<html>
+<body>
+  <h4>Filed Data</h4>
+  <table border="1">
+    <tr>
+      <th>
+        Filed
+      </th>
+      <th>
+        Equity
+      </th>
+      <th>
+        Shares
+      </th>
+      <th>
+        Revenue
+      </th>
+      <th>
+        CoRev
+      </th>
+      <th>
+        OpsExp
+      </th>
+      <th>
+        OpsInc
+      </th>
+      <th>
+        NetInc
+      </th>
+      <th>
+        LDebt
+      </th>
+      <th>
+        SDebt
+      </th>
+      <th>
+        Cash
+      </th>
+    </tr>
+    {{ range $index, $report := .Filings }}
+      <tr>
+        <th>
+          {{ date $report }}
+        </th>
+        <th>
+          {{ printf "%.2f"  (equity $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (sharecount $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (revenue $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (costofrevenue $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (opsexpense $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (opsincome $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (netincome $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (ltdebt $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (stdebt $report) }}
+        </th>
+        <th>
+          {{ printf "%.2f" (cash $report) }}
+        </th>
+      </tr>
+   {{ end }}
+  </table>
+</body>
+</html>

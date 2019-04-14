@@ -1,0 +1,6 @@
+package: github.com/palafrank/valuator
+import:
+- package: golang.org/x/net
+  subpackages:
+  - html
+- package: github.com/palafrank/edgar

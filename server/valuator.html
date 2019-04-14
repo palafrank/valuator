@@ -1,0 +1,275 @@
+<html>
+  <body>
+  <h4>Valuation Metrics</h4>
+    <table border="1">
+      <tr>
+        <th>
+          Filed
+        </th>
+        <th>
+          Book
+        </th>
+        <th>
+          DPS
+        </th>
+        <th>
+          FCF
+        </th>
+        <th>
+          Payout
+        </th>
+        <th>
+          NetMargin
+        </th>
+        <th>
+          OpsMargin
+        </th>
+        <th>
+          OpsLev
+        </th>
+        <th>
+          FinLev
+        </th>
+        <th>
+          CRatio
+        </th>
+        <th>
+          RoA
+        </th>
+        <th>
+          RoE
+        </th>
+      </tr>
+      {{ range $index, $m := .Measures }}
+      <tr>
+        <th>
+          {{ $m.Date.String }}
+        </th>
+        <th>
+          {{ $m.BookValue }}
+        </th>
+        <th>
+          {{ $m.DividendPerShare }}
+        </th>
+        <th>
+          {{ printf "%.2f" $m.FreeCashFlow }}
+        </th>
+        <th>
+          {{ $m.PayOutToFcf }}
+        </th>
+        <th>
+          {{ $m.ContribMargin }}
+        </th>
+        <th>
+          {{ $m.OpsMargin }}
+        </th>
+        <th>
+          {{ $m.OperatingLeverage }}
+        </th>
+        <th>
+          {{ $m.FinancialLeverage }}
+        </th>
+        <th>
+          {{ $m.CurrentRatio }}
+        </th>
+        <th>
+          {{ $m.ReturnOnAssets }}
+        </th>
+        <th>
+          {{ $m.ReturnOnEquity }}
+        </th>
+      </tr>
+      {{ end }}
+    </table>
+    <h4>YoY Metrics</h4>
+    <table border="1">
+      <tr>
+        <th>
+          Filed
+          </th>
+        <th>
+          Revenue(%)
+        </th>
+        <th>
+          Earnings(%)
+        </th>
+        <th>
+          FCF(%)
+        </th>
+        <th>
+          Margin(%)
+        </th>
+        <th>
+          Debt(%)
+        </th>
+        <th>
+          Equity(%)
+        </th>
+        <th>
+          BV
+        </th>
+        <th>
+          Div
+        </th>
+      </tr>
+      {{ range $index, $m := .Measures }}
+      {{ if (isYoyNonNil $m) }}
+      {{ $yoy := $m.Yoy }}
+      <tr>
+        <th>
+          {{ $m.Date.String }}
+        </th>
+        <th>
+          {{ $yoy.RevenueGrowth }}
+        </th>
+        <th>
+          {{ $yoy.EarningsGrowth }}
+        </th>
+        <th>
+          {{ $yoy.CashFlowGrowth }}
+        </th>
+        <th>
+          {{ $yoy.GrossMarginGrowth }}
+        </th>
+        <th>
+          {{ $yoy.DebtGrowth }}
+        </th>
+        <th>
+          {{ $yoy.EquityGrowth }}
+        </th>
+        <th>
+          {{ $yoy.BookValueGrowth }}
+        </th>
+        <th>
+          {{ $yoy.DividendGrowth }}
+        </th>
+      </tr>
+      {{end}}
+      {{end}}
+    </table>
+    <h4>Averages</h4>
+    <table border="1">
+    <tr>
+      <th>
+        RevGrowth
+      </th>
+      <th>
+        IncGrowth
+      </th>
+      <th>
+        OpsLevGrowth
+      </th>
+      <th>
+        GrossMarginGrowth
+      </th>
+      <th>
+        DebtGrowth
+      </th>
+      <th>
+        EquityGrowth
+      </th>
+      <th>
+        CashFlowGrowth
+      </th>
+      <th>
+        DivGrowth
+      </th>
+      <th>
+        BVGrowth
+      </th>
+    </tr>
+    <tr>
+      <th>
+        {{ .Avg.AvgRevenueGrowth }}
+      </th>
+      <th>
+        {{ .Avg.AvgEarningsGrowth }}
+      </th>
+      <th>
+        {{ .Avg.AvgOlGrowth }}
+      </th>
+      <th>
+        {{ .Avg.AvgGrossMarginGrowth }}
+      </th>
+      <th>
+        {{ .Avg.AvgDebtGrowth }}
+      </th>
+      <th>
+        {{ .Avg.AvgEquityGrowth }}
+      </th>
+      <th>
+        {{ .Avg.AvgCashFlowGrowth }}
+      </th>
+      <th>
+        {{ .Avg.AvgDividendGrowth }}
+      </th>
+      <th>
+        {{ .Avg.AvgBookValueGrowth }}
+      </th>
+    </tr>
+    </table>
+    <h4>Discounted Cash Flow Valuations</h4>
+    <table border=1>
+      <tr>
+        <th>
+          Metric vs Trend
+        </th>
+        <th>
+          25%
+        </th>
+        <th>
+          50%
+        </th>
+        <th>
+          100%
+        </th>
+        <th>
+          125%
+        </th>
+        <th>
+          150%
+        </th>
+      </tr>
+      <tr>
+        <th>
+          DCF (BV & DIV)
+        </th>
+        <th>
+          {{ dcfTrend .Ticker 3 10 25 }}
+        </th>
+        <th>
+          {{ dcfTrend .Ticker 3 10 50 }}
+        </th>
+        <th>
+          {{ dcfTrend .Ticker 3 10 100 }}
+        </th>
+        <th>
+          {{ dcfTrend .Ticker 3 10 125 }}
+        </th>
+        <th>
+          {{ dcfTrend .Ticker 3 10 150 }}
+        </th>
+      </tr>
+      <tr>
+        <th>
+          DCF (FCF)
+        </th>
+        <th>
+          {{ dcfFCFTrend .Ticker 3 10 25 }}
+        </th>
+        <th>
+          {{ dcfFCFTrend .Ticker 3 10 50 }}
+        </th>
+        <th>
+          {{ dcfFCFTrend .Ticker 3 10 100 }}
+        </th>
+        <th>
+          {{ dcfFCFTrend .Ticker 3 10 125 }}
+        </th>
+        <th>
+          {{ dcfFCFTrend .Ticker 3 10 150 }}
+        </th>
+      </tr>
+    </table>
+  </body>
+</html>
