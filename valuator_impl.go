@@ -3,16 +3,8 @@ package valuator
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
-	"html/template"
 	"log"
-	"reflect"
 	"time"
-)
-
-var (
-	valuatorDatabaseURL  = "./db/"
-	valuatorDatabaseType = FileDatabaseType
 )
 
 // Filing interface for fetching financial data
@@ -45,6 +37,7 @@ type Filing interface {
 }
 
 type valuation struct {
+	Ticker    string     `json:"-"`
 	Date      Timestamp  `json:"Recorded on"`
 	FiledData []Measures `json:"Measures"`
 	Avgs      Average    `json:"Averages"`
@@ -61,35 +54,6 @@ type valuator struct {
 
 func (v valuator) String() string {
 	return v.store.String()
-}
-
-func (v valuator) HTML(ticker string) string {
-	// Get filing data
-	collector := v.collector[ticker].HTML(ticker)
-
-	// Get Measures data
-	by := bytes.NewBuffer(nil)
-	t := template.New("valuator")
-	t.Funcs(template.FuncMap{
-		"isYoyNonNil": func(m Measures) bool {
-			if yoy := m.Yoy(); !reflect.ValueOf(yoy).IsNil() {
-				return true
-			}
-			return false
-		},
-		"getYoy": func(m Measures) Yoy {
-			return m.Yoy()
-		},
-	})
-	t, err := t.Parse(valuatorTemplate)
-	if err != nil {
-		panic(err.Error())
-	}
-
-	t.Execute(by, v.Valuations[ticker])
-	measures := string(by.Bytes())
-
-	return collector + measures
 }
 
 func (v valuation) String() string {
@@ -125,6 +89,17 @@ func (v *valuator) Clean(ticker string) {
 
 }
 
+func (v *valuator) Filings(ticker string) []Filing {
+	if v, ok := v.Valuations[ticker]; ok {
+		filings := make([]Filing, len(v.FiledData))
+		for i, m := range v.FiledData {
+			filings[i] = m.Filing()
+		}
+		return filings
+	}
+	return []Filing{}
+}
+
 func (v *valuator) LastFiling(ticker string) Filing {
 	if v, ok := v.Valuations[ticker]; ok {
 		m := v.FiledData[len(v.FiledData)-1]
@@ -133,12 +108,28 @@ func (v *valuator) LastFiling(ticker string) Filing {
 	return nil
 }
 
+func (v *valuator) Measures(ticker string) []Measures {
+	if v, ok := v.Valuations[ticker]; ok {
+		return v.FiledData
+	}
+	return []Measures{}
+}
+
+func (v *valuator) Averages(ticker string) Average {
+	if v, ok := v.Valuations[ticker]; ok {
+		return v.Avgs
+	}
+	return nil
+}
+
 func (v *valuator) Collect(ticker string) error {
 	if _, ok := v.collector[ticker]; ok {
-		return errors.New("Collection for ticker " + ticker + " is already done")
+		log.Println("Collection for ticker " + ticker + " is already done")
+		return nil
 	}
 	v.Valuations[ticker] = &valuation{
-		Avgs: nil,
+		Ticker: ticker,
+		Avgs:   nil,
 	}
 	v.store.read(ticker)
 	collect, err := NewCollector(CollectorEdgar, v.store)
@@ -177,8 +168,4 @@ func (v *valuator) Collect(ticker string) error {
 	v.Store()
 
 	return nil
-}
-
-func newValuatorDB() (Database, error) {
-	return NewDatabase(valuatorDatabaseURL, valuatorDatabaseType)
 }

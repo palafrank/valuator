@@ -40,15 +40,6 @@ func (c *edgarCollector) Name() string {
 	return "Edgar Collector"
 }
 
-func (c *edgarCollector) HTML(ticker string) string {
-	comp, err := c.fetcher.CompanyFolder(ticker)
-	if err == nil {
-		return comp.HTML(edgar.FilingType10K)
-	}
-	return ""
-
-}
-
 func (c *edgarCollector) CollectAnnualData(ticker string,
 	years ...int) ([]Filing, error) {
 

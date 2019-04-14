@@ -4,9 +4,14 @@ import (
 	"testing"
 )
 
+var (
+	valuatorDatabaseURL  = "./db/"
+	valuatorDatabaseType = FileDatabaseType
+	testFileDB, _        = NewDatabase(valuatorDatabaseURL, valuatorDatabaseType)
+)
+
 func TestAAPLCollector(t *testing.T) {
-	db, _ := newValuatorDB()
-	s := newStore(db)
+	s := newStore(testFileDB)
 	c, _ := NewCollector(CollectorEdgar, s)
 	fs, _ := c.CollectAnnualData("AAPL", 2012, 2013, 2014, 2015, 2016, 2017)
 	m := newMeasures(fs)
@@ -46,7 +51,7 @@ func TestAAPLCollector(t *testing.T) {
 }
 
 func TestNewPSXValuator(t *testing.T) {
-	v, err := NewValuator()
+	v, err := NewValuator(testFileDB)
 	if err != nil {
 		t.Error("Failed to create valuator: ", err.Error())
 		return
@@ -75,7 +80,7 @@ func TestNewPSXValuator(t *testing.T) {
 }
 
 func TestNewTGTValuator(t *testing.T) {
-	v, err := NewValuator()
+	v, err := NewValuator(testFileDB)
 	if err != nil {
 		t.Error("Failed to create valuator: ", err.Error())
 		return
@@ -110,7 +115,7 @@ func TestNewTGTValuator(t *testing.T) {
 }
 
 func TestNewIBMValuator(t *testing.T) {
-	v, err := NewValuator()
+	v, err := NewValuator(testFileDB)
 	if err != nil {
 		t.Error("Failed to create valuator: ", err.Error())
 		return
@@ -131,7 +136,7 @@ func TestNewIBMValuator(t *testing.T) {
 }
 
 func TestNewMSFTValuator(t *testing.T) {
-	v, err := NewValuator()
+	v, err := NewValuator(testFileDB)
 	if err != nil {
 		t.Error("Failed to create valuator: ", err.Error())
 		return
@@ -154,7 +159,7 @@ func TestNewMSFTValuator(t *testing.T) {
 }
 
 func TestNewCSCOValuator(t *testing.T) {
-	v, err := NewValuator()
+	v, err := NewValuator(testFileDB)
 	if err != nil {
 		t.Error("Failed to create valuator: ", err.Error())
 		return
@@ -181,7 +186,7 @@ func TestNewCSCOValuator(t *testing.T) {
 }
 
 func TestNewWValuator(t *testing.T) {
-	v, err := NewValuator()
+	v, err := NewValuator(testFileDB)
 	if err != nil {
 		t.Error("Failed to create valuator: ", err.Error())
 		return
@@ -195,8 +200,7 @@ func TestNewWValuator(t *testing.T) {
 }
 
 func TestValuatorStore(t *testing.T) {
-	db, _ := newValuatorDB()
-	s := newStore(db)
+	s := newStore(testFileDB)
 	s.read("IBM")
 	collect, err := NewCollector(CollectorEdgar, s)
 	if err != nil {

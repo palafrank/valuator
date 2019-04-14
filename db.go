@@ -38,7 +38,8 @@ func NewDatabase(url interface{}, ty DatabaseType) (Database, error) {
 		return &noneDB{}, nil
 	default:
 		log.Println("Unknown Database type ", ty)
-		return nil, errors.New("Unknown database type " + string(ty))
+		return nil, errors.New("Unknown database type " + string(ty) +
+			". Application should directly pass a Database interface to the Valuator")
 	}
 	if err := db.Open(); err != nil {
 		return nil, err

@@ -24,21 +24,8 @@ There are four main interfaces to the valuator:
       This interface is a set of metrics generated from contiguous data available from the Measures interfaces. The interface reflects data YoY as calculated over the collected Measures
   - Averages
       This interface provides access to averages calculated for all the collected data and metrics. This forms the basis for projected valuations and intrinsic value calculations
-      
-# Server
-The Valuator provides a webserver that acts as a query interface to the valuator. The data queried is served in the form of simple HTML tables for easy reading and evaluating. If requested, the data can also be provided in the form of a raw JSON document
 
-- Starting a server
-  - Currently the server bound IP and port are predefined as localhost:8080
-  ex: valuator.StartServer()
-- Data only query
-  ex: http://localhost:8080/valuator?ticker=AAPL&data=yes
-- Valuation query (Including data)
-  ex: http://localhost:8080/valuator?ticker=CSCO
-- Get data in raw JSON format
-  ex: http://localhost:8080/valuator?ticker=AAPL&data=yes&format=json
-  ex: http://localhost:8080/valuator?ticker=CSCO&format=json
-Some useful measures:
+# Some useful measures:
 
 Working Capital:
 ---------------

@@ -19,8 +19,6 @@ type Collector interface {
 	CollectAnnualData(ticker string, year ...int) ([]Filing, error)
 	// Write the Collectors content to an IO Writer
 	Write(string, io.Writer) error
-	//HTML returns the HTML formatted output of the collector
-	HTML(string) string
 }
 
 // NewCollector creates a collector to collect filings

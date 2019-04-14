@@ -1,9 +1,10 @@
 package valuator
 
-import "log"
-
 // Valuator interface allows queries into the the valuator for valuation metrics
 type Valuator interface {
+
+	// Interfaces to calculate valuation of a Company
+
 	/*
 		 	DiscountedCashFlowTrend
 			Calculated DCF based on the collected BV and DIV growth rates
@@ -44,19 +45,42 @@ type Valuator interface {
 	*/
 	DiscountedFCFTrend(ticker string, dr float64, trend float64, duration int, endYear ...int) (float64, error)
 
-	/* Utility APIs*/
+	/* Per Ticker interface */
+
+	// Collect collects filing information for a specific ticker
 	Collect(string) error
+
+	// Filings returns all the collected filings for a specific ticker
+	Filings(string) []Filing
+
+	// LastFiling returns the cronologically ordered last filing collected
+	LastFiling(string) Filing
+
+	// Measures returns all the computed measures for a specific ticker
+	Measures(string) []Measures
+
+	// Averages returns the computed average metrics for a specific ticker
+	Averages(string) Average
+
+	// Clean clears all the filing data collected for a specific ticker
 	Clean(string)
+
+	/* Overall Valuator interface */
+
+	// Write saves the entire data in the valuator to the underlying database
 	Write() error
+
+	// String creates a JSON output of the entire data in the valuator
 	String() string
-	HTML(string) string
 }
 
 // NewValuator creates a new valuator to generate valuation metrics
-func NewValuator() (Valuator, error) {
-	db, err := newValuatorDB()
-	if err != nil {
-		log.Println("Error creating valuator: ", err)
+func NewValuator(db Database) (Valuator, error) {
+	if db == nil {
+		var err error
+		if db, err = NewDatabase(nil, NoneDatabaseType); err != nil {
+			panic("Could not create a NoneDatabaseType")
+		}
 	}
 	v := &valuator{
 		collector:  make(map[string]Collector),

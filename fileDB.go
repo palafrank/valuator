@@ -9,6 +9,14 @@ import (
 	"os"
 )
 
+/*
+	FileDB is an internally supported implementation of the Database interface.
+	This be used by applications that want to simply uses text files to save the
+	output received from the valuator to store information for later use.
+	The file path will be provided by the app and the name of the files will
+	be detrmined by the ticker that is being queried.
+*/
+
 type fileDB struct {
 	path   string
 	writer map[string]*os.File
