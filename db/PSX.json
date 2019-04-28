@@ -36,7 +36,9 @@
                             "Cash": 3474000000,
                             "Securities": 0,
                             "Goodwill": 3344000000,
-                            "Intangibles": 724000000
+                            "Intangibles": 724000000,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -79,7 +81,9 @@
                             "Cash": 5400000000,
                             "Securities": 0,
                             "Goodwill": 3096000000,
-                            "Intangibles": 698000000
+                            "Intangibles": 698000000,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -122,7 +126,9 @@
                             "Cash": 5207000000,
                             "Securities": 0,
                             "Goodwill": 3274000000,
-                            "Intangibles": 900000000
+                            "Intangibles": 900000000,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -165,7 +171,9 @@
                             "Cash": 5207000000,
                             "Securities": 0,
                             "Goodwill": 3275000000,
-                            "Intangibles": 906000000
+                            "Intangibles": 906000000,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -208,7 +216,9 @@
                             "Cash": 3074000000,
                             "Securities": 0,
                             "Goodwill": 3270000000,
-                            "Intangibles": 888000000
+                            "Intangibles": 888000000,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -251,7 +261,9 @@
                             "Cash": 3119000000,
                             "Securities": 0,
                             "Goodwill": 3270000000,
-                            "Intangibles": 876000000
+                            "Intangibles": 876000000,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -294,7 +306,9 @@
                             "Cash": 3019000000,
                             "Securities": 0,
                             "Goodwill": 3270000000,
-                            "Intangibles": 869000000
+                            "Intangibles": 869000000,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -309,7 +323,7 @@
         }
     },
     "Financial Measures": {
-        "Recorded on": "2019-04-14",
+        "Recorded on": "2019-04-27",
         "Measures": [
             {
                 "Date": "2013-02-22",
@@ -492,11 +506,16 @@
             "Average Debt Growth (%)": 8.33,
             "Average Equity Growth (%)": 2.5,
             "Average Cash Flow Growth (%)": 23.16,
-            "Average Dividend Growth (%)": 0.42,
+            "Average Dividend Growth": 0.42,
             "Average Book Value Growth": 3.45
         },
-        "Market Price": 97.17,
-        "Market Capitalization": 44203904663.79,
-        "Enterprise Value": 52344904663.79
+        "Price Metrics": {
+            "Market Price": 94.92,
+            "Enterprise Value": 51321350218.04,
+            "Market Capitalization": 43180350218.04,
+            "Price To Earnings": 18.64,
+            "Price To CashFlow": 5.7,
+            "Price To Revenue": 1.48
+        }
     }
 }

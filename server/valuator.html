@@ -208,6 +208,49 @@
       </th>
     </tr>
     </table>
+    <h4>Priced Based Metrics</h4>
+    <table border=1>
+      <tr>
+        <th>
+          Price
+        </th>
+        <th>
+          EV
+        </th>
+        <th>
+          Market Cap
+        </th>
+        <th>
+          P/E
+        </tn>
+        <th>
+          P/CF
+        </th>
+        <th>
+          P/Rev
+        </th>
+      </tr>
+      <tr>
+        <th>
+          {{ .Pbm.Price }}
+        </th>
+        <th>
+          {{ printf "%.2f" .Pbm.EnterpriseValue }}
+        </th>
+        <th>
+          {{ printf "%.2f" .Pbm.MarketCapitalization }}
+        </th>
+        <th>
+          {{ .Pbm.PriceOverEarnings }}
+        </tn>
+        <th>
+          {{ .Pbm.PriceOverCashFlow }}
+        </th>
+        <th>
+          {{ .Pbm.PriceOverRevenue }}
+        </th>
+      </tr>
+    </table>
     <h4>Discounted Cash Flow Valuations</h4>
     <table border=1>
       <tr>

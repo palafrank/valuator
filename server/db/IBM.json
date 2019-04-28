@@ -25,7 +25,7 @@
                             "Dividend Per Share": 2.99
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 7935,
                             "Long-Term debt": 22857000000,
                             "Short-Term debt": 8463000000,
                             "Current Liabilities": 42123000000,
@@ -33,10 +33,12 @@
                             "Retained Earnings": 104857000000,
                             "Total Shareholder Equity": 20138000000,
                             "Current Assets": 50928000000,
-                            "Cash": 0,
+                            "Cash": 11922000000,
                             "Securities": 0,
-                            "Goodwill": 0,
-                            "Intangibles": 0
+                            "Goodwill": 26213000000,
+                            "Intangibles": 3392000000,
+                            "Total Assets": 116433000000,
+                            "Total Liabilities": 96197000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -68,7 +70,7 @@
                             "Dividend Per Share": 3.38
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 7935,
                             "Long-Term debt": 24088000000,
                             "Short-Term debt": 9181000000,
                             "Current Liabilities": 43625000000,
@@ -76,10 +78,12 @@
                             "Retained Earnings": 117641000000,
                             "Total Shareholder Equity": 18860000000,
                             "Current Assets": 49433000000,
-                            "Cash": 0,
+                            "Cash": 10412000000,
                             "Securities": 0,
-                            "Goodwill": 0,
-                            "Intangibles": 0
+                            "Goodwill": 29247000000,
+                            "Intangibles": 3787000000,
+                            "Total Assets": 119213000000,
+                            "Total Liabilities": 100229000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -111,7 +115,7 @@
                             "Dividend Per Share": 3.89
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 7935,
                             "Long-Term debt": 32856000000,
                             "Short-Term debt": 6862000000,
                             "Current Liabilities": 40154000000,
@@ -119,10 +123,12 @@
                             "Retained Earnings": 130042000000,
                             "Total Shareholder Equity": 22792000000,
                             "Current Assets": 51350000000,
-                            "Cash": 0,
+                            "Cash": 10716000000,
                             "Securities": 0,
-                            "Goodwill": 0,
-                            "Intangibles": 0
+                            "Goodwill": 31184000000,
+                            "Intangibles": 3871000000,
+                            "Total Assets": 126223000000,
+                            "Total Liabilities": 103294000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -154,7 +160,7 @@
                             "Dividend Per Share": 4.31
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 7935,
                             "Long-Term debt": 35073000000,
                             "Short-Term debt": 5731000000,
                             "Current Liabilities": 39600000000,
@@ -162,10 +168,12 @@
                             "Retained Earnings": 137793000000,
                             "Total Shareholder Equity": 11868000000,
                             "Current Assets": 49422000000,
-                            "Cash": 0,
+                            "Cash": 8476000000,
                             "Securities": 0,
-                            "Goodwill": 0,
-                            "Intangibles": 0
+                            "Goodwill": 30556000000,
+                            "Intangibles": 3104000000,
+                            "Total Assets": 117532000000,
+                            "Total Liabilities": 105518000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -197,7 +205,7 @@
                             "Dividend Per Share": 4.95
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 7935,
                             "Long-Term debt": 33428000000,
                             "Short-Term debt": 6461000000,
                             "Current Liabilities": 34269000000,
@@ -205,10 +213,12 @@
                             "Retained Earnings": 146124000000,
                             "Total Shareholder Equity": 14262000000,
                             "Current Assets": 42504000000,
-                            "Cash": 0,
+                            "Cash": 7686000000,
                             "Securities": 0,
-                            "Goodwill": 0,
-                            "Intangibles": 0
+                            "Goodwill": 32021000000,
+                            "Intangibles": 3487000000,
+                            "Total Assets": 110495000000,
+                            "Total Liabilities": 96071000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -240,7 +250,7 @@
                             "Dividend Per Share": 5.57
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 6911,
                             "Long-Term debt": 34655000000,
                             "Short-Term debt": 7513000000,
                             "Current Liabilities": 36275000000,
@@ -248,10 +258,12 @@
                             "Retained Earnings": 152759000000,
                             "Total Shareholder Equity": 18246000000,
                             "Current Assets": 43888000000,
-                            "Cash": 0,
+                            "Cash": 7826000000,
                             "Securities": 0,
-                            "Goodwill": 0,
-                            "Intangibles": 0
+                            "Goodwill": 36199000000,
+                            "Intangibles": 0,
+                            "Total Assets": 117470000000,
+                            "Total Liabilities": 99078000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -283,7 +295,7 @@
                             "Dividend Per Share": 5.97
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 127,
+                            "Collected Data": 6911,
                             "Long-Term debt": 39837000000,
                             "Short-Term debt": 6987000000,
                             "Current Liabilities": 37363000000,
@@ -291,10 +303,12 @@
                             "Retained Earnings": 153126000000,
                             "Total Shareholder Equity": 17594000000,
                             "Current Assets": 49735000000,
-                            "Cash": 0,
+                            "Cash": 11972000000,
                             "Securities": 0,
-                            "Goodwill": 0,
-                            "Intangibles": 0
+                            "Goodwill": 36788000000,
+                            "Intangibles": 0,
+                            "Total Assets": 125356000000,
+                            "Total Liabilities": 107631000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -326,7 +340,7 @@
                             "Dividend Per Share": 6.36
                         },
                         "Balance Sheet Information": {
-                            "Collected Data": 759,
+                            "Collected Data": 6903,
                             "Long-Term debt": 35605000000,
                             "Short-Term debt": 10207000000,
                             "Current Liabilities": 38227000000,
@@ -337,7 +351,9 @@
                             "Cash": 11379000000,
                             "Securities": 0,
                             "Goodwill": 36265000000,
-                            "Intangibles": 0
+                            "Intangibles": 0,
+                            "Total Assets": 123382000000,
+                            "Total Liabilities": 106452000000
                         },
                         "Cash Flow Information": {
                             "Collected Data": 15,
@@ -352,7 +368,7 @@
         }
     },
     "Financial Measures": {
-        "Recorded on": "2019-03-04",
+        "Recorded on": "2019-04-16",
         "Measures": [
             {
                 "Date": "2012-02-28",
@@ -362,7 +378,7 @@
                 "Operating Leverage": 4.47,
                 "Financial Leverage (%)": 155,
                 "Return on Equity (%)": 78,
-                "Return on Assets": 0,
+                "Return on Assets": 13,
                 "Dividend": 2.99,
                 "Free Cash Flow": 19846000000,
                 "Dividend to FCF": 17,
@@ -378,7 +394,7 @@
                 "Operating Leverage": 4.3,
                 "Financial Leverage (%)": 176,
                 "Return on Equity (%)": 88,
-                "Return on Assets": 0,
+                "Return on Assets": 13,
                 "Dividend": 3.38,
                 "Free Cash Flow": 19586000000,
                 "Dividend to FCF": 19,
@@ -404,7 +420,7 @@
                 "Operating Leverage": 4.57,
                 "Financial Leverage (%)": 174,
                 "Return on Equity (%)": 72,
-                "Return on Assets": 0,
+                "Return on Assets": 13,
                 "Dividend": 3.89,
                 "Free Cash Flow": 17485000000,
                 "Dividend to FCF": 23,
@@ -430,7 +446,7 @@
                 "Operating Leverage": 4.23,
                 "Financial Leverage (%)": 343,
                 "Return on Equity (%)": 101,
-                "Return on Assets": 0,
+                "Return on Assets": 10,
                 "Dividend": 4.31,
                 "Free Cash Flow": 16868000000,
                 "Dividend to FCF": 25,
@@ -456,7 +472,7 @@
                 "Operating Leverage": 4.78,
                 "Financial Leverage (%)": 279,
                 "Return on Equity (%)": 92,
-                "Return on Assets": 0,
+                "Return on Assets": 11,
                 "Dividend": 4.95,
                 "Free Cash Flow": 17008000000,
                 "Dividend to FCF": 28,
@@ -482,7 +498,7 @@
                 "Operating Leverage": 6.06,
                 "Financial Leverage (%)": 231,
                 "Return on Equity (%)": 65,
-                "Return on Assets": 0,
+                "Return on Assets": 10,
                 "Dividend": 5.57,
                 "Free Cash Flow": 16958000000,
                 "Dividend to FCF": 30,
@@ -508,7 +524,7 @@
                 "Operating Leverage": 6.42,
                 "Financial Leverage (%)": 266,
                 "Return on Equity (%)": 32,
-                "Return on Assets": 0,
+                "Return on Assets": 4,
                 "Dividend": 5.97,
                 "Free Cash Flow": 16724000000,
                 "Dividend to FCF": 32,
@@ -534,7 +550,7 @@
                 "Operating Leverage": 3.28,
                 "Financial Leverage (%)": 272,
                 "Return on Equity (%)": 51,
-                "Return on Assets": 0,
+                "Return on Assets": 7,
                 "Dividend": 6.36,
                 "Free Cash Flow": 15247000000,
                 "Dividend to FCF": 37,
@@ -561,11 +577,607 @@
             "Average Debt Growth (%)": 6.85,
             "Average Equity Growth (%)": 0.42,
             "Average Cash Flow Growth (%)": -4.15,
-            "Average Dividend Growth (%)": 0.47,
+            "Average Dividend Growth": 0.47,
             "Average Book Value Growth": 0.21
         },
-        "Market Price": 138.43,
-        "Market Capitalization": 123184185818.08,
-        "Enterprise Value": 157617185818.08002
+        "Price Metrics": {
+            "Market Price": 145.14,
+            "Enterprise Value": 163588188395.83,
+            "Market Capitalization": 129155188395.83,
+            "Price To Earnings": 14.79,
+            "Price To CashFlow": 8.47,
+            "Price To Revenue": 1.62
+        }
+    }
+}{
+    "Company": "IBM",
+    "Financial Data": {
+        "Company": "IBM",
+        "Financial Reports": {
+            "10-K": {
+                "2012-02-28": {
+                    "Company": "IBM",
+                    "Report date": "2012-02-28",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 1158661712
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 106916000000,
+                            "Cost Of Revenue": 14973000000,
+                            "Gross Margin": 50138000000,
+                            "Operational Income": 21003000000,
+                            "Operational Expense": 70940000000,
+                            "Net Income": 15855000000,
+                            "Weighted Average Share Count": 1158661712,
+                            "Dividend Per Share": 2.99
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 7935,
+                            "Long-Term debt": 22857000000,
+                            "Short-Term debt": 8463000000,
+                            "Current Liabilities": 42123000000,
+                            "Deferred revenue": 12197000000,
+                            "Retained Earnings": 104857000000,
+                            "Total Shareholder Equity": 20138000000,
+                            "Current Assets": 50928000000,
+                            "Cash": 11922000000,
+                            "Securities": 0,
+                            "Goodwill": 26213000000,
+                            "Intangibles": 3392000000,
+                            "Total Assets": 116433000000,
+                            "Total Liabilities": 96197000000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 19846000000,
+                            "Capital Expenditure": -4108000000,
+                            "Dividends paid": -3473000000,
+                            "Interest paid": 956000000
+                        }
+                    }
+                },
+                "2013-02-26": {
+                    "Company": "IBM",
+                    "Report date": "2013-02-26",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 1114509771
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 104507000000,
+                            "Cost Of Revenue": 13956000000,
+                            "Gross Margin": 50298000000,
+                            "Operational Income": 21902000000,
+                            "Operational Expense": 68649000000,
+                            "Net Income": 16604000000,
+                            "Weighted Average Share Count": 1114509771,
+                            "Dividend Per Share": 3.38
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 7935,
+                            "Long-Term debt": 24088000000,
+                            "Short-Term debt": 9181000000,
+                            "Current Liabilities": 43625000000,
+                            "Deferred revenue": 11952000000,
+                            "Retained Earnings": 117641000000,
+                            "Total Shareholder Equity": 18860000000,
+                            "Current Assets": 49433000000,
+                            "Cash": 10412000000,
+                            "Securities": 0,
+                            "Goodwill": 29247000000,
+                            "Intangibles": 3787000000,
+                            "Total Assets": 119213000000,
+                            "Total Liabilities": 100229000000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 19586000000,
+                            "Capital Expenditure": -4082000000,
+                            "Dividends paid": -3773000000,
+                            "Interest paid": 1009000000
+                        }
+                    }
+                },
+                "2014-02-25": {
+                    "Company": "IBM",
+                    "Report date": "2014-02-25",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 1041340758
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 99751000000,
+                            "Cost Of Revenue": 12572000000,
+                            "Gross Margin": 48505000000,
+                            "Operational Income": 19524000000,
+                            "Operational Expense": 67655000000,
+                            "Net Income": 16483000000,
+                            "Weighted Average Share Count": 1041340758,
+                            "Dividend Per Share": 3.89
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 7935,
+                            "Long-Term debt": 32856000000,
+                            "Short-Term debt": 6862000000,
+                            "Current Liabilities": 40154000000,
+                            "Deferred revenue": 12557000000,
+                            "Retained Earnings": 130042000000,
+                            "Total Shareholder Equity": 22792000000,
+                            "Current Assets": 51350000000,
+                            "Cash": 10716000000,
+                            "Securities": 0,
+                            "Goodwill": 31184000000,
+                            "Intangibles": 3871000000,
+                            "Total Assets": 126223000000,
+                            "Total Liabilities": 103294000000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 17485000000,
+                            "Capital Expenditure": -3623000000,
+                            "Dividends paid": -4058000000,
+                            "Interest paid": 982000000
+                        }
+                    }
+                },
+                "2015-02-24": {
+                    "Company": "IBM",
+                    "Report date": "2015-02-24",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 988424172
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 92793000000,
+                            "Cost Of Revenue": 9312000000,
+                            "Gross Margin": 46407000000,
+                            "Operational Income": 19986000000,
+                            "Operational Expense": 63495000000,
+                            "Net Income": 12022000000,
+                            "Weighted Average Share Count": 988424172,
+                            "Dividend Per Share": 4.31
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 7935,
+                            "Long-Term debt": 35073000000,
+                            "Short-Term debt": 5731000000,
+                            "Current Liabilities": 39600000000,
+                            "Deferred revenue": 11877000000,
+                            "Retained Earnings": 137793000000,
+                            "Total Shareholder Equity": 11868000000,
+                            "Current Assets": 49422000000,
+                            "Cash": 8476000000,
+                            "Securities": 0,
+                            "Goodwill": 30556000000,
+                            "Intangibles": 3104000000,
+                            "Total Assets": 117532000000,
+                            "Total Liabilities": 105518000000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 16868000000,
+                            "Capital Expenditure": -3740000000,
+                            "Dividends paid": -4265000000,
+                            "Interest paid": 1061000000
+                        }
+                    }
+                },
+                "2016-02-23": {
+                    "Company": "IBM",
+                    "Report date": "2016-02-23",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 988424172
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 81741000000,
+                            "Cost Of Revenue": 6920000000,
+                            "Gross Margin": 40684000000,
+                            "Operational Income": 15945000000,
+                            "Operational Expense": 58876000000,
+                            "Net Income": 13190000000,
+                            "Weighted Average Share Count": 988424172,
+                            "Dividend Per Share": 4.95
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 7935,
+                            "Long-Term debt": 33428000000,
+                            "Short-Term debt": 6461000000,
+                            "Current Liabilities": 34269000000,
+                            "Deferred revenue": 11021000000,
+                            "Retained Earnings": 146124000000,
+                            "Total Shareholder Equity": 14262000000,
+                            "Current Assets": 42504000000,
+                            "Cash": 7686000000,
+                            "Securities": 0,
+                            "Goodwill": 32021000000,
+                            "Intangibles": 3487000000,
+                            "Total Assets": 110495000000,
+                            "Total Liabilities": 96071000000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 17008000000,
+                            "Capital Expenditure": -3579000000,
+                            "Dividends paid": -4897000000,
+                            "Interest paid": 995000000
+                        }
+                    }
+                },
+                "2017-02-28": {
+                    "Company": "IBM",
+                    "Report date": "2017-02-28",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 943212551
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 79919000000,
+                            "Cost Of Revenue": 6559000000,
+                            "Gross Margin": 38294000000,
+                            "Operational Income": 12330000000,
+                            "Operational Expense": 61030000000,
+                            "Net Income": 11872000000,
+                            "Weighted Average Share Count": 943212551,
+                            "Dividend Per Share": 5.57
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 6911,
+                            "Long-Term debt": 34655000000,
+                            "Short-Term debt": 7513000000,
+                            "Current Liabilities": 36275000000,
+                            "Deferred revenue": 11035000000,
+                            "Retained Earnings": 152759000000,
+                            "Total Shareholder Equity": 18246000000,
+                            "Current Assets": 43888000000,
+                            "Cash": 7826000000,
+                            "Securities": 0,
+                            "Goodwill": 36199000000,
+                            "Intangibles": 0,
+                            "Total Assets": 117470000000,
+                            "Total Liabilities": 99078000000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 16958000000,
+                            "Capital Expenditure": -3567000000,
+                            "Dividends paid": -5256000000,
+                            "Interest paid": 1158000000
+                        }
+                    }
+                },
+                "2018-02-27": {
+                    "Company": "IBM",
+                    "Report date": "2018-02-27",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 921167894
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 79139000000,
+                            "Cost Of Revenue": 7256000000,
+                            "Gross Margin": 36227000000,
+                            "Operational Income": 11400000000,
+                            "Operational Expense": 60483000000,
+                            "Net Income": 5753000000,
+                            "Weighted Average Share Count": 921167894,
+                            "Dividend Per Share": 5.97
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 6911,
+                            "Long-Term debt": 39837000000,
+                            "Short-Term debt": 6987000000,
+                            "Current Liabilities": 37363000000,
+                            "Deferred revenue": 11552000000,
+                            "Retained Earnings": 153126000000,
+                            "Total Shareholder Equity": 17594000000,
+                            "Current Assets": 49735000000,
+                            "Cash": 11972000000,
+                            "Securities": 0,
+                            "Goodwill": 36788000000,
+                            "Intangibles": 0,
+                            "Total Assets": 125356000000,
+                            "Total Liabilities": 107631000000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 16724000000,
+                            "Capital Expenditure": -3229000000,
+                            "Dividends paid": -5506000000,
+                            "Interest paid": 1208000000
+                        }
+                    }
+                },
+                "2019-02-26": {
+                    "Company": "IBM",
+                    "Report date": "2019-02-26",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 889866256
+                        },
+                        "Operational Information": {
+                            "Collected Data": 255,
+                            "Revenue": 79591000000,
+                            "Cost Of Revenue": 42655000000,
+                            "Gross Margin": 36936000000,
+                            "Operational Income": 11342000000,
+                            "Operational Expense": 25594000000,
+                            "Net Income": 8728000000,
+                            "Weighted Average Share Count": 889866256,
+                            "Dividend Per Share": 6.36
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 6903,
+                            "Long-Term debt": 35605000000,
+                            "Short-Term debt": 10207000000,
+                            "Current Liabilities": 38227000000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": 159206000000,
+                            "Total Shareholder Equity": 16796000000,
+                            "Current Assets": 49146000000,
+                            "Cash": 11379000000,
+                            "Securities": 0,
+                            "Goodwill": 36265000000,
+                            "Intangibles": 0,
+                            "Total Assets": 123382000000,
+                            "Total Liabilities": 106452000000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 15,
+                            "Operating Cash Flow": 15247000000,
+                            "Capital Expenditure": -3395000000,
+                            "Dividends paid": -5666000000,
+                            "Interest paid": 1423000000
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Financial Measures": {
+        "Recorded on": "2019-04-16",
+        "Measures": [
+            {
+                "Date": "2012-02-28",
+                "Book Value": 17.38,
+                "Contribution Margin": 85,
+                "Operating Margin": 19,
+                "Operating Leverage": 4.47,
+                "Financial Leverage (%)": 155,
+                "Return on Equity (%)": 78,
+                "Return on Assets": 13,
+                "Dividend": 2.99,
+                "Free Cash Flow": 19846000000,
+                "Dividend to FCF": 17,
+                "Working Capital": 8805000000,
+                "Current Ratio": 1.2,
+                "YoY": null
+            },
+            {
+                "Date": "2013-02-26",
+                "Book Value": 16.92,
+                "Contribution Margin": 86,
+                "Operating Margin": 20,
+                "Operating Leverage": 4.3,
+                "Financial Leverage (%)": 176,
+                "Return on Equity (%)": 88,
+                "Return on Assets": 13,
+                "Dividend": 3.38,
+                "Free Cash Flow": 19586000000,
+                "Dividend to FCF": 19,
+                "Working Capital": 5808000000,
+                "Current Ratio": 1.13,
+                "YoY": {
+                    "Revenue Growth": -3,
+                    "Earning Growth": 4,
+                    "Operating Leverage Growth": -4,
+                    "Gross Margin Growth": 0,
+                    "Debt Growth": 5,
+                    "Equity Growth": -7,
+                    "Cash Flow Growth": -2,
+                    "Dividend Growth": 0.38,
+                    "Book Value Growth": -0.46
+                }
+            },
+            {
+                "Date": "2014-02-25",
+                "Book Value": 21.88,
+                "Contribution Margin": 87,
+                "Operating Margin": 19,
+                "Operating Leverage": 4.57,
+                "Financial Leverage (%)": 174,
+                "Return on Equity (%)": 72,
+                "Return on Assets": 13,
+                "Dividend": 3.89,
+                "Free Cash Flow": 17485000000,
+                "Dividend to FCF": 23,
+                "Working Capital": 11196000000,
+                "Current Ratio": 1.27,
+                "YoY": {
+                    "Revenue Growth": -5,
+                    "Earning Growth": -1,
+                    "Operating Leverage Growth": 6,
+                    "Gross Margin Growth": -4,
+                    "Debt Growth": 36,
+                    "Equity Growth": 20,
+                    "Cash Flow Growth": -11,
+                    "Dividend Growth": 0.51,
+                    "Book Value Growth": 4.95
+                }
+            },
+            {
+                "Date": "2015-02-24",
+                "Book Value": 12,
+                "Contribution Margin": 89,
+                "Operating Margin": 21,
+                "Operating Leverage": 4.23,
+                "Financial Leverage (%)": 343,
+                "Return on Equity (%)": 101,
+                "Return on Assets": 10,
+                "Dividend": 4.31,
+                "Free Cash Flow": 16868000000,
+                "Dividend to FCF": 25,
+                "Working Capital": 9822000000,
+                "Current Ratio": 1.24,
+                "YoY": {
+                    "Revenue Growth": -7,
+                    "Earning Growth": -28,
+                    "Operating Leverage Growth": -8,
+                    "Gross Margin Growth": -5,
+                    "Debt Growth": 6,
+                    "Equity Growth": -48,
+                    "Cash Flow Growth": -4,
+                    "Dividend Growth": 0.41,
+                    "Book Value Growth": -9.88
+                }
+            },
+            {
+                "Date": "2016-02-23",
+                "Book Value": 14.42,
+                "Contribution Margin": 91,
+                "Operating Margin": 19,
+                "Operating Leverage": 4.78,
+                "Financial Leverage (%)": 279,
+                "Return on Equity (%)": 92,
+                "Return on Assets": 11,
+                "Dividend": 4.95,
+                "Free Cash Flow": 17008000000,
+                "Dividend to FCF": 28,
+                "Working Capital": 8235000000,
+                "Current Ratio": 1.24,
+                "YoY": {
+                    "Revenue Growth": -12,
+                    "Earning Growth": 9,
+                    "Operating Leverage Growth": 13,
+                    "Gross Margin Growth": -13,
+                    "Debt Growth": -5,
+                    "Equity Growth": 20,
+                    "Cash Flow Growth": 0,
+                    "Dividend Growth": 0.64,
+                    "Book Value Growth": 2.42
+                }
+            },
+            {
+                "Date": "2017-02-28",
+                "Book Value": 19.34,
+                "Contribution Margin": 91,
+                "Operating Margin": 15,
+                "Operating Leverage": 6.06,
+                "Financial Leverage (%)": 231,
+                "Return on Equity (%)": 65,
+                "Return on Assets": 10,
+                "Dividend": 5.57,
+                "Free Cash Flow": 16958000000,
+                "Dividend to FCF": 30,
+                "Working Capital": 7613000000,
+                "Current Ratio": 1.2,
+                "YoY": {
+                    "Revenue Growth": -3,
+                    "Earning Growth": -10,
+                    "Operating Leverage Growth": 26,
+                    "Gross Margin Growth": -6,
+                    "Debt Growth": 3,
+                    "Equity Growth": 27,
+                    "Cash Flow Growth": -1,
+                    "Dividend Growth": 0.62,
+                    "Book Value Growth": 4.92
+                }
+            },
+            {
+                "Date": "2018-02-27",
+                "Book Value": 19.09,
+                "Contribution Margin": 90,
+                "Operating Margin": 14,
+                "Operating Leverage": 6.42,
+                "Financial Leverage (%)": 266,
+                "Return on Equity (%)": 32,
+                "Return on Assets": 4,
+                "Dividend": 5.97,
+                "Free Cash Flow": 16724000000,
+                "Dividend to FCF": 32,
+                "Working Capital": 12372000000,
+                "Current Ratio": 1.33,
+                "YoY": {
+                    "Revenue Growth": -1,
+                    "Earning Growth": -52,
+                    "Operating Leverage Growth": 5,
+                    "Gross Margin Growth": -6,
+                    "Debt Growth": 14,
+                    "Equity Growth": -4,
+                    "Cash Flow Growth": -2,
+                    "Dividend Growth": 0.39,
+                    "Book Value Growth": -0.25
+                }
+            },
+            {
+                "Date": "2019-02-26",
+                "Book Value": 18.87,
+                "Contribution Margin": 46,
+                "Operating Margin": 14,
+                "Operating Leverage": 3.28,
+                "Financial Leverage (%)": 272,
+                "Return on Equity (%)": 51,
+                "Return on Assets": 7,
+                "Dividend": 6.36,
+                "Free Cash Flow": 15247000000,
+                "Dividend to FCF": 37,
+                "Working Capital": 10919000000,
+                "Current Ratio": 1.28,
+                "YoY": {
+                    "Revenue Growth": 0,
+                    "Earning Growth": 51,
+                    "Operating Leverage Growth": -49,
+                    "Gross Margin Growth": 1,
+                    "Debt Growth": -11,
+                    "Equity Growth": -5,
+                    "Cash Flow Growth": -9,
+                    "Dividend Growth": 0.39,
+                    "Book Value Growth": -0.22
+                }
+            }
+        ],
+        "Averages": {
+            "Average Revenue Growth (%)": -4.43,
+            "Average Earning Growth (%)": -3.86,
+            "Average Operating Leverage Growth (%)": -1.58,
+            "Average Gross Margin Growth (%)": -4.72,
+            "Average Debt Growth (%)": 6.85,
+            "Average Equity Growth (%)": 0.42,
+            "Average Cash Flow Growth (%)": -4.15,
+            "Average Dividend Growth": 0.47,
+            "Average Book Value Growth": 0.21
+        },
+        "Price Metrics": {
+            "Market Price": 145.14,
+            "Enterprise Value": 163588188395.83,
+            "Market Capitalization": 129155188395.83,
+            "Price To Earnings": 14.79,
+            "Price To CashFlow": 8.47,
+            "Price To Revenue": 1.62
+        }
     }
 }

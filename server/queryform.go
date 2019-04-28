@@ -12,6 +12,7 @@ type valuatorStruct struct {
 	Filings  []valuator.Filing
 	Measures []valuator.Measures
 	Avg      valuator.Average
+	Pbm      valuator.PriceBasedMetrics
 }
 
 func (s *server) queryForm(w http.ResponseWriter, r *http.Request) {
@@ -25,13 +26,13 @@ func (s *server) queryForm(w http.ResponseWriter, r *http.Request) {
 	save := len(r.Form["save"])
 	if err := s.valuator.Collect(ticker); err != nil {
 		w.Write([]byte(err.Error()))
-		if save == 1 {
-			s.valuator.Write()
-		}
 		return
 	}
 	s.writeData(w, ticker)
-	//w.Write([]byte(s.valuator.HTML(ticker)))
+	// Save in DB
+	if save == 1 {
+		s.valuator.Write()
+	}
 }
 
 func (s *server) writeData(w http.ResponseWriter, ticker string) {
@@ -39,6 +40,7 @@ func (s *server) writeData(w http.ResponseWriter, ticker string) {
 	vals.Filings = s.valuator.Filings(ticker)
 	vals.Measures = s.valuator.Measures(ticker)
 	vals.Avg = s.valuator.Averages(ticker)
+	vals.Pbm = s.valuator.PriceMetrics(ticker)
 	vals.Ticker = ticker
 
 	err := s.colTempl.Execute(w, vals)

@@ -62,6 +62,9 @@ type Valuator interface {
 	// Averages returns the computed average metrics for a specific ticker
 	Averages(string) Average
 
+	// PriceMetrics gets the price based metrics computed based on current price
+	PriceMetrics(string) PriceBasedMetrics
+
 	// Clean clears all the filing data collected for a specific ticker
 	Clean(string)
 

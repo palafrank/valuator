@@ -27,7 +27,7 @@ type averages struct {
 	Debt      float64 `json:"Average Debt Growth (%)"`
 	Equity    float64 `json:"Average Equity Growth (%)"`
 	Cf        float64 `json:"Average Cash Flow Growth (%)"`
-	Div       float64 `json:"Average Dividend Growth (%)"`
+	Div       float64 `json:"Average Dividend Growth"`
 	Bv        float64 `json:"Average Book Value Growth"`
 }
 

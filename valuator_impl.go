@@ -34,16 +34,16 @@ type Filing interface {
 	Securities() (float64, error)
 	Goodwill() (float64, error)
 	Intangibles() (float64, error)
+	Assets() (float64, error)
+	Liabilities() (float64, error)
 }
 
 type valuation struct {
-	Ticker    string     `json:"-"`
-	Date      Timestamp  `json:"Recorded on"`
-	FiledData []Measures `json:"Measures"`
-	Avgs      Average    `json:"Averages"`
-	Price     float64    `json:"Market Price"`
-	Mcap      float64    `json:"Market Capitalization"`
-	EV        float64    `json:"Enterprise Value"`
+	Ticker    string            `json:"-"`
+	Date      Timestamp         `json:"Recorded on"`
+	FiledData []Measures        `json:"Measures"`
+	Avgs      Average           `json:"Averages"`
+	Pbm       PriceBasedMetrics `json:"Price Metrics"`
 }
 
 type valuator struct {
@@ -122,6 +122,13 @@ func (v *valuator) Averages(ticker string) Average {
 	return nil
 }
 
+func (v *valuator) PriceMetrics(ticker string) PriceBasedMetrics {
+	if v, ok := v.Valuations[ticker]; ok {
+		return v.Pbm
+	}
+	return nil
+}
+
 func (v *valuator) Collect(ticker string) error {
 	if _, ok := v.collector[ticker]; ok {
 		log.Println("Collection for ticker " + ticker + " is already done")
@@ -161,9 +168,7 @@ func (v *valuator) Collect(ticker string) error {
 	valuation := v.Valuations[ticker]
 	valuation.FiledData = mea
 	valuation.Avgs = avg
-	valuation.Price = priceFetcher(ticker)
-	valuation.EV = v.EnterpriseValue(ticker)
-	valuation.Mcap = v.MarketCap(ticker)
+	valuation.Pbm = newPriceBasedMetrics(mea[len(mea)-1])
 	valuation.Date = Timestamp(time.Now())
 	v.Store()
 

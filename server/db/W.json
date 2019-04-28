@@ -32,7 +32,13 @@
                             "Deferred revenue": 26784000000,
                             "Retained Earnings": -58122000000,
                             "Total Shareholder Equity": 305539000000,
-                            "Current Assets": 486868000000
+                            "Current Assets": 486868000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -71,7 +77,13 @@
                             "Deferred revenue": 50884000,
                             "Retained Earnings": -135565000,
                             "Total Shareholder Equity": 242545000,
-                            "Current Assets": 492323000
+                            "Current Assets": 492323000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -110,7 +122,13 @@
                             "Deferred revenue": 65892000,
                             "Retained Earnings": -329940000,
                             "Total Shareholder Equity": 79384000,
-                            "Current Assets": 477091000
+                            "Current Assets": 477091000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 7,
@@ -149,7 +167,13 @@
                             "Deferred revenue": 94116000,
                             "Retained Earnings": -583266000,
                             "Total Shareholder Equity": -48329000,
-                            "Current Assets": 816820000
+                            "Current Assets": 816820000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
                         },
                         "Cash Flow Information": {
                             "Collected Data": 3,
@@ -159,11 +183,57 @@
                             "Interest paid": 0
                         }
                     }
+                },
+                "2019-02-25": {
+                    "Company": "W",
+                    "Report date": "2019-02-25",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 63032847
+                        },
+                        "Operational Information": {
+                            "Collected Data": 63,
+                            "Revenue": 6779174000,
+                            "Cost Of Revenue": 5192451000,
+                            "Gross Margin": 1586723000,
+                            "Operational Income": -473279000,
+                            "Operational Expense": 2060002000,
+                            "Net Income": -504080000,
+                            "Weighted Average Share Count": 63032847,
+                            "Dividend Per Share": 0
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 6388,
+                            "Long-Term debt": 0,
+                            "Short-Term debt": 0,
+                            "Current Liabilities": 1139223000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": -1082689000,
+                            "Total Shareholder Equity": -330721000,
+                            "Current Assets": 1255936000,
+                            "Cash": 849461000,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 1890850000,
+                            "Total Liabilities": 2221571000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 11,
+                            "Operating Cash Flow": 84861000,
+                            "Capital Expenditure": -159205000,
+                            "Dividends paid": 0,
+                            "Interest paid": 1554000
+                        }
+                    }
                 }
             }
         }
     },
     "Financial Measures": {
+        "Recorded on": "2019-04-16",
         "Measures": [
             {
                 "Date": "2015-03-19",
@@ -258,18 +328,430 @@
                     "Dividend Growth": 0,
                     "Book Value Growth": -2.41
                 }
+            },
+            {
+                "Date": "2019-02-25",
+                "Book Value": -5.25,
+                "Contribution Margin": 23,
+                "Operating Margin": -7,
+                "Operating Leverage": -3.29,
+                "Financial Leverage (%)": -0,
+                "Return on Equity (%)": 152,
+                "Return on Assets": -27,
+                "Dividend": 0,
+                "Free Cash Flow": 84861000,
+                "Dividend to FCF": 0,
+                "Working Capital": 116713000,
+                "Current Ratio": 1.1,
+                "YoY": {
+                    "Revenue Growth": 43,
+                    "Earning Growth": 106,
+                    "Operating Leverage Growth": -29,
+                    "Gross Margin Growth": 41,
+                    "Debt Growth": 0,
+                    "Equity Growth": 584,
+                    "Cash Flow Growth": 152,
+                    "Dividend Growth": 0,
+                    "Book Value Growth": -4.41
+                }
             }
         ],
         "Averages": {
-            "Average Revenue Growth (%)": -3.67,
-            "Average Earning Growth (%)": 25,
-            "Average Operating Leverage Growth (%)": 64.66,
-            "Average Gross Margin Growth (%)": -4.34,
+            "Average Revenue Growth (%)": 8,
+            "Average Earning Growth (%)": 45.25,
+            "Average Operating Leverage Growth (%)": 41.25,
+            "Average Gross Margin Growth (%)": 7,
             "Average Debt Growth (%)": 0,
-            "Average Equity Growth (%)": -109.67,
-            "Average Cash Flow Growth (%)": -66,
-            "Average Dividend Growth (%)": -354.09,
-            "Average Book Value Growth": -2738.1
+            "Average Equity Growth (%)": 63.75,
+            "Average Cash Flow Growth (%)": -11.5,
+            "Average Dividend Growth": -265.57,
+            "Average Book Value Growth": -2054.68
+        },
+        "Price Metrics": {
+            "Market Price": 149.53,
+            "Enterprise Value": 8575840611.91,
+            "Market Capitalization": 9425301611.91,
+            "Price To Earnings": -18.7,
+            "Price To CashFlow": 111.06,
+            "Price To Revenue": 1.39
+        }
+    }
+}{
+    "Company": "W",
+    "Financial Data": {
+        "Company": "W",
+        "Financial Reports": {
+            "10-K": {
+                "2015-03-19": {
+                    "Company": "W",
+                    "Report date": "2015-03-19",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 37199841
+                        },
+                        "Operational Information": {
+                            "Collected Data": 191,
+                            "Revenue": 1318951000000,
+                            "Cost Of Revenue": 1007853000000,
+                            "Gross Margin": 311098000000,
+                            "Operational Income": -147784000000,
+                            "Operational Expense": 458882000000,
+                            "Net Income": -148098000000,
+                            "Weighted Average Share Count": 37199841,
+                            "Dividend Per Share": 1062.26
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 124,
+                            "Long-Term debt": 0,
+                            "Short-Term debt": 0,
+                            "Current Liabilities": 232592000000,
+                            "Deferred revenue": 26784000000,
+                            "Retained Earnings": -58122000000,
+                            "Total Shareholder Equity": 305539000000,
+                            "Current Assets": 486868000000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 7,
+                            "Operating Cash Flow": 4125000000,
+                            "Capital Expenditure": -31855000000,
+                            "Dividends paid": -39516000000,
+                            "Interest paid": 0
+                        }
+                    }
+                },
+                "2016-02-29": {
+                    "Company": "W",
+                    "Report date": "2016-02-29",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 46159314
+                        },
+                        "Operational Information": {
+                            "Collected Data": 63,
+                            "Revenue": 2249885000,
+                            "Cost Of Revenue": 1709161000,
+                            "Gross Margin": 540724000,
+                            "Operational Income": -81350000,
+                            "Operational Expense": 622074000,
+                            "Net Income": -77443000,
+                            "Weighted Average Share Count": 46159314,
+                            "Dividend Per Share": 0
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 124,
+                            "Long-Term debt": 0,
+                            "Short-Term debt": 0,
+                            "Current Liabilities": 397026000,
+                            "Deferred revenue": 50884000,
+                            "Retained Earnings": -135565000,
+                            "Total Shareholder Equity": 242545000,
+                            "Current Assets": 492323000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 7,
+                            "Operating Cash Flow": 135121000,
+                            "Capital Expenditure": -44648000,
+                            "Dividends paid": 0,
+                            "Interest paid": 0
+                        }
+                    }
+                },
+                "2017-02-28": {
+                    "Company": "W",
+                    "Report date": "2017-02-28",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 50338973
+                        },
+                        "Operational Information": {
+                            "Collected Data": 63,
+                            "Revenue": 3380360000,
+                            "Cost Of Revenue": 2572549000,
+                            "Gross Margin": 807811000,
+                            "Operational Income": -196217000,
+                            "Operational Expense": 1004028000,
+                            "Net Income": -194375000,
+                            "Weighted Average Share Count": 50338973,
+                            "Dividend Per Share": 0
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 124,
+                            "Long-Term debt": 0,
+                            "Short-Term debt": 0,
+                            "Current Liabilities": 557220000,
+                            "Deferred revenue": 65892000,
+                            "Retained Earnings": -329940000,
+                            "Total Shareholder Equity": 79384000,
+                            "Current Assets": 477091000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 7,
+                            "Operating Cash Flow": 62814000,
+                            "Capital Expenditure": -96707000,
+                            "Dividends paid": 0,
+                            "Interest paid": 0
+                        }
+                    }
+                },
+                "2018-02-26": {
+                    "Company": "W",
+                    "Report date": "2018-02-26",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 57762425
+                        },
+                        "Operational Information": {
+                            "Collected Data": 63,
+                            "Revenue": 4720895000,
+                            "Cost Of Revenue": 3602072000,
+                            "Gross Margin": 1118823000,
+                            "Operational Income": -235453000,
+                            "Operational Expense": 1354276000,
+                            "Net Income": -244614000,
+                            "Weighted Average Share Count": 57762425,
+                            "Dividend Per Share": 0
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 124,
+                            "Long-Term debt": 0,
+                            "Short-Term debt": 0,
+                            "Current Liabilities": 739755000,
+                            "Deferred revenue": 94116000,
+                            "Retained Earnings": -583266000,
+                            "Total Shareholder Equity": -48329000,
+                            "Current Assets": 816820000,
+                            "Cash": 0,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 0,
+                            "Total Liabilities": 0
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 3,
+                            "Operating Cash Flow": 33634000,
+                            "Capital Expenditure": -100451000,
+                            "Dividends paid": 0,
+                            "Interest paid": 0
+                        }
+                    }
+                },
+                "2019-02-25": {
+                    "Company": "W",
+                    "Report date": "2019-02-25",
+                    "Financial Data": {
+                        "Filing Type": "10-K",
+                        "Entity Information": {
+                            "Collected Data": 1,
+                            "Shares Outstanding": 63032847
+                        },
+                        "Operational Information": {
+                            "Collected Data": 63,
+                            "Revenue": 6779174000,
+                            "Cost Of Revenue": 5192451000,
+                            "Gross Margin": 1586723000,
+                            "Operational Income": -473279000,
+                            "Operational Expense": 2060002000,
+                            "Net Income": -504080000,
+                            "Weighted Average Share Count": 63032847,
+                            "Dividend Per Share": 0
+                        },
+                        "Balance Sheet Information": {
+                            "Collected Data": 6388,
+                            "Long-Term debt": 0,
+                            "Short-Term debt": 0,
+                            "Current Liabilities": 1139223000,
+                            "Deferred revenue": 0,
+                            "Retained Earnings": -1082689000,
+                            "Total Shareholder Equity": -330721000,
+                            "Current Assets": 1255936000,
+                            "Cash": 849461000,
+                            "Securities": 0,
+                            "Goodwill": 0,
+                            "Intangibles": 0,
+                            "Total Assets": 1890850000,
+                            "Total Liabilities": 2221571000
+                        },
+                        "Cash Flow Information": {
+                            "Collected Data": 11,
+                            "Operating Cash Flow": 84861000,
+                            "Capital Expenditure": -159205000,
+                            "Dividends paid": 0,
+                            "Interest paid": 1554000
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Financial Measures": {
+        "Recorded on": "2019-04-16",
+        "Measures": [
+            {
+                "Date": "2015-03-19",
+                "Book Value": 8213.44,
+                "Contribution Margin": 23,
+                "Operating Margin": -12,
+                "Operating Leverage": -1.92,
+                "Financial Leverage (%)": 0,
+                "Return on Equity (%)": -49,
+                "Return on Assets": 0,
+                "Dividend": 1062.26,
+                "Free Cash Flow": 4125000000,
+                "Dividend to FCF": 957,
+                "Working Capital": 254276000000,
+                "Current Ratio": 2.09,
+                "YoY": null
+            },
+            {
+                "Date": "2016-02-29",
+                "Book Value": 5.25,
+                "Contribution Margin": 24,
+                "Operating Margin": -4,
+                "Operating Leverage": -6,
+                "Financial Leverage (%)": 0,
+                "Return on Equity (%)": -32,
+                "Return on Assets": 0,
+                "Dividend": 0,
+                "Free Cash Flow": 135121000,
+                "Dividend to FCF": -0,
+                "Working Capital": 95297000,
+                "Current Ratio": 1.24,
+                "YoY": {
+                    "Revenue Growth": -100,
+                    "Earning Growth": -100,
+                    "Operating Leverage Growth": 212,
+                    "Gross Margin Growth": -100,
+                    "Debt Growth": 0,
+                    "Equity Growth": -100,
+                    "Cash Flow Growth": -97,
+                    "Dividend Growth": -1062.26,
+                    "Book Value Growth": -8208.19
+                }
+            },
+            {
+                "Date": "2017-02-28",
+                "Book Value": 1.57,
+                "Contribution Margin": 23,
+                "Operating Margin": -6,
+                "Operating Leverage": -3.84,
+                "Financial Leverage (%)": 0,
+                "Return on Equity (%)": -245,
+                "Return on Assets": 0,
+                "Dividend": 0,
+                "Free Cash Flow": 62814000,
+                "Dividend to FCF": -0,
+                "Working Capital": -80129000,
+                "Current Ratio": 0.85,
+                "YoY": {
+                    "Revenue Growth": 50,
+                    "Earning Growth": 150,
+                    "Operating Leverage Growth": -37,
+                    "Gross Margin Growth": 49,
+                    "Debt Growth": 0,
+                    "Equity Growth": -68,
+                    "Cash Flow Growth": -54,
+                    "Dividend Growth": 0,
+                    "Book Value Growth": -3.68
+                }
+            },
+            {
+                "Date": "2018-02-26",
+                "Book Value": -0.84,
+                "Contribution Margin": 23,
+                "Operating Margin": -5,
+                "Operating Leverage": -4.6,
+                "Financial Leverage (%)": -0,
+                "Return on Equity (%)": 506,
+                "Return on Assets": 0,
+                "Dividend": 0,
+                "Free Cash Flow": 33634000,
+                "Dividend to FCF": 0,
+                "Working Capital": 77065000,
+                "Current Ratio": 1.1,
+                "YoY": {
+                    "Revenue Growth": 39,
+                    "Earning Growth": 25,
+                    "Operating Leverage Growth": 19,
+                    "Gross Margin Growth": 38,
+                    "Debt Growth": 0,
+                    "Equity Growth": -161,
+                    "Cash Flow Growth": -47,
+                    "Dividend Growth": 0,
+                    "Book Value Growth": -2.41
+                }
+            },
+            {
+                "Date": "2019-02-25",
+                "Book Value": -5.25,
+                "Contribution Margin": 23,
+                "Operating Margin": -7,
+                "Operating Leverage": -3.29,
+                "Financial Leverage (%)": -0,
+                "Return on Equity (%)": 152,
+                "Return on Assets": -27,
+                "Dividend": 0,
+                "Free Cash Flow": 84861000,
+                "Dividend to FCF": 0,
+                "Working Capital": 116713000,
+                "Current Ratio": 1.1,
+                "YoY": {
+                    "Revenue Growth": 43,
+                    "Earning Growth": 106,
+                    "Operating Leverage Growth": -29,
+                    "Gross Margin Growth": 41,
+                    "Debt Growth": 0,
+                    "Equity Growth": 584,
+                    "Cash Flow Growth": 152,
+                    "Dividend Growth": 0,
+                    "Book Value Growth": -4.41
+                }
+            }
+        ],
+        "Averages": {
+            "Average Revenue Growth (%)": 8,
+            "Average Earning Growth (%)": 45.25,
+            "Average Operating Leverage Growth (%)": 41.25,
+            "Average Gross Margin Growth (%)": 7,
+            "Average Debt Growth (%)": 0,
+            "Average Equity Growth (%)": 63.75,
+            "Average Cash Flow Growth (%)": -11.5,
+            "Average Dividend Growth": -265.57,
+            "Average Book Value Growth": -2054.68
+        },
+        "Price Metrics": {
+            "Market Price": 149.53,
+            "Enterprise Value": 8575840611.91,
+            "Market Capitalization": 9425301611.91,
+            "Price To Earnings": -18.7,
+            "Price To CashFlow": 111.06,
+            "Price To Revenue": 1.39
         }
     }
 }

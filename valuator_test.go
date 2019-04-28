@@ -1,6 +1,7 @@
 package valuator
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -125,7 +126,7 @@ func TestNewIBMValuator(t *testing.T) {
 		t.Error("Failed to create a valuator: ", err.Error())
 		return
 	}
-
+	fmt.Println(v)
 	ret, _ := v.DiscountedCashFlowTrend("IBM", 3, 100, 10, 2018)
 	if ret != 81.15 {
 		t.Error("Error in DCF calculation at 100% trend ", ret)

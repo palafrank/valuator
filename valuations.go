@@ -2,7 +2,6 @@ package valuator
 
 import (
 	"errors"
-	"log"
 	"math"
 )
 
@@ -117,33 +116,4 @@ func (v *valuator) DiscountedCashFlow(ticker string, dr float64, bvIn float64, d
 	}
 
 	return round(sumDiv + sumBv), nil
-}
-
-func (v *valuator) EnterpriseValue(ticker string) float64 {
-	valuation, ok := v.Valuations[ticker]
-	if !ok {
-		log.Println("Valuation not found: Error calculating enterprise value")
-		return 0
-	}
-	m := valuation.FiledData[len(valuation.FiledData)-1]
-	cash, _ := m.Filing().Cash()
-	ld, _ := m.Filing().LongTermDebt()
-	sd, _ := m.Filing().ShortTermDebt()
-	sc, _ := m.Filing().ShareCount()
-	mc := sc * valuation.Price
-
-	return mc + ld + sd - cash
-}
-
-func (v *valuator) MarketCap(ticker string) float64 {
-	valuation, ok := v.Valuations[ticker]
-	if !ok {
-		log.Println("Valuation not found: Error calculating market cap")
-		return 0
-	}
-	m := valuation.FiledData[len(valuation.FiledData)-1]
-	if sc, err := m.Filing().ShareCount(); err == nil {
-		return sc * valuation.Price
-	}
-	return 0
 }

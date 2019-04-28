@@ -203,7 +203,15 @@ func (m *measures) ReturnOnEquity() float64 {
 }
 
 func (m *measures) ReturnOnAssets() float64 {
-	return 0
+	ni, err := m.filing.NetIncome()
+	if err != nil {
+		return 0
+	}
+	as, err := m.filing.Assets()
+	if err != nil {
+		return 0
+	}
+	return percentage(ni / as)
 }
 
 func (m *measures) DividendPerShare() float64 {

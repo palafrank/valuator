@@ -115,6 +115,7 @@ func (s *storeCollection) putMeasures(ticker string, data []byte) {
 		FinMeasures: data,
 	}
 	s.Entries[ticker] = entry
+
 	return
 }
 
@@ -124,7 +125,6 @@ func (s *storeCollection) write() error {
 		if err := s.db.Write(ticker, []byte(entry.String())); err != nil {
 			return err
 		}
-
 	}
 	return nil
 }
